@@ -2,6 +2,20 @@
   <Folder Name="/Gateway/" />
   <Folder Name="/logs/" />
   <Folder Name="/Services/" />
+  <Folder Name="/Services/AdminService/">
+    <Project Path="SmartShip.Admin.API/SmartShip.Admin.API.csproj" />
+    <Project Path="SmartShip.Admin.Application/SmartShip.Admin.Application.csproj" />
+    <Project Path="SmartShip.Admin.Domain/SmartShip.Admin.Domain.csproj" />
+    <Project Path="SmartShip.Admin.Infrastructure/SmartShip.Admin.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Services/IdentityService/">
+    <Project Path="SmartShip.Identity.API/SmartShip.Identity.API.csproj" />
+    <Project Path="SmartShip.Identity.Application/SmartShip.Identity.Application.csproj" />
+    <Project Path="SmartShip.Identity.Domain/SmartShip.Identity.Domain.csproj" />
+    <Project Path="SmartShip.Identity.Infrastructure/SmartShip.Identity.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Services/ShipmentService/" />
+  <Folder Name="/Services/TrackingService/" />
   <Folder Name="/Shared/" />
   <Folder Name="/Testing/" />
 </Solution>
