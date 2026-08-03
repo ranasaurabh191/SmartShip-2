@@ -3,30 +3,48 @@
     <Project Path="Gateway/SmartShip.Gateway/SmartShip.Gateway.csproj" />
   </Folder>
   <Folder Name="/Services/" />
-  <Folder Name="/Services/AdminService/">
-    <Project Path="Services/AdminService/SmartShip.Admin.API/SmartShip.Admin.API.csproj" />
-    <Project Path="Services/AdminService/SmartShip.Admin.Application/SmartShip.Admin.Application.csproj" />
-    <Project Path="Services/AdminService/SmartShip.Admin.Domain/SmartShip.Admin.Domain.csproj" />
-    <Project Path="Services/AdminService/SmartShip.Admin.Infrastructure/SmartShip.Admin.Infrastructure.csproj" />
+  <Folder Name="/Services/AdminService/" />
+  <Folder Name="/Services/AdminService/Core/">
+    <Project Path="Services/AdminService/Core/SmartShip.Admin.Application/SmartShip.Admin.Application.csproj" />
+    <Project Path="Services/AdminService/Core/SmartShip.Admin.Domain/SmartShip.Admin.Domain.csproj" />
   </Folder>
-  <Folder Name="/Services/IdentityService/">
-    <Project Path="Services/IdentityService/SmartShip.Identity.API/SmartShip.Identity.API.csproj" />
-    <Project Path="Services/IdentityService/SmartShip.Identity.Application/SmartShip.Identity.Application.csproj" />
-    <Project Path="Services/IdentityService/SmartShip.Identity.Domain/SmartShip.Identity.Domain.csproj" />
-    <Project Path="Services/IdentityService/SmartShip.Identity.Infrastructure/SmartShip.Identity.Infrastructure.csproj" />
+  <Folder Name="/Services/AdminService/Infrastructure/">
+    <Project Path="Services/AdminService/Infrastructure/SmartShip.Admin.Infrastructure/SmartShip.Admin.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/Services/ShipmentService/">
-    <Project Path="Services/ShipmentService/SmartShip.Shipment.API/SmartShip.Shipment.API.csproj" />
-    <Project Path="Services/ShipmentService/SmartShip.Shipment.Application/SmartShip.Shipment.Application.csproj" />
-    <Project Path="Services/ShipmentService/SmartShip.Shipment.Domain/SmartShip.Shipment.Domain.csproj" />
-    <Project Path="Services/ShipmentService/SmartShip.Shipment.Infrastructure/SmartShip.Shipment.Infrastructure.csproj" />
+  <Folder Name="/Services/AdminService/Presentation/">
+    <Project Path="Services/AdminService/Presentation/SmartShip.Admin.API/SmartShip.Admin.API.csproj" />
   </Folder>
-  <Folder Name="/Services/TrackingService/">
-    <Project Path="Services/TrackingService/SmartShip.Tracking.API/SmartShip.Tracking.API.csproj" />
-    <Project Path="Services/TrackingService/SmartShip.Tracking.Application/SmartShip.Tracking.Application.csproj" />
-    <Project Path="Services/TrackingService/SmartShip.Tracking.Domain/SmartShip.Tracking.Domain.csproj" />
-    <Project Path="Services/TrackingService/SmartShip.Tracking.Infrastructure/SmartShip.Tracking.Infrastructure.csproj" />
+  <Folder Name="/Services/IdentityService/" />
+  <Folder Name="/Services/IdentityService/Core/">
+    <Project Path="Services/IdentityService/Core/SmartShip.Identity.Application/SmartShip.Identity.Application.csproj" />
+    <Project Path="Services/IdentityService/Core/SmartShip.Identity.Domain/SmartShip.Identity.Domain.csproj" />
   </Folder>
-  <Folder Name="/Shared/" />
-  <Folder Name="/Testing/" />
+  <Folder Name="/Services/IdentityService/Infrastructure/">
+    <Project Path="Services/IdentityService/Infrastructure/SmartShip.Identity.Infrastructure/SmartShip.Identity.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Services/IdentityService/Presentation/">
+    <Project Path="Services/IdentityService/Presentation/SmartShip.Identity.API/SmartShip.Identity.API.csproj" />
+  </Folder>
+  <Folder Name="/Services/ShipmentService/" />
+  <Folder Name="/Services/ShipmentService/Core/">
+    <Project Path="Services/ShipmentService/Core/SmartShip.Shipment.Application/SmartShip.Shipment.Application.csproj" />
+    <Project Path="Services/ShipmentService/Core/SmartShip.Shipment.Domain/SmartShip.Shipment.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Services/ShipmentService/Infrastructure/">
+    <Project Path="Services/ShipmentService/Infrastructure/SmartShip.Shipment.Infrastructure/SmartShip.Shipment.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Services/ShipmentService/Presentation/">
+    <Project Path="Services/ShipmentService/Presentation/SmartShip.Shipment.API/SmartShip.Shipment.API.csproj" />
+  </Folder>
+  <Folder Name="/Services/TrackingService/" />
+  <Folder Name="/Services/TrackingService/Core/">
+    <Project Path="Services/TrackingService/Core/SmartShip.Tracking.Application/SmartShip.Tracking.Application.csproj" />
+    <Project Path="Services/TrackingService/Core/SmartShip.Tracking.Domain/SmartShip.Tracking.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Services/TrackingService/Infrastructure/">
+    <Project Path="Services/TrackingService/Infrastructure/SmartShip.Tracking.Infrastructure/SmartShip.Tracking.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Services/TrackingService/Presentation/">
+    <Project Path="Services/TrackingService/Presentation/SmartShip.Tracking.API/SmartShip.Tracking.API.csproj" />
+  </Folder>
 </Solution>
