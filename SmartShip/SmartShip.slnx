@@ -1,1 +1,7 @@
-<Solution />
+<Solution>
+  <Folder Name="/Gateway/" />
+  <Folder Name="/logs/" />
+  <Folder Name="/Services/" />
+  <Folder Name="/Shared/" />
+  <Folder Name="/Testing/" />
+</Solution>
