@@ -1,0 +1,6 @@
+@SmartShip.Tracking.API_HostAddress = http://localhost:5196
+
+GET {{SmartShip.Tracking.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

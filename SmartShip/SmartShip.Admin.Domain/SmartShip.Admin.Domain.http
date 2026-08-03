@@ -1,6 +1,0 @@
-@SmartShip.Admin.Domain_HostAddress = http://localhost:5274
-
-GET {{SmartShip.Admin.Domain_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
