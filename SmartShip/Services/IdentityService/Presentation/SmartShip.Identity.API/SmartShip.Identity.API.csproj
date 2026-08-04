@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -8,6 +8,16 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="11.0.0-preview.6.26359.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contollers\" />
+    <Folder Include="Middleware\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SmartShip.Identity.Application\SmartShip.Identity.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\SmartShip.Identity.Infrastructure\SmartShip.Identity.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

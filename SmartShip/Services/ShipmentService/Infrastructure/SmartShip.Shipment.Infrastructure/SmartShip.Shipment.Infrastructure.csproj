@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="Logs\" />
+    <Folder Include="Persistence\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SmartShip.Shipment.Application\SmartShip.Shipment.Application.csproj" />
+    <ProjectReference Include="..\..\Core\SmartShip.Shipment.Domain\SmartShip.Shipment.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

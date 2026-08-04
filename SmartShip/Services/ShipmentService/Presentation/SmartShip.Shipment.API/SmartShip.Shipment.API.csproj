@@ -10,4 +10,14 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="11.0.0-preview.6.26359.118" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contollers\" />
+    <Folder Include="Middleware\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SmartShip.Shipment.Application\SmartShip.Shipment.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\SmartShip.Shipment.Infrastructure\SmartShip.Shipment.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
