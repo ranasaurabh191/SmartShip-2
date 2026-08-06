@@ -1,9 +1,10 @@
 ﻿using MassTransit;
 using SmartShip.Shared.Events;
 using Microsoft.EntityFrameworkCore;
-using SmartShip.AdminService.Infrastructure.Data;
+using SmartShip.Admin.Infrastructure.Context;
+using Microsoft.Extensions.Logging;
 
-namespace SmartShip.AdminService.Infrastructure.Messaging.Consumers;
+namespace SmartShip.Admin.Infrastructure.Consumers;
 
 public class UserCreatedConsumer : IConsumer<UserCreatedEvent>
 {

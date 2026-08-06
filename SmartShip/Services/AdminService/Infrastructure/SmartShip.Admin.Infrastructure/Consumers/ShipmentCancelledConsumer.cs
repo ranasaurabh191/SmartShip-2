@@ -1,8 +1,10 @@
 ﻿using MassTransit;
 using SmartShip.Shared.Events;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using SmartShip.Admin.Infrastructure.Context;
 
-namespace SmartShip.AdminService.Infrastructure.Messaging.Consumers;
+namespace SmartShip.Admin.Infrastructure.Consumers;
 
 public class ShipmentCancelledConsumer : IConsumer<ShipmentCancelledEvent>
 {

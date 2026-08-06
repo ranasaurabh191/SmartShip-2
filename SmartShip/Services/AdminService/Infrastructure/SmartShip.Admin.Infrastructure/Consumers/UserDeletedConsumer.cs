@@ -1,8 +1,9 @@
 ﻿using MassTransit;
 using SmartShip.Shared.Events;
 using Microsoft.EntityFrameworkCore;
-using SmartShip.AdminService.Infrastructure.Data;
-namespace SmartShip.AdminService.Infrastructure.Messaging.Consumers
+using SmartShip.Admin.Infrastructure.Context;
+using Microsoft.Extensions.Logging;
+namespace SmartShip.Admin.Infrastructure.Consumers
 {
     public class UserDeletedConsumer : IConsumer<UserDeletedEvent>
     {

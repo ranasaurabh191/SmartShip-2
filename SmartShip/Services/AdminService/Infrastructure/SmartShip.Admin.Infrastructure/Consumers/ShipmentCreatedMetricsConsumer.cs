@@ -1,10 +1,11 @@
 ﻿using MassTransit;
 using Microsoft.EntityFrameworkCore;
-using SmartShip.AdminService.Domain.Entities;
-using SmartShip.AdminService.Infrastructure.Data;
+using Microsoft.Extensions.Logging;
+using SmartShip.Admin.Domain.Entities;
+using SmartShip.Admin.Infrastructure.Context;
 using SmartShip.Shared.Events;
 
-namespace SmartShip.AdminService.Infrastructure.Messaging.Consumers;
+namespace SmartShip.Admin.Infrastructure.Consumers;
 
 public class ShipmentCreatedMetricsConsumer : IConsumer<ShipmentCreatedEvent>
 {
@@ -22,12 +23,6 @@ public class ShipmentCreatedMetricsConsumer : IConsumer<ShipmentCreatedEvent>
         var msg = context.Message;
         _logger.LogInformation("Admin: ShipmentCreated received -> {TrackingNumber}", msg.TrackingNumber);
 
-        //var metrics = await _db.DashboardMetrics.FirstOrDefaultAsync();
-        //if (metrics == null)
-        //{
-        //    _logger.LogWarning("No DashboardMetrics row found");
-        //    return;
-        //}
         var metrics = await _db.DashboardMetrics.FirstOrDefaultAsync();
 
         if (metrics == null)
@@ -38,7 +33,6 @@ public class ShipmentCreatedMetricsConsumer : IConsumer<ShipmentCreatedEvent>
                 TotalShipments = 0,
                 ActiveShipments = 0,
                 DeliveredToday = 0,
-                Exceptions = 0,
                 TotalCustomers = 0,
                 LastUpdatedAt = DateTime.Now
             };

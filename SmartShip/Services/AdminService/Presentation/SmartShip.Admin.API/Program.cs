@@ -4,7 +4,6 @@ using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using RabbitMQ.Client;
 using Serilog;
@@ -14,7 +13,8 @@ using SmartShip.Admin.Infrastructure.Context;
 using SmartShip.Admin.Infrastructure.Persistence;
 using SmartShip.Admin.Infrastructure.Repositories;
 using System.Text;
-
+using SmartShip.Admin.Infrastructure.Consumers;
+using SmartShip.Shared.Middleware;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()

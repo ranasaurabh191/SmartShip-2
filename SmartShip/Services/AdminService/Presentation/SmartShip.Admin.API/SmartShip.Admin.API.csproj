@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.10" />
     <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
@@ -15,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SmartShip.Shared\SmartShip.Shared.csproj" />
     <ProjectReference Include="..\..\Core\SmartShip.Admin.Application\SmartShip.Admin.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\SmartShip.Admin.Infrastructure\SmartShip.Admin.Infrastructure.csproj" />
   </ItemGroup>
