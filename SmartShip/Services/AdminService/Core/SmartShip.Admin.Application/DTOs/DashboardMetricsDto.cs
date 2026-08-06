@@ -1,7 +1,7 @@
 ﻿
 namespace SmartShip.Admin.Application.DTOs
 {
-    public class DashboardMetricsDto
+    public class DashboardMetricsDTO
     {
         public int TotalShipments { get; set; }
         public int ActiveShipments { get; set; }

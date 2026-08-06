@@ -1,0 +1,53 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using SmartShip.Admin.Application.DTOs;
+using System.Security.Claims;
+
+namespace SmartShip.Admin.API.Controllers;
+
+[ApiController]//tells that this class is an API controller and enables features like automatic model validation and binding source inference.
+[Route("api/admin")]
+[Authorize(Roles = "ADMIN")]
+public class AdminController : ControllerBase  // ControllerBase is a base class for API controllers that provides common functionality for handling HTTP requests and responses.
+{
+    private readonly IAdminService _service;
+    public AdminController(IAdminService service) => _service = service;
+
+    [HttpGet("dashboard")]
+    public async Task<IActionResult> Dashboard() => Ok(await _service.GetDashboardAsync());
+
+    [HttpGet("hubs/all-active")]
+    public async Task<IActionResult> GetAllActiveHubs() => Ok(await _service.GetAllActiveHubsAsync());
+
+    [HttpGet("hubs/{id}")]
+    public async Task<IActionResult> GetHub(int id)
+    {
+        var h = await _service.GetHubByIdAsync(id);
+        return h == null ? NotFound() : Ok(h);
+    }
+
+    [HttpPost("hubs")]
+    public async Task<IActionResult> CreateHub([FromBody] CreateHubRequest req) => Ok(await _service.CreateHubAsync(req));
+
+    [HttpPut("hubs/{id}")]
+    public async Task<IActionResult> UpdateHub(int id, [FromBody] UpdateHubRequest req)
+    {
+        await _service.UpdateHubAsync(id, req);
+        return Ok("Updated Successfully");
+    }
+
+    [HttpDelete("hubs/{id}")]
+    public async Task<IActionResult> DeleteHub(int id)
+    {
+        await _service.DeleteHubAsync(id);
+        return Ok(new { message = "Deleted Successfully" });
+    }
+
+    [HttpPost("reports")]
+    public async Task<IActionResult> GenerateReport([FromBody] ReportRequest req)
+    {
+        var user = User.FindFirstValue(ClaimTypes.Name) ?? "Admin";
+        var result = await _service.GenerateReportAsync(req);
+        return Ok(result);
+    }
+}
