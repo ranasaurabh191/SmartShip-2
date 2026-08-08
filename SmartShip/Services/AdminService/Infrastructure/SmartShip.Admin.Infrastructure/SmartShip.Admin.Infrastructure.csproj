@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Logs\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\..\SmartShip.Shared\SmartShip.Shared.csproj" />
     <ProjectReference Include="..\..\Core\SmartShip.Admin.Application\SmartShip.Admin.Application.csproj" />
     <ProjectReference Include="..\..\Core\SmartShip.Admin.Domain\SmartShip.Admin.Domain.csproj" />

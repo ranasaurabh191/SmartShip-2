@@ -1,0 +1,28 @@
+﻿using Microsoft.EntityFrameworkCore;
+using SmartShip.Identity.Application.Interfaces.Repositories;
+using SmartShip.Identity.Domain.Entities;
+using SmartShip.Identity.Infrastructure.Data;
+
+
+namespace SmartShip.Identity.Infrastructure.Repositories;
+
+public class OtpVerificationRepository : IOtpVerificationRepository
+{
+    private readonly IdentityDbContext _context;
+
+    public OtpVerificationRepository(IdentityDbContext context) => _context = context;
+    
+    public async Task<OtpVerification?> GetByEmailAndPurposeAsync(string email, string purpose)
+        => await _context.OtpVerifications.FirstOrDefaultAsync(o => o.Email == email && o.Purpose == purpose);
+
+    public async Task AddAsync(OtpVerification otp) => await _context.OtpVerifications.AddAsync(otp);
+
+    public void Update(OtpVerification otp) => _context.OtpVerifications.Update(otp);
+
+    public void Delete(OtpVerification otp) => _context.OtpVerifications.Remove(otp);
+
+    public async Task<IEnumerable<OtpVerification>> GetByUserIdAsync(int userId)
+       => await _context.OtpVerifications
+           .Where(o => o.CustomerId == userId)
+           .ToListAsync();
+}

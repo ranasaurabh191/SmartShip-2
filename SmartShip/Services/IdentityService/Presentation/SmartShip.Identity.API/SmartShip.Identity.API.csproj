@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contollers\" />
-    <Folder Include="Middleware\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\SmartShip.Identity.Application\SmartShip.Identity.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\SmartShip.Identity.Infrastructure\SmartShip.Identity.Infrastructure.csproj" />
   </ItemGroup>
