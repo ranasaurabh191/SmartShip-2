@@ -1,7 +1,7 @@
 .vs/
 bin/
 obj/
-Properties/
+**/Properties/
 *.json
 *.user
 *.suo
