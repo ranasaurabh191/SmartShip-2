@@ -10,8 +10,6 @@ public class ShipmentDbContext : DbContext
     public DbSet<Shipments> Shipments => Set<Shipments>();
     public DbSet<Address> Addresses => Set<Address>();
     public DbSet<Package> Packages => Set<Package>();
-    public DbSet<ShipmentOrderState> ShipmentOrderSagas => Set<ShipmentOrderState>();
-    public DbSet<ShipmentRoute> ShipmentRoutes => Set<ShipmentRoute>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -31,21 +29,6 @@ public class ShipmentDbContext : DbContext
             e.Property(p => p.DeclaredValue)
              .HasColumnType("decimal(18,2)");
         });
-        modelBuilder.Entity<ShipmentOrderState>(e =>
-        {
-            e.HasKey(s => s.CorrelationId);
-            e.Property(s => s.CurrentState).HasMaxLength(64);
-            e.Property(s => s.TrackingNumber).HasMaxLength(50);
-            e.Property(s => s.ShipmentIdKey).HasMaxLength(20);
-            e.HasIndex(s => s.ShipmentIdKey).IsUnique();
-            e.Property(s => s.Amount).HasPrecision(18, 2);
-            e.Property(s => s.RowVersion).IsRowVersion();
-        });
-        modelBuilder.Entity<ShipmentRoute>(e =>
-        {
-            e.HasKey(r => r.Id);
-            e.HasIndex(r => new { r.ShipmentId, r.SequenceOrder }).IsUnique();
-            e.HasOne(r => r.Shipment).WithMany().HasForeignKey(r => r.ShipmentId).OnDelete(DeleteBehavior.Cascade);
-        });
+  
     }
 }

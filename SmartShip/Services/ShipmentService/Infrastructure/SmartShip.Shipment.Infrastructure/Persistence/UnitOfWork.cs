@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using SmartShip.ShipmentService.Core.Interfaces.Persistence;
-using SmartShip.ShipmentService.Infrastructure.Data;
+using SmartShip.Shipment.Core.Interfaces.Persistence;
+using SmartShip.Shipment.Infrastructure.Context;
 
-namespace SmartShip.ShipmentService.Infrastructure.Persistence;
+
+namespace SmartShip.Shipment.Infrastructure.Persistence;
 
 public class UnitOfWork : IUnitOfWork
 {

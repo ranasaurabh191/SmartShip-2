@@ -6,7 +6,7 @@ using SmartShip.Shipment.Core.Interfaces.Repositories;
 using SmartShip.Shipment.Domain.Enums;
 
 
-namespace SmartShip.ShipmentService.Infrastructure.Messaging.Consumers;
+namespace SmartShip.Shipment.Infrastructure.Consumers;
 
 public class PaymentFailedShipmentConsumer : IConsumer<UpdateShipmentStatusToPaymentFailedCommand>
 {

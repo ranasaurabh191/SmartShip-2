@@ -5,7 +5,7 @@ using SmartShip.Shipment.Core.Interfaces.Persistence;
 using SmartShip.Shipment.Core.Interfaces.Repositories;
 using SmartShip.Shipment.Domain.Enums;
 
-namespace SmartShip.Shipment.Infrastructure.Messaging.Consumers;
+namespace SmartShip.Shipment.Infrastructure.Consumers;
 
 public class CancelShipmentConsumer : IConsumer<CancelShipmentCommand>
 {
