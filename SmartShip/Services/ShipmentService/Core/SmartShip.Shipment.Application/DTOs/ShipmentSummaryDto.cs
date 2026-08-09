@@ -1,0 +1,10 @@
+namespace SmartShip.Shipment.Core.DTOs
+{
+    public class ShipmentSummaryDto
+    {
+        public int Id { get; set; }
+        public string TrackingNumber { get; set; } = string.Empty;
+        public string Status { get; set; } = string.Empty;
+        public decimal ShippingRate { get; set; }
+    }
+}

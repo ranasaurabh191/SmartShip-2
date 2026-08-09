@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\SmartShip Logistics Management System\Services\SmartShip.NotificationService\SmartShip.NotificationService.csproj" />
     <ProjectReference Include="..\..\..\..\SmartShip.Shared\SmartShip.Shared.csproj" />
     <ProjectReference Include="..\SmartShip.Identity.Domain\SmartShip.Identity.Domain.csproj" />
   </ItemGroup>

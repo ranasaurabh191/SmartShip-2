@@ -48,6 +48,7 @@
     <Project Path="Services/TrackingService/Presentation/SmartShip.Tracking.API/SmartShip.Tracking.API.csproj" />
   </Folder>
   <Folder Name="/Shared/">
+    <Project Path="../../SmartShip Logistics Management System/Services/SmartShip.NotificationService/SmartShip.NotificationService.csproj" />
     <Project Path="SmartShip.Shared/SmartShip.Shared.csproj" Id="57d61665-2d06-466c-93ed-a273e9ca3adc" />
   </Folder>
 </Solution>

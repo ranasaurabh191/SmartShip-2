@@ -1,0 +1,29 @@
+using SmartShip.Shipment.Domain.Enums;
+namespace SmartShip.Shipment.Domain.Entities;
+
+public class Shipments
+{
+    public int Id { get; set; }
+    public string TrackingNumber { get; set; } = string.Empty;
+    public int CustomerId { get; set; }
+    public ShipmentType ShipmentType { get; set; }
+    public ShipmentStatus Status { get; set; } = ShipmentStatus.Draft;
+    public PaymentMethod PaymentMethod { get; set; } = PaymentMethod.Online;
+    public decimal ShippingRate { get; set; }
+    public bool IsFragile { get; set; }
+    public double DistanceKm { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public DateTime? UpdatedAt { get; set; }
+    public DateTime? PickupScheduledAt { get; set; }
+    public DateTime? DeliveredAt { get; set; }
+    public string? Notes { get; set; }
+
+    public int SenderAddressId { get; set; }
+    public Address SenderAddress { get; set; } = null!;
+
+    public int ReceiverAddressId { get; set; }
+    public Address ReceiverAddress { get; set; } = null!;
+
+    public int PackageId { get; set; }
+    public Package Package { get; set; } = null!;
+}

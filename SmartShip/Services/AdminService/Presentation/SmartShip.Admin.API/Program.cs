@@ -22,7 +22,7 @@ Log.Logger = new LoggerConfiguration()
 try
 {
     Log.Information(" --> Starting AdminService API...");
-    var builder = WebApplication.CreateBuilder(args); // a new WebApplicationBuilder instance
+    var builder = WebApplication.CreateBuilder(args); 
 
     // Add services to the container.
     builder.Host.UseSerilog((ctx, lc) => lc
@@ -31,7 +31,7 @@ try
     .Enrich.WithProperty("Application", "AdminService")
     .Enrich.WithProperty("Environment", ctx.HostingEnvironment.EnvironmentName));
 
-    // 
+    
     builder.Services.AddControllers()
         .ConfigureApiBehaviorOptions(options =>
         {
