@@ -16,8 +16,7 @@ using SmartShip.Identity.Application.Validators;
 using SmartShip.Identity.Infrastructure.Data;
 using SmartShip.Identity.Infrastructure.Persistence;
 using SmartShip.Identity.Infrastructure.Repositories;
-using SmartShip.NotificationService.Core.Interfaces.Services;
-using SmartShip.NotificationService.Infrastructure.Services;
+
 using SmartShip.Shared.Middleware;
 using System.Text;
 
@@ -27,26 +26,13 @@ Log.Logger = new LoggerConfiguration()
 
 try
 {
-    Log.Information(" --> Starting IdentityService...");
+    Log.Information(" --> Starting IdentityService on PORT: 5002...");
 
     var builder = WebApplication.CreateBuilder(args);
-    var internalKey = builder.Configuration["InternalApi:ApiKey"];
 
-    var urls = builder.Configuration.GetSection("ServiceUrls");
-    builder.Services.AddHttpClient("IdentityService", c =>
-    {
-        c.BaseAddress = new Uri(urls["IdentityService"]!);
-        c.DefaultRequestHeaders.Add("X-Internal-Key", internalKey);
-    });
+    builder.Services.AddScoped<IValidator<SignupRequest>, SignupRequestValidator>();
 
-    builder.Services.AddScoped<IValidator<SignupOtpRequest>, SignupOtpRequestValidator>();
-    builder.Services.AddScoped<IValidator<VerifyOtpRequest>, VerifyOtpRequestValidator>();
 
-    builder.Services.AddHttpClient("ShipmentService", c =>
-    {
-        c.BaseAddress = new Uri(urls["ShipmentService"]!);
-        c.DefaultRequestHeaders.Add("X-Internal-Key", internalKey);
-    });
     builder.Host.UseSerilog((ctx, lc) => lc
         .ReadFrom.Configuration(ctx.Configuration)
         .Enrich.FromLogContext()
@@ -139,15 +125,13 @@ try
 
     builder.Services.AddAuthorization();
 
-    builder.Services.AddScoped<IEmailService, EmailService>();
     builder.Services.AddScoped<IUserRepository, UserRepository>();
-    builder.Services.AddScoped<IOtpVerificationRepository, OtpVerificationRepository>();
     builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
     builder.Services.AddScoped<IAuthService, AuthService>();
     builder.Services.AddScoped<IUserService, UserService>();
 
     builder.Services.AddCors(opt =>
-        opt.AddPolicy("AllowAll", p => p.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod()));
+        opt.AddPolicy("AllowAll", p => p.WithOrigins("Any").AllowAnyHeader().AllowAnyMethod()));
 
     builder.Services.AddSingleton<IConnection>(sp =>
     {

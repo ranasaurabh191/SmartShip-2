@@ -1,4 +1,3 @@
-using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartShip.Identity.Application.DTOs;
@@ -11,17 +10,11 @@ namespace SmartShip.Identity.API.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly IAuthService _authService;
-    private readonly IValidator<SignupOtpRequest> _signupOtpValidator;
-    private readonly IValidator<VerifyOtpRequest> _verifyOtpValidator;
 
     public AuthController(
-        IAuthService authService,
-        IValidator<SignupOtpRequest> signupOtpValidator,
-        IValidator<VerifyOtpRequest> verifyOtpValidator)
+        IAuthService authService)
     {
         _authService = authService;
-        _signupOtpValidator = signupOtpValidator;
-        _verifyOtpValidator = verifyOtpValidator;
     }
 
     [HttpPost("login")]
@@ -31,33 +24,10 @@ public class AuthController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPost("signup/request-otp")]
-    public async Task<IActionResult> RequestSignupOtp([FromBody] SignupOtpRequest request)
+    [HttpPost("signup")]
+    public async Task<IActionResult> Signup([FromBody] SignupRequest request)
     {
-        await _signupOtpValidator.ValidateAndThrowAsync(request);
-        var result = await _authService.RequestSignupOtpAsync(request);
-        return Ok(result);
-    }
-
-    [HttpPost("signup/verify-otp")]
-    public async Task<IActionResult> VerifySignupOtp([FromBody] VerifyOtpRequest request)
-    {
-        await _verifyOtpValidator.ValidateAndThrowAsync(request);
-        var result = await _authService.VerifySignupOtpAsync(request);
-        return Ok(result);
-    }
-
-    [HttpPost("forgot-password")]
-    public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request)
-    {
-        var result = await _authService.ForgotPasswordAsync(request);
-        return Ok(result);
-    }
-
-    [HttpPost("reset-password")]
-    public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequest request)
-    {
-        var result = await _authService.ResetPasswordAsync(request);
+        var result = await _authService.SignupAsync(request);
         return Ok(result);
     }
 

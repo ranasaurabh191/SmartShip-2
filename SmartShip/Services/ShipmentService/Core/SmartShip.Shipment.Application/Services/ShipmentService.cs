@@ -1,5 +1,4 @@
 using MassTransit;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using SmartShip.Shared.Events;
@@ -9,8 +8,7 @@ using SmartShip.Shipment.Core.Interfaces.Repositories;
 using SmartShip.Shipment.Core.Interfaces.Services;
 using SmartShip.Shipment.Domain.Entities;
 using SmartShip.Shipment.Domain.Enums;
-using SmartShip.Shipment.Shared.Helpers;
-using System.Net.Http.Json;
+using SmartShip.Shipment.Application.Services;
 
 namespace SmartShip.ShipmentService.Core.Services;
 
@@ -23,7 +21,6 @@ public class ShipmentService : IShipmentService
     private readonly ILogger<ShipmentService> _logger;
     private readonly IPublishEndpoint _publisher;
     private readonly IHttpClientFactory _httpClientFactory;
-    private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IConfiguration _config;
 
     public ShipmentService(
@@ -34,7 +31,6 @@ public class ShipmentService : IShipmentService
         ILogger<ShipmentService> logger,
         IPublishEndpoint publisher,
         IHttpClientFactory httpClientFactory,
-        IHttpContextAccessor httpContextAccessor,
         IConfiguration config)
     {
         _shipmentRepository = shipmentRepository;
@@ -44,7 +40,6 @@ public class ShipmentService : IShipmentService
         _logger = logger;
         _publisher = publisher;
         _httpClientFactory = httpClientFactory;
-        _httpContextAccessor = httpContextAccessor;
         _config = config;
     }
 
@@ -113,7 +108,6 @@ public class ShipmentService : IShipmentService
                 SenderCity = sender.City,
                 CreatedAt = shipment.CreatedAt,
                 Amount = shipment.ShippingRate,
-                CorrelationId = correlationId,
                 IsFragile = shipment.IsFragile
             });
             _logger.LogInformation("Shipment created Event Published.");

@@ -26,7 +26,7 @@ Log.Logger = new LoggerConfiguration()
 
 try
 {
-    Log.Information(" --> Starting ShipmentService...");
+    Log.Information(" --> Starting ShipmentService on Port: 5004...");
 
     var builder = WebApplication.CreateBuilder(args);
     var isTesting = builder.Environment.IsEnvironment("Testing");
@@ -36,6 +36,7 @@ try
         .Enrich.WithProperty("Application", "ShipmentService")
         .Enrich.WithProperty("Environment", ctx.HostingEnvironment.EnvironmentName));
 
+    builder.Services.AddHttpClient();
     builder.Services.AddControllers()
         .AddJsonOptions(opts =>
         {
@@ -97,23 +98,7 @@ try
     builder.Services.AddDbContext<ShipmentDbContext>(opt =>
         opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-    builder.Services.AddHttpClient("PaymentService", client =>
-    {
-        client.BaseAddress = new Uri(builder.Configuration["Services:PaymentService"]!);
-    });
-
-    builder.Services.AddHttpClient("IdentityService", client =>
-    {
-        client.BaseAddress = new Uri(builder.Configuration["Services:IdentityService"]!);
-    });
-
-    builder.Services.AddHttpClient("AdminService", client =>
-    {
-        client.BaseAddress = new Uri(builder.Configuration["Services:AdminService"] ?? "http://localhost:5004/");
-    });
-
-    builder.Services.AddHttpContextAccessor();
-
+   
     var rabbitHost = builder.Configuration["RabbitMQ:Host"] ?? "localhost";
 
     builder.Services.AddMassTransit(x =>
@@ -169,7 +154,7 @@ try
     builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
     builder.Services.AddScoped<IShipmentService, ShipmentService>();
 
-    builder.Services.AddCors(opt => opt.AddPolicy("AllowAll", p => p.WithOrigins( "http://localhost:3000").AllowAnyHeader().AllowAnyMethod()));
+    builder.Services.AddCors(opt => opt.AddPolicy("AllowAll", p => p.WithOrigins( "Any").AllowAnyHeader().AllowAnyMethod()));
     if (!isTesting)
     {
         builder.Services.AddSingleton<IConnection>(sp =>

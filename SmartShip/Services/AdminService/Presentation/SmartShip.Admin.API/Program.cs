@@ -21,7 +21,7 @@ Log.Logger = new LoggerConfiguration()
     .CreateBootstrapLogger();
 try
 {
-    Log.Information(" --> Starting AdminService API...");
+    Log.Information(" --> Starting AdminService API on PORT : 5001...");
     var builder = WebApplication.CreateBuilder(args); 
 
     // Add services to the container.
@@ -152,7 +152,7 @@ try
     builder.Services.AddScoped<IAdminService, AdminService>();
     builder.Services.AddHttpContextAccessor();
 
-    builder.Services.AddCors(opt => opt.AddPolicy("AllowAll", p => p.WithOrigins("http://localhost:5000").AllowAnyHeader().AllowAnyMethod()));
+    builder.Services.AddCors(opt => opt.AddPolicy("AllowAll", p => p.WithOrigins("Any").AllowAnyHeader().AllowAnyMethod()));
 
     builder.Services.AddSingleton<IConnection>(sp =>
     {
@@ -168,8 +168,7 @@ try
     var app = builder.Build();
 
     app.UseMiddleware<ExceptionMiddleware>();
-    app.UseSerilogRequestLogging(opt =>
-        opt.MessageTemplate = "HTTP {RequestMethod} {RequestPath} → {StatusCode} in {Elapsed:0.0000}ms");
+    app.UseSerilogRequestLogging(opt =>  opt.MessageTemplate = "HTTP {RequestMethod} {RequestPath} → {StatusCode} in {Elapsed:0.0000}ms");
 
     if (!app.Environment.IsEnvironment("Testing"))
     {

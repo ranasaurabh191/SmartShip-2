@@ -11,7 +11,6 @@ namespace SmartShip.Identity.Application.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
-    private readonly IOtpVerificationRepository _otpRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly ILogger<UserService> _logger;
     private readonly IPublishEndpoint _publisher;
@@ -19,14 +18,12 @@ public class UserService : IUserService
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
         ILogger<UserService> logger,
-        IPublishEndpoint publisher,
-        IOtpVerificationRepository otpRepository)
+        IPublishEndpoint publisher)
     {
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
         _logger = logger;
         _publisher = publisher;
-        _otpRepository = otpRepository;
     }
 
 
@@ -79,16 +76,6 @@ public class UserService : IUserService
         {
             _logger.LogWarning("Delete failed - user not found: {UserId}", userId);
             throw new KeyNotFoundException($"User {userId} not found.");
-        }
-
-        var otpEntries = await _otpRepository.GetByUserIdAsync(userId);
-        if (otpEntries.Any())
-        {
-            _logger.LogInformation("Deleting {OtpCount} OTP entries for UserId: {UserId}", otpEntries.Count(), userId);
-            foreach (var otp in otpEntries)
-            {
-                _otpRepository.Delete(otp);
-            }
         }
 
 

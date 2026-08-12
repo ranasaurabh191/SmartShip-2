@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using SmartShip.Shipment.Core.DTOs;
 using SmartShip.Shipment.Core.Interfaces.Services;
 using SmartShip.Shipment.Domain.Enums;
-using SmartShip.Shipment.Infrastructure.Context;
 using System.Security.Claims;
 
 namespace SmartShip.ShipmentService.API.Controllers;
@@ -14,15 +13,11 @@ namespace SmartShip.ShipmentService.API.Controllers;
 public class ShipmentsController : ControllerBase
 {
     private readonly IShipmentService _service;
-    private readonly ShipmentDbContext _context;
-    private readonly IConfiguration _config;
     private readonly ILogger<ShipmentsController> _logger;
 
-    public ShipmentsController(IShipmentService service, ShipmentDbContext context, IConfiguration config, ILogger<ShipmentsController> logger)
+    public ShipmentsController(IShipmentService service, ILogger<ShipmentsController> logger)
     {
         _service = service;
-        _context = context; 
-        _config = config;
         _logger = logger;
     }
     
