@@ -13,7 +13,7 @@ namespace SmartShip.Identity.Infrastructure.Migrations
 {
     [DbContext(typeof(IdentityDbContext))]
     [Migration("20260811154159_table-update")]
-    partial class tableupdate
+    partial class TableUpdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -14,6 +14,9 @@
   <Folder Name="/Services/AdminService/Presentation/">
     <Project Path="Services/AdminService/Presentation/SmartShip.Admin.API/SmartShip.Admin.API.csproj" />
   </Folder>
+  <Folder Name="/Services/AdminService/Tests/">
+    <Project Path="Services/AdminService/Tests/SmartShip.Admin.Tests/SmartShip.Admin.Tests.csproj" />
+  </Folder>
   <Folder Name="/Services/IdentityService/" />
   <Folder Name="/Services/IdentityService/Core/">
     <Project Path="Services/IdentityService/Core/SmartShip.Identity.Application/SmartShip.Identity.Application.csproj" />
@@ -24,6 +27,9 @@
   </Folder>
   <Folder Name="/Services/IdentityService/Presentation/">
     <Project Path="Services/IdentityService/Presentation/SmartShip.Identity.API/SmartShip.Identity.API.csproj" />
+  </Folder>
+  <Folder Name="/Services/IdentityService/Tests/" Id="90fcdbe8-84bd-3748-0848-b0381c788ccf">
+    <Project Path="Services/IdentityService/Tests/SmartShip.Identity.Tests/SmartShip.Identity.Tests.csproj" />
   </Folder>
   <Folder Name="/Services/PaymentService/" />
   <Folder Name="/Services/PaymentService/Core/">
@@ -36,6 +42,9 @@
   <Folder Name="/Services/PaymentService/Presentation/">
     <Project Path="Services/PaymentService/Presentation/SmartShip.Payment.API/SmartShip.Payment.API.csproj" />
   </Folder>
+  <Folder Name="/Services/PaymentService/Tests/" Id="aca047ca-d6cb-44ea-e160-1fdfaa0b8a1c">
+    <Project Path="Services/PaymentService/Tests/SmartShip.Payment.Tests/SmartShip.Payment.Tests.csproj" />
+  </Folder>
   <Folder Name="/Services/ShipmentService/" />
   <Folder Name="/Services/ShipmentService/Core/">
     <Project Path="Services/ShipmentService/Core/SmartShip.Shipment.Application/SmartShip.Shipment.Application.csproj" />
@@ -46,6 +55,9 @@
   </Folder>
   <Folder Name="/Services/ShipmentService/Presentation/">
     <Project Path="Services/ShipmentService/Presentation/SmartShip.Shipment.API/SmartShip.Shipment.API.csproj" />
+  </Folder>
+  <Folder Name="/Services/ShipmentService/Tests/" Id="e878f506-3e01-a0b5-7bd4-b8261f55f638">
+    <Project Path="Services/ShipmentService/Tests/SmartShip.Shipment.Tests/SmartShip.Shipment.Tests.csproj" />
   </Folder>
   <Folder Name="/Shared/">
     <Project Path="SmartShip.Shared/SmartShip.Shared.csproj" Id="57d61665-2d06-466c-93ed-a273e9ca3adc" />

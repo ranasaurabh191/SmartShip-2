@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SmartShip.PaymentService.Infrastructure.Data;
+using SmartShip.Payment.Infrastructure.Context;
 
 #nullable disable
 

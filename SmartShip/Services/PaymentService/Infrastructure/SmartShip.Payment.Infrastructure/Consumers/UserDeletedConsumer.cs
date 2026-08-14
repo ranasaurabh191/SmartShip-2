@@ -1,10 +1,10 @@
 ﻿using MassTransit;
 using SmartShip.Shared.Events;
 using Microsoft.EntityFrameworkCore;
-using SmartShip.PaymentService.Infrastructure.Data;
+using SmartShip.Payment.Infrastructure.Context;
 using Microsoft.Extensions.Logging;
 
-namespace SmartShip.PaymentService.Infrastructure.Messaging.Consumers;
+namespace SmartShip.Payment.Infrastructure.Consumers;
 
 public class UserDeletedConsumer : IConsumer<UserDeletedEvent>
 {

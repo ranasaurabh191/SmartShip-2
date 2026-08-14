@@ -2,10 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SmartShip.Payment.Domain.Entities.Enums;
-using SmartShip.PaymentService.Infrastructure.Data;
+using SmartShip.Payment.Infrastructure.Context;
 using SmartShip.Shared.Events;
 
-namespace SmartShip.PaymentService.Infrastructure.Messaging.Consumers;
+namespace SmartShip.Payment.Infrastructure.Consumers;
 
 public class ShipmentCancelledByCustomerConsumer : IConsumer<ShipmentCancelledByCustomerEvent>
 {

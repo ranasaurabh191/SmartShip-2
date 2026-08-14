@@ -2,10 +2,10 @@ using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SmartShip.Payment.Domain.Entities.Enums;
-using SmartShip.PaymentService.Infrastructure.Data;
 using SmartShip.Shared.Events;
+using SmartShip.Payment.Infrastructure.Context;
 
-namespace SmartShip.PaymentService.Infrastructure.Messaging.Consumers;
+namespace SmartShip.Payment.Infrastructure.Consumers;
 
 public class ShipmentCancelledConsumer : IConsumer<ShipmentCancelledEvent>
 {

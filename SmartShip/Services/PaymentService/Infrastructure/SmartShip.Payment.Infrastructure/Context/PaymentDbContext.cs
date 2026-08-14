@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SmartShip.Payment.Domain.Entities;
 
-namespace SmartShip.PaymentService.Infrastructure.Data;
+namespace SmartShip.Payment.Infrastructure.Context;
 
 public class PaymentDbContext : DbContext
 {

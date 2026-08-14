@@ -1,6 +1,6 @@
-﻿using SmartShip.PaymentService.Infrastructure.Data;
+﻿using SmartShip.Payment.Infrastructure.Context;
 
-namespace SmartShip.PaymentService.Infrastructure.Persistence;
+namespace SmartShip.Payment.Infrastructure.Persistence;
 
 public class UnitOfWork : IUnitOfWork
 {

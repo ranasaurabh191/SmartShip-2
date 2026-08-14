@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SmartShip.Payment.Application.Repositories;
 using SmartShip.Payment.Domain.Entities;
-using SmartShip.PaymentService.Infrastructure.Data;
+using SmartShip.Payment.Infrastructure.Context;
 
-namespace SmartShip.PaymentService.Infrastructure.Repositories;
+namespace SmartShip.Payment.Infrastructure.Repositories;
 
 public class PaymentRepository : IPaymentRepository
 {

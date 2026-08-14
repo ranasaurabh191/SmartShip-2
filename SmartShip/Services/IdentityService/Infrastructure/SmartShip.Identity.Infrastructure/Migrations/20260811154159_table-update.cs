@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SmartShip.Identity.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class tableupdate : Migration
+    public partial class TableUpdate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

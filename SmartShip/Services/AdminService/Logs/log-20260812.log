@@ -1,0 +1,6 @@
+2026-08-12 21:45:17 [INF] [AdminService] Configured endpoint admin-shipment-delivered, Consumer: SmartShip.Admin.Infrastructure.Consumers.ShipmentDeliveredConsumer
+2026-08-12 21:45:17 [INF] [AdminService] Configured endpoint admin-user-created, Consumer: SmartShip.Admin.Infrastructure.Consumers.UserCreatedConsumer
+2026-08-12 21:45:17 [INF] [AdminService] Configured endpoint admin-user-deleted, Consumer: SmartShip.Admin.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-12 21:45:17 [INF] [AdminService] Configured endpoint admin-shipment-created, Consumer: SmartShip.Admin.Infrastructure.Consumers.ShipmentCreatedMetricsConsumer
+2026-08-12 21:45:17 [INF] [AdminService] Configured endpoint admin-shipment-cancelled, Consumer: SmartShip.Admin.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-12 21:45:18 [INF] [AdminService] Bus started: "rabbitmq://localhost/"

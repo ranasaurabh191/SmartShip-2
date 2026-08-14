@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using RabbitMQ.Client;
 using Serilog;
 using SmartShip.Admin.Application.Services;
 using SmartShip.Admin.Application.Validators;
@@ -153,17 +152,6 @@ try
     builder.Services.AddHttpContextAccessor();
 
     builder.Services.AddCors(opt => opt.AddPolicy("AllowAll", p => p.WithOrigins("Any").AllowAnyHeader().AllowAnyMethod()));
-
-    builder.Services.AddSingleton<IConnection>(sp =>
-    {
-        var host = builder.Configuration["RabbitMQ:Host"] ?? "localhost";
-        var factory = new ConnectionFactory
-        {
-            Uri = new Uri($"amqp://guest:guest@{host}:5672"),
-            AutomaticRecoveryEnabled = true
-        };
-        return factory.CreateConnectionAsync().GetAwaiter().GetResult();
-    });
 
     var app = builder.Build();
 

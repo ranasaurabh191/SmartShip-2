@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net10.0</TargetFramework>
+	<IsTestProject>true</IsTestProject>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+	<PackageReference Include="xunit" Version="2.8.1" />
+	<PackageReference Include="xunit.runner.visualstudio" Version="2.8.1">
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  <PrivateAssets>all</PrivateAssets>
+	</PackageReference>
+	<PackageReference Include="coverlet.collector" Version="6.0.0">
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  <PrivateAssets>all</PrivateAssets>
+	</PackageReference>
+	<PackageReference Include="Moq" Version="4.20.70" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\..\Core\SmartShip.Shipment.Application\SmartShip.Shipment.Application.csproj" />
+	<ProjectReference Include="..\..\Core\SmartShip.Shipment.Domain\SmartShip.Shipment.Domain.csproj" />
+	<ProjectReference Include="..\..\Infrastructure\SmartShip.Shipment.Infrastructure\SmartShip.Shipment.Infrastructure.csproj" />
+	<ProjectReference Include="..\..\Presentation\SmartShip.Shipment.API\SmartShip.Shipment.API.csproj" />
+  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Services\" />
+		<Folder Include="Repositories\" />
+		<Folder Include="Controllers\" />
+	</ItemGroup>
+</Project>
