@@ -1,0 +1,237 @@
+2026-08-15 12:31:23 [INF] [IdentityService] Bus started: "rabbitmq://localhost/"
+2026-08-15 12:33:51 [INF] [IdentityService] Bus started: "rabbitmq://localhost/"
+2026-08-15 12:35:54 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 17.0123ms
+2026-08-15 12:38:22 [INF] [IdentityService] HTTP POST /api/auth/signup → 400 in 295.7490ms
+2026-08-15 12:38:38 [INF] [IdentityService] HTTP POST /api/auth/signup → 400 in 10.0298ms
+2026-08-15 12:38:50 [INF] [IdentityService] HTTP POST /api/auth/signup → 400 in 23.0784ms
+2026-08-15 12:38:59 [INF] [IdentityService] Signup attempt for email: ranasaurabh191@gmail.com
+2026-08-15 12:39:00 [INF] [IdentityService] User created successfully: ranasaurabh191@gmail.com (ID: 1)
+2026-08-15 12:39:00 [INF] [IdentityService] Generating JWT token for user: ranasaurabh191@gmail.com, Role: CUSTOMER
+2026-08-15 12:39:00 [INF] [IdentityService] Token generated successfully for user: ranasaurabh191@gmail.com, expires in 60 minutes
+2026-08-15 12:39:00 [INF] [IdentityService] HTTP POST /api/auth/signup → 200 in 1216.0360ms
+2026-08-15 12:41:16 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:41:16 [WRN] [IdentityService] Login failed - wrong password: ranasaurabh191@gmail.com
+2026-08-15 12:41:43 [ERR] [IdentityService] HTTP POST /api/auth/login → 500 in 27034.9265ms
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 12:41:43 [ERR] [IdentityService] Unhandled exception for POST /api/auth/login
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at SmartShip.Shared.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\SmartShip.Shared\Middleware\ExceptionMiddleware.cs:line 16
+2026-08-15 12:42:45 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:42:45 [INF] [IdentityService] Login successful: ranasaurabh191@gmail.com | Role: CUSTOMER
+2026-08-15 12:42:45 [INF] [IdentityService] Generating JWT token for user: ranasaurabh191@gmail.com, Role: CUSTOMER
+2026-08-15 12:42:45 [INF] [IdentityService] Token generated successfully for user: ranasaurabh191@gmail.com, expires in 60 minutes
+2026-08-15 12:42:45 [INF] [IdentityService] HTTP POST /api/auth/login → 200 in 152.8089ms
+2026-08-15 12:42:54 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:42:54 [WRN] [IdentityService] Login failed - wrong password: ranasaurabh191@gmail.com
+2026-08-15 12:43:30 [ERR] [IdentityService] HTTP POST /api/auth/login → 500 in 36554.7456ms
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 12:43:30 [ERR] [IdentityService] Unhandled exception for POST /api/auth/login
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at SmartShip.Shared.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\SmartShip.Shared\Middleware\ExceptionMiddleware.cs:line 16
+2026-08-15 12:43:33 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:43:33 [WRN] [IdentityService] Login failed - wrong password: ranasaurabh191@gmail.com
+2026-08-15 12:43:34 [ERR] [IdentityService] HTTP POST /api/auth/login → 500 in 216.8070ms
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 12:43:34 [ERR] [IdentityService] Unhandled exception for POST /api/auth/login
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at SmartShip.Shared.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\SmartShip.Shared\Middleware\ExceptionMiddleware.cs:line 16
+2026-08-15 12:43:36 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:43:36 [WRN] [IdentityService] Login failed - wrong password: ranasaurabh191@gmail.com
+2026-08-15 12:43:36 [ERR] [IdentityService] HTTP POST /api/auth/login → 500 in 209.0591ms
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 12:43:36 [ERR] [IdentityService] Unhandled exception for POST /api/auth/login
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at SmartShip.Shared.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\SmartShip.Shared\Middleware\ExceptionMiddleware.cs:line 16
+2026-08-15 12:50:52 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 7.5074ms
+2026-08-15 12:51:03 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 6.0810ms
+2026-08-15 12:51:05 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 4.1910ms
+2026-08-15 12:51:05 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 3.3772ms
+2026-08-15 12:51:07 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 1.9518ms
+2026-08-15 12:51:12 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 5.6593ms
+2026-08-15 12:51:54 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:51:54 [INF] [IdentityService] Login successful: ranasaurabh191@gmail.com | Role: CUSTOMER
+2026-08-15 12:51:54 [INF] [IdentityService] Generating JWT token for user: ranasaurabh191@gmail.com, Role: CUSTOMER
+2026-08-15 12:51:54 [INF] [IdentityService] Token generated successfully for user: ranasaurabh191@gmail.com, expires in 60 minutes
+2026-08-15 12:51:54 [INF] [IdentityService] HTTP POST /api/auth/login → 200 in 183.0053ms
+2026-08-15 12:52:04 [INF] [IdentityService] HTTP POST /api/auth/login → 400 in 4.9672ms
+2026-08-15 12:52:11 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:52:11 [WRN] [IdentityService] Login failed - wrong password: ranasaurabh191@gmail.com
+2026-08-15 12:52:11 [ERR] [IdentityService] HTTP POST /api/auth/login → 500 in 209.8113ms
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 12:52:11 [WRN] [IdentityService] Handled application exception for POST /api/auth/login: Incorrect password.
+2026-08-15 12:52:44 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:52:44 [WRN] [IdentityService] Login failed - wrong password: ranasaurabh191@gmail.com
+2026-08-15 12:52:44 [ERR] [IdentityService] HTTP POST /api/auth/login → 500 in 200.8356ms
+System.UnauthorizedAccessException: Incorrect password.
+   at SmartShip.Identity.Application.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Core\SmartShip.Identity.Application\Services\AuthService.cs:line 126
+   at SmartShip.Identity.API.Controllers.AuthController.Login(LoginRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\IdentityService\Presentation\SmartShip.Identity.API\Contollers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 12:52:45 [WRN] [IdentityService] Handled application exception for POST /api/auth/login: Incorrect password.
+2026-08-15 12:53:14 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-15 12:53:14 [INF] [IdentityService] Login successful: ranasaurabh191@gmail.com | Role: CUSTOMER
+2026-08-15 12:53:14 [INF] [IdentityService] Generating JWT token for user: ranasaurabh191@gmail.com, Role: CUSTOMER
+2026-08-15 12:53:14 [INF] [IdentityService] Token generated successfully for user: ranasaurabh191@gmail.com, expires in 60 minutes
+2026-08-15 12:53:14 [INF] [IdentityService] HTTP POST /api/auth/login → 200 in 149.0411ms
+2026-08-15 12:59:55 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 27.1153ms
+2026-08-15 13:00:01 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 2.2396ms
+2026-08-15 13:00:31 [INF] [IdentityService] FixAdmin operation started
+2026-08-15 13:00:31 [WRN] [IdentityService] Admin not found. Creating new admin user.
+2026-08-15 13:00:32 [INF] [IdentityService] FixAdmin operation completed successfully.
+2026-08-15 13:00:32 [INF] [IdentityService] HTTP GET /api/auth/fix-admin → 200 in 175.4260ms

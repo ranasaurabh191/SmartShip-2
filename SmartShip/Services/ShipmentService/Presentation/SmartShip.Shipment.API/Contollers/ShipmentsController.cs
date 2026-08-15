@@ -5,7 +5,7 @@ using SmartShip.Shipment.Core.Interfaces.Services;
 using SmartShip.Shipment.Domain.Enums;
 using System.Security.Claims;
 
-namespace SmartShip.ShipmentService.API.Controllers;
+namespace SmartShip.Shipment.API.Controllers;
 
 [ApiController]
 [Route("api/shipments")]

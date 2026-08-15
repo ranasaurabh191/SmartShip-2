@@ -22,14 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+	<ProjectReference Include="..\..\..\..\SmartShip.Shared\SmartShip.Shared.csproj" />
 	<ProjectReference Include="..\..\Core\SmartShip.Shipment.Application\SmartShip.Shipment.Application.csproj" />
 	<ProjectReference Include="..\..\Core\SmartShip.Shipment.Domain\SmartShip.Shipment.Domain.csproj" />
 	<ProjectReference Include="..\..\Infrastructure\SmartShip.Shipment.Infrastructure\SmartShip.Shipment.Infrastructure.csproj" />
 	<ProjectReference Include="..\..\Presentation\SmartShip.Shipment.API\SmartShip.Shipment.API.csproj" />
   </ItemGroup>
-	<ItemGroup>
-		<Folder Include="Services\" />
-		<Folder Include="Repositories\" />
-		<Folder Include="Controllers\" />
-	</ItemGroup>
 </Project>

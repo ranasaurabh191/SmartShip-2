@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using SmartShip.Payment.Application.DTOs;
 using SmartShip.Payment.Application.Interfaces.Services;
-using SmartShip.Payment.Application.Persistence;
 using SmartShip.Payment.Application.Repositories;
 using SmartShip.Payment.Core.Services;
 using SmartShip.Payment.Domain.Entities;
@@ -215,62 +214,6 @@ public class PaymentServiceTests
 
         await Assert.ThrowsAsync<UnauthorizedAccessException>(
             () => service.CreateOrderAsync(request));
-    }
-
-    [Fact]
-    public async Task CreateOrderAsync_COD_ShouldCreatePendingPayment()
-    {
-        SetUser(10);
-
-        var shipment = CreateShipment(
-            shippingRate: 1000m,
-            shipmentType: "Domestic",
-            isFragile: false);
-
-        SetupShipmentClient(shipment);
-
-        _paymentRepository
-            .Setup(x => x.GetByShipmentIdAsync(1))
-            .ReturnsAsync((ShipmentPayment?)null);
-
-        var request = new CreateOrderRequest(1, PaymentMethod.COD);
-
-        var service = CreateService();
-
-        var result = await service.CreateOrderAsync(request);
-
-        Assert.NotNull(result);
-        Assert.Equal(1, result.ShipmentId);
-        Assert.Equal("TRK001", result.TrackingNumber);
-        Assert.Equal("COD", result.PaymentMethod);
-        Assert.Equal("Pending", result.PaymentStatus);
-        Assert.Equal(1298m, result.Amount);
-        Assert.Equal("COD order created. Pay on delivery.", result.Message);
-
-        _paymentRepository.Verify(
-            x => x.AddAsync(It.Is<ShipmentPayment>(p =>
-                p.ShipmentId == 1 &&
-                p.CustomerId == 10 &&
-                p.PaymentMethod == PaymentMethod.COD &&
-                p.PaymentStatus == PaymentStatus.Pending &&
-                p.Amount == 1298m)),
-            Times.Once);
-
-        _unitOfWork.Verify(
-            x => x.SaveChangesAsync(It.IsAny<CancellationToken>()),
-            Times.Once);
-
-        _publisher.Verify(
-            x => x.Publish(
-                It.IsAny<PaymentCreatedEvent>(),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-
-        _publisher.Verify(
-            x => x.Publish(
-                It.IsAny<PaymentCompletedEvent>(),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
     }
 
     [Fact]

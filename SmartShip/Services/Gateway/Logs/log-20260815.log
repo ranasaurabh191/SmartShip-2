@@ -1,0 +1,136 @@
+2026-08-15 12:35:45 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 196.4018ms
+2026-08-15 12:35:45 [INF] [Gateway] GATEWAY GET /swagger/index.js -> 200 in 4.1302ms
+2026-08-15 12:35:45 [INF] [Gateway] GATEWAY GET /swagger/index.css -> 200 in 14.2722ms
+2026-08-15 12:35:45 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-standalone-preset.js -> 200 in 46.4366ms
+2026-08-15 12:35:45 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui.css -> 200 in 75.0390ms
+2026-08-15 12:35:45 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-bundle.js -> 200 in 77.3894ms
+2026-08-15 12:35:46 [INF] [Gateway] GATEWAY GET /swagger/favicon-32x32.png -> 200 in 0.4126ms
+2026-08-15 12:35:46 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 342.8299ms
+2026-08-15 12:35:54 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 121.0086ms
+2026-08-15 12:38:22 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/signup' via the EnableRateLimiting option.
+2026-08-15 12:38:22 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000005, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/signup' in the route /gateway/auth/signup.
+2026-08-15 12:38:22 [WRN] [Gateway] RequestId: 0HNNQJEG80MIR:00000005, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/auth/signup
+2026-08-15 12:38:22 [INF] [Gateway] GATEWAY POST /gateway/auth/signup -> 400 in 514.3292ms
+2026-08-15 12:38:38 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/signup' via the EnableRateLimiting option.
+2026-08-15 12:38:38 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000006, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/signup' in the route /gateway/auth/signup.
+2026-08-15 12:38:38 [WRN] [Gateway] RequestId: 0HNNQJEG80MIR:00000006, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/auth/signup
+2026-08-15 12:38:38 [INF] [Gateway] GATEWAY POST /gateway/auth/signup -> 400 in 24.7799ms
+2026-08-15 12:38:50 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/signup' via the EnableRateLimiting option.
+2026-08-15 12:38:50 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000007, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/signup' in the route /gateway/auth/signup.
+2026-08-15 12:38:50 [WRN] [Gateway] RequestId: 0HNNQJEG80MIR:00000007, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/auth/signup
+2026-08-15 12:38:50 [INF] [Gateway] GATEWAY POST /gateway/auth/signup -> 400 in 33.1870ms
+2026-08-15 12:38:58 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/signup' via the EnableRateLimiting option.
+2026-08-15 12:38:58 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000008, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/signup' in the route /gateway/auth/signup.
+2026-08-15 12:39:00 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/auth/signup
+2026-08-15 12:39:00 [INF] [Gateway] GATEWAY POST /gateway/auth/signup -> 200 in 1226.4804ms
+2026-08-15 12:41:16 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000009, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:41:16 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:00000009, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:41:43 [WRN] [Gateway] RequestId: 0HNNQJEG80MIR:00000009, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:41:43 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 401 in 27202.2769ms
+2026-08-15 12:42:45 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:42:45 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000A, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:42:45 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000A, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:42:45 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 200 in 185.2661ms
+2026-08-15 12:42:54 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000B, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:42:54 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000B, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:43:30 [WRN] [Gateway] RequestId: 0HNNQJEG80MIR:0000000B, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:43:30 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 401 in 36603.6505ms
+2026-08-15 12:43:33 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000C, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:43:33 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000C, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:43:34 [WRN] [Gateway] RequestId: 0HNNQJEG80MIR:0000000C, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:43:34 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 401 in 280.1708ms
+2026-08-15 12:43:36 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000D, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:43:36 [INF] [Gateway] RequestId: 0HNNQJEG80MIR:0000000D, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:43:36 [WRN] [Gateway] RequestId: 0HNNQJEG80MIR:0000000D, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:43:36 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 401 in 268.4002ms
+2026-08-15 12:50:51 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.7802ms
+2026-08-15 12:50:52 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 23.4135ms
+2026-08-15 12:51:03 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.3944ms
+2026-08-15 12:51:03 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 12.2244ms
+2026-08-15 12:51:04 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.5662ms
+2026-08-15 12:51:05 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 12.8608ms
+2026-08-15 12:51:05 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.5289ms
+2026-08-15 12:51:05 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 8.8685ms
+2026-08-15 12:51:06 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.4492ms
+2026-08-15 12:51:07 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 8.3980ms
+2026-08-15 12:51:11 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.4584ms
+2026-08-15 12:51:11 [INF] [Gateway] GATEWAY GET /swagger/index.css -> 200 in 0.1653ms
+2026-08-15 12:51:11 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui.css -> 200 in 0.8337ms
+2026-08-15 12:51:11 [INF] [Gateway] GATEWAY GET /swagger/index.js -> 200 in 0.2849ms
+2026-08-15 12:51:11 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-standalone-preset.js -> 200 in 2.6649ms
+2026-08-15 12:51:11 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-bundle.js -> 200 in 14.9893ms
+2026-08-15 12:51:12 [INF] [Gateway] GATEWAY GET /swagger/favicon-32x32.png -> 200 in 0.6494ms
+2026-08-15 12:51:12 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 14.3638ms
+2026-08-15 12:51:54 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:51:54 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000003, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:51:54 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:51:54 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 200 in 215.3803ms
+2026-08-15 12:52:04 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:52:04 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000004, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:52:04 [WRN] [Gateway] RequestId: 0HNNQJEG80MJ3:00000004, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:52:04 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 400 in 20.4182ms
+2026-08-15 12:52:11 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:52:11 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000005, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:52:11 [WRN] [Gateway] RequestId: 0HNNQJEG80MJ3:00000005, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:52:11 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 401 in 262.5402ms
+2026-08-15 12:52:44 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:52:44 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000006, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:52:45 [WRN] [Gateway] RequestId: 0HNNQJEG80MJ3:00000006, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:52:45 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 401 in 247.7328ms
+2026-08-15 12:53:14 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-15 12:53:14 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000007, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-15 12:53:14 [INF] [Gateway] RequestId: 0HNNQJEG80MJ3:00000007, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/auth/login
+2026-08-15 12:53:14 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 200 in 157.3444ms
+2026-08-15 12:59:54 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.8217ms
+2026-08-15 12:59:55 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 39.7647ms
+2026-08-15 13:00:01 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.3807ms
+2026-08-15 13:00:01 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 9.6549ms
+2026-08-15 13:00:31 [INF] [Gateway] RequestId: 0HNNQJEG80MJ8:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/fix-admin' via the EnableRateLimiting option.
+2026-08-15 13:00:31 [INF] [Gateway] RequestId: 0HNNQJEG80MJ8:00000003, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/fix-admin' in the route /gateway/auth/fix-admin.
+2026-08-15 13:00:32 [INF] [Gateway] RequestId: 0HNNQJEG80MJ8:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/auth/fix-admin
+2026-08-15 13:00:32 [INF] [Gateway] GATEWAY GET /gateway/auth/fix-admin -> 200 in 202.1737ms

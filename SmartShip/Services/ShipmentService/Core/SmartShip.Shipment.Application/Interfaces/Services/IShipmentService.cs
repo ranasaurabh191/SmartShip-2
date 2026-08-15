@@ -11,7 +11,7 @@ namespace SmartShip.Shipment.Core.Interfaces.Services
         Task SchedulePickupAsync(int id, int customerId, SchedulePickupRequest request);
         Task CancelByCustomerAsync(int shipmentId, int customerId, string reason);
         Task<ShipmentResponse?> GetByTrackingNumberAsync(string trackingNumber);
-        Task<decimal> CalculateRateAsync(double weightKg, ShipmentType type, double distanceKm = 0);
+        Task<decimal> CalculateRateAsync(double weightKg, ShipmentType type);
 
     }
 }

@@ -15,7 +15,7 @@ using SmartShip.Shipment.Infrastructure.Consumers;
 using SmartShip.Shipment.Infrastructure.Context;
 using SmartShip.Shipment.Infrastructure.Persistence;
 using SmartShip.Shipment.Infrastructure.Repositories;
-using SmartShip.ShipmentService.Core.Services;
+using SmartShip.Shipment.Core.Services;
 using System.Text;
 using System.Text.Json.Serialization;
 

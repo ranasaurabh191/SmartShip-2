@@ -10,7 +10,7 @@ using SmartShip.Shipment.Domain.Entities;
 using SmartShip.Shipment.Domain.Enums;
 using SmartShip.Shipment.Application.Services;
 
-namespace SmartShip.ShipmentService.Core.Services;
+namespace SmartShip.Shipment.Core.Services;
 
 public class ShipmentService : IShipmentService
 {
@@ -66,7 +66,7 @@ public class ShipmentService : IShipmentService
             var receiver = MapAddress(req.ReceiverAddress);
             var package = MapPackage(req.Package);
 
-            var rate = await CalculateRateAsync(req.Package.WeightKg, req.ShipmentType, 0);
+            var rate = await CalculateRateAsync(req.Package.WeightKg, req.ShipmentType);
             _logger.LogInformation("Calculated shipping rate: {Rate} for Type: {Type} ", rate, req.ShipmentType);
 
             await _addressRepository.AddRangeAsync(sender, receiver);
@@ -132,7 +132,7 @@ public class ShipmentService : IShipmentService
             shipment.Package!
         );
     }
-    public Task<decimal> CalculateRateAsync(double weightKg, ShipmentType type, double distanceKm = 0)
+    public Task<decimal> CalculateRateAsync(double weightKg, ShipmentType type)
     {
         decimal rate = type switch
         {
@@ -142,19 +142,6 @@ public class ShipmentService : IShipmentService
             ShipmentType.Domestic => (decimal)(weightKg * 80),
             _ => (decimal)(weightKg * 80)
         };
-
-        const decimal baseDistance = 2000m;
-        const decimal flatDistanceSurcharge = 200m;
-
-        if (distanceKm > (double)baseDistance)
-        {
-            rate += flatDistanceSurcharge;
-
-            _logger.LogInformation("Added flat distance surcharge: {Charge} for shipment over {BaseKm}km",
-                flatDistanceSurcharge,
-                baseDistance
-            );
-        }
 
         var finalRate = Math.Max(rate, 99);
 
@@ -427,8 +414,7 @@ public class ShipmentService : IShipmentService
                 package.Description, package.DeclaredValue
             ),
             Notes: shipment.Notes,
-            IsFragile: shipment.IsFragile,
-            DistanceKm: 0
+            IsFragile: shipment.IsFragile
         );
     }
 

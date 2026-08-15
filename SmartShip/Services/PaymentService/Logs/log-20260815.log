@@ -1,0 +1,14 @@
+2026-08-15 12:28:20 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 12:28:21 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 12:28:21 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 12:28:21 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 12:31:57 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 12:31:57 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 12:31:57 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 12:31:57 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 12:31:58 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 12:33:51 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 12:33:51 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 12:33:51 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 12:33:51 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 12:33:52 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"

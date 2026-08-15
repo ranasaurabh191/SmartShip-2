@@ -13,11 +13,33 @@ namespace SmartShip.Shared.Middleware
 
         public async Task InvokeAsync(HttpContext context)
         {
-            try { await _next(context); }
+            try
+            {
+                await _next(context);
+            }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Unhandled exception for {Method} {Path}",
-                    context.Request.Method, context.Request.Path);
+                if (ex is UnauthorizedAccessException ||
+                    ex is KeyNotFoundException ||
+                    ex is ArgumentException ||
+                    ex is InvalidOperationException ||
+                    ex is TimeoutException)
+                {
+                    _logger.LogWarning(
+                        "Handled application exception for {Method} {Path}: {Message}",
+                        context.Request.Method,
+                        context.Request.Path,
+                        ex.Message);
+                }
+                else
+                {
+                    _logger.LogError(
+                        ex,
+                        "Unhandled exception for {Method} {Path}",
+                        context.Request.Method,
+                        context.Request.Path);
+                }
+
                 await HandleExceptionAsync(context, ex);
             }
         }

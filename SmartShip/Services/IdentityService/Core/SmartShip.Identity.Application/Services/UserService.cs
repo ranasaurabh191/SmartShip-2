@@ -56,10 +56,8 @@ public class UserService : IUserService
             throw new KeyNotFoundException($"User {id} not found.");
         }
 
-        user.Name = request.Name;
-        user.Phone = request.Phone;
+        
         user.IsActive = request.IsActive;
-        user.Role = request.Role;
 
         _userRepository.Update(user);
         await _unitOfWork.SaveChangesAsync();
