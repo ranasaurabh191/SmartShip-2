@@ -68,8 +68,8 @@ graph TD
     Payment --> PaymentDb
     Admin --> AdminDb
 
-    Payment -.->|HTTP GET api/shipments/{id}| Shipment
-    Shipment -.->|HTTP GET api/auth/internal/users/{id}/exists| Identity
+    Payment -.->|HTTP GET api/shipments/:id| Shipment
+    Shipment -.->|HTTP GET api/auth/internal/users/:id/exists| Identity
 
     Identity ==>|UserDeletedEvent| Broker
     Shipment ==>|ShipmentCreated / Cancelled / Delivered| Broker

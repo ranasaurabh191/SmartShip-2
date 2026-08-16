@@ -100,8 +100,8 @@ graph TD
     PaymentSvc --> PaymentDb
     AdminSvc --> AdminDb
 
-    PaymentSvc -.->|HTTP Check: api/shipments/{id}| ShipmentSvc
-    ShipmentSvc -.->|HTTP Check: api/auth/internal/users/{id}/exists| IdentitySvc
+    PaymentSvc -.->|HTTP Check: api/shipments/:id| ShipmentSvc
+    ShipmentSvc -.->|HTTP Check: api/auth/internal/users/:id/exists| IdentitySvc
 
     IdentitySvc ==>|UserDeletedEvent| RabbitMQ
     ShipmentSvc ==>|ShipmentCreatedEvent<br/>ShipmentCancelledEvent<br/>ShipmentDeliveredEvent<br/>ShipmentStatusUpdatedEvent| RabbitMQ
@@ -537,9 +537,9 @@ sequenceDiagram
     participant Razorpay as Razorpay API
     participant Bus as RabbitMQ Bus
 
-    Customer->>Gateway: POST /gateway/payment/create-order { shipmentId, paymentMethod: "Online" }
+    Customer->>Gateway: POST /gateway/payment/create-order (shipmentId, paymentMethod: Online)
     Gateway->>Payment: Forward to Payment Service
-    Payment->>Shipment: HTTP GET api/shipments/{id}
+    Payment->>Shipment: HTTP GET api/shipments/:id
     Shipment-->>Payment: 200 OK (Shipment Details & Rate)
     Payment->>Payment: Calculate Subtotal, Fees & 18% GST
     Payment->>Razorpay: Create Razorpay Order (amount in paise)
@@ -548,7 +548,7 @@ sequenceDiagram
     Payment-->>Customer: Return PaymentResponse (Razorpay Order ID, Amount, Key)
 
     Customer->>Customer: Complete checkout on Razorpay Modal / Demo Endpoint
-    Customer->>Gateway: POST /gateway/payment/verify { razorpayOrderId, razorpayPaymentId, signature }
+    Customer->>Gateway: POST /gateway/payment/verify (razorpayOrderId, razorpayPaymentId, signature)
     Gateway->>Payment: Forward to Payment Service
     Payment->>Payment: Verify HMAC-SHA256 Signature
     alt Signature Valid
