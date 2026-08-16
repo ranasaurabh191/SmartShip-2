@@ -7,8 +7,8 @@ public interface IAuthService
 {
     Task<AuthResponse> LoginAsync(LoginRequest request);
     Task<AuthResponse> SignupAsync(SignupRequest request);
-    Task<object> DebugLoginAsync(LoginRequest request);  
-    Task<object> FixAdminAsync();
-    
-  
+    Task<object> DebugLoginAsync(LoginRequest request);
+    Task<UserDto> UpdateMyProfileAsync(int userId, UpdateMyProfileRequest request);
+    Task<bool> ExistsActiveUserAsync(int id);
+
 }

@@ -8,5 +8,4 @@ public class Package
     public double WidthCm { get; set; }
     public double HeightCm { get; set; }
     public string Description { get; set; } = string.Empty;
-    public decimal DeclaredValue { get; set; }
 }

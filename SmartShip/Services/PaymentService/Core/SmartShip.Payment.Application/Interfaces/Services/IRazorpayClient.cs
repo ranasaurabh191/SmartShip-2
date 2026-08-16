@@ -1,7 +1,19 @@
-﻿namespace SmartShip.Payment.Application.Interfaces.Services;
-
-public interface IRazorpayClient
+﻿
+namespace SmartShip.Payment.Application.Interfaces.Services
 {
-    string CreateOrder(decimal amount, int shipmentId);
-    bool VerifySignature(string orderId, string paymentId, string signature);
+    public interface IRazorpayClient
+    {
+        string CreateOrder(decimal amount, int shipmentId);
+
+        bool VerifySignature(
+            string orderId,
+            string paymentId,
+            string signature);
+
+        string GenerateDemoPaymentId();
+
+        string GenerateDemoSignature(
+            string orderId,
+            string paymentId);
+    }
 }

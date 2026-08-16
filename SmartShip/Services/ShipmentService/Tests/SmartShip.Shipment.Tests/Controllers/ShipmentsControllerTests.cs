@@ -94,8 +94,8 @@ public class ShipmentsControllerTests
                 20,
                 15,
                 10,
-                "Electronics",
-                5000),
+                "Electronics"
+              ),
             "Test shipment",
             false);
     }
@@ -124,8 +124,8 @@ public class ShipmentsControllerTests
                 20,
                 15,
                 10,
-                "Electronics",
-                5000),
+                "Electronics"
+              ),
             ShipmentType.Domestic,
             null,
             "Test shipment",

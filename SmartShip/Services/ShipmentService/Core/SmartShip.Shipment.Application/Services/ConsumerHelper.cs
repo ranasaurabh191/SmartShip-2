@@ -6,20 +6,45 @@ namespace SmartShip.Shipment.Application.Services;
 public static class ConsumerHelper
 {
     public static async Task<bool> ValidateCustomerExistsAsync(
-        IHttpClientFactory factory, ILogger logger, int customerId, IConfiguration config)
+    IHttpClientFactory factory,
+    ILogger logger,
+    int customerId,
+    IConfiguration config)
     {
         try
         {
             var client = factory.CreateClient("IdentityService");
 
             var apiKey = config["InternalApi:ApiKey"];
-            if (!string.IsNullOrEmpty(apiKey))  client.DefaultRequestHeaders.Add("X-Internal-Key", apiKey);
 
-            var response = await client.GetAsync($"api/admin/users/exists/{customerId}");
+            if (!string.IsNullOrEmpty(apiKey))
+            {
+                client.DefaultRequestHeaders.Remove("X-Internal-Key");
+                client.DefaultRequestHeaders.Add("X-Internal-Key", apiKey);
+            }
+
+            var url = $"api/auth/internal/users/{customerId}/exists";
+
+            logger.LogInformation(
+                "Calling IdentityService: {BaseAddress}{Url}",
+                client.BaseAddress,
+                url);
+
+            var response = await client.GetAsync(url);
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            logger.LogInformation(
+                "IdentityService response: Status={StatusCode}, Body={Body}",
+                (int)response.StatusCode,
+                responseBody);
 
             if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
-                logger.LogWarning("Customer {CustomerId} not found in IdentityService.", customerId);
+                logger.LogWarning(
+                    "Customer {CustomerId} does not exist or is inactive.",
+                    customerId);
+
                 return false;
             }
 
@@ -27,7 +52,11 @@ public static class ConsumerHelper
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Failed to validate customer {CustomerId}", customerId);
+            logger.LogError(
+                ex,
+                "Failed to validate customer {CustomerId}",
+                customerId);
+
             return false;
         }
     }

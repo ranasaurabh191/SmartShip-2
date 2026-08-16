@@ -1,0 +1,386 @@
+2026-08-16 19:16:45 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 162.1813ms
+2026-08-16 19:16:45 [INF] [Gateway] GATEWAY GET /swagger/index.js -> 200 in 8.7773ms
+2026-08-16 19:16:45 [INF] [Gateway] GATEWAY GET /swagger/index.css -> 200 in 22.2341ms
+2026-08-16 19:16:45 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui.css -> 200 in 71.1519ms
+2026-08-16 19:16:45 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-standalone-preset.js -> 200 in 71.1375ms
+2026-08-16 19:16:45 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-bundle.js -> 200 in 96.3384ms
+2026-08-16 19:16:45 [INF] [Gateway] GATEWAY GET /swagger/favicon-32x32.png -> 200 in 0.8401ms
+2026-08-16 19:16:46 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 274.0939ms
+2026-08-16 19:20:01 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 220.6409ms
+2026-08-16 19:20:13 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 21.9606ms
+2026-08-16 19:22:50 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.6044ms
+2026-08-16 19:22:50 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 23.9874ms
+2026-08-16 19:23:06 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 20.6833ms
+2026-08-16 19:23:12 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/adminservice -> 200 in 101.2328ms
+2026-08-16 19:23:16 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 31.6217ms
+2026-08-16 19:56:55 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 165.7293ms
+2026-08-16 19:56:55 [INF] [Gateway] GATEWAY GET /swagger/index.js -> 200 in 21.3249ms
+2026-08-16 19:56:55 [INF] [Gateway] GATEWAY GET /swagger/index.css -> 200 in 35.4991ms
+2026-08-16 19:56:55 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui.css -> 200 in 92.1334ms
+2026-08-16 19:56:55 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-standalone-preset.js -> 200 in 92.1386ms
+2026-08-16 19:56:55 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-bundle.js -> 200 in 140.1827ms
+2026-08-16 19:56:55 [INF] [Gateway] GATEWAY GET /swagger/favicon-32x32.png -> 200 in 0.7650ms
+2026-08-16 19:56:56 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 321.4633ms
+2026-08-16 19:57:00 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 102.6751ms
+2026-08-16 19:57:17 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-16 19:57:17 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000005, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-16 19:57:18 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000005, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/auth/login
+2026-08-16 19:57:18 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 200 in 1327.4705ms
+2026-08-16 19:57:39 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 212.2428ms
+2026-08-16 19:58:22 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/create' via the EnableRateLimiting option.
+2026-08-16 19:58:22 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000007, PreviousRequestId: -
+The path '/gateway/shipments/create' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 19:58:22 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000007, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/create' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 19:58:23 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000007, PreviousRequestId: -
+201 Created status code of request URI: http://localhost:5004/api/shipments/create
+2026-08-16 19:58:23 [INF] [Gateway] GATEWAY POST /gateway/shipments/create -> 201 in 1245.7953ms
+2026-08-16 19:59:24 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}' via the EnableRateLimiting option.
+2026-08-16 19:59:24 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000008, PreviousRequestId: -
+The path '/gateway/shipments/by-tracking/SHP-20260816195823-4437' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 19:59:24 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000008, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/by-tracking/SHP-20260816195823-4437' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 19:59:25 [INF] [Gateway] RequestId: 0HNNRK9M38N34:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5004/api/shipments/by-tracking/SHP-20260816195823-4437
+2026-08-16 19:59:25 [INF] [Gateway] GATEWAY GET /gateway/shipments/by-tracking/SHP-20260816195823-4437 -> 200 in 635.3704ms
+2026-08-16 20:03:14 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.5599ms
+2026-08-16 20:03:14 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 48.4695ms
+2026-08-16 20:03:22 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.3548ms
+2026-08-16 20:03:22 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui.css -> 200 in 0.9831ms
+2026-08-16 20:03:22 [INF] [Gateway] GATEWAY GET /swagger/index.css -> 200 in 0.2950ms
+2026-08-16 20:03:22 [INF] [Gateway] GATEWAY GET /swagger/index.js -> 200 in 0.4927ms
+2026-08-16 20:03:22 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-standalone-preset.js -> 200 in 2.2551ms
+2026-08-16 20:03:22 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-bundle.js -> 200 in 12.6340ms
+2026-08-16 20:03:22 [INF] [Gateway] GATEWAY GET /swagger/favicon-32x32.png -> 200 in 0.3608ms
+2026-08-16 20:03:22 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 37.2912ms
+2026-08-16 20:03:36 [INF] [Gateway] RequestId: 0HNNRK9M38N39:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/create' via the EnableRateLimiting option.
+2026-08-16 20:03:36 [INF] [Gateway] RequestId: 0HNNRK9M38N39:00000004, PreviousRequestId: -
+The path '/gateway/shipments/create' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:03:36 [INF] [Gateway] RequestId: 0HNNRK9M38N39:00000004, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/create' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:03:46 [WRN] [Gateway] RequestId: 0HNNRK9M38N39:00000004, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5004/api/shipments/create
+2026-08-16 20:03:46 [INF] [Gateway] GATEWAY POST /gateway/shipments/create -> 400 in 9298.2584ms
+2026-08-16 20:04:09 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.4611ms
+2026-08-16 20:04:10 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 22.0072ms
+2026-08-16 20:04:15 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 0.6182ms
+2026-08-16 20:04:15 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui.css -> 200 in 1.0213ms
+2026-08-16 20:04:15 [INF] [Gateway] GATEWAY GET /swagger/index.css -> 200 in 0.2887ms
+2026-08-16 20:04:15 [INF] [Gateway] GATEWAY GET /swagger/index.js -> 200 in 0.7472ms
+2026-08-16 20:04:15 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-standalone-preset.js -> 200 in 2.2636ms
+2026-08-16 20:04:15 [INF] [Gateway] GATEWAY GET /swagger/swagger-ui-bundle.js -> 200 in 11.0717ms
+2026-08-16 20:04:15 [INF] [Gateway] GATEWAY GET /swagger/favicon-32x32.png -> 200 in 0.2818ms
+2026-08-16 20:04:15 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 13.9049ms
+2026-08-16 20:04:32 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/create' via the EnableRateLimiting option.
+2026-08-16 20:04:32 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000005, PreviousRequestId: -
+The path '/gateway/shipments/create' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:04:32 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000005, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/create' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:04:32 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000005, PreviousRequestId: -
+201 Created status code of request URI: http://localhost:5004/api/shipments/create
+2026-08-16 20:04:32 [INF] [Gateway] GATEWAY POST /gateway/shipments/create -> 201 in 133.5741ms
+2026-08-16 20:05:18 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}/schedule-pickup' via the EnableRateLimiting option.
+2026-08-16 20:05:18 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000006, PreviousRequestId: -
+The path '/gateway/shipments/2/schedule-pickup' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:05:18 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000006, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/2/schedule-pickup' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:05:18 [WRN] [Gateway] RequestId: 0HNNRK9M38N36:00000006, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5004/api/shipments/2/schedule-pickup
+2026-08-16 20:05:18 [INF] [Gateway] GATEWAY POST /gateway/shipments/2/schedule-pickup -> 400 in 43.0291ms
+2026-08-16 20:05:25 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}/schedule-pickup' via the EnableRateLimiting option.
+2026-08-16 20:05:25 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000007, PreviousRequestId: -
+The path '/gateway/shipments/2/schedule-pickup' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:05:25 [INF] [Gateway] RequestId: 0HNNRK9M38N36:00000007, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/2/schedule-pickup' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:05:26 [WRN] [Gateway] RequestId: 0HNNRK9M38N36:00000007, PreviousRequestId: -
+404 Not Found status code of request URI: http://localhost:5004/api/shipments/2/schedule-pickup
+2026-08-16 20:05:26 [INF] [Gateway] GATEWAY POST /gateway/shipments/2/schedule-pickup -> 404 in 205.7354ms
+2026-08-16 20:09:44 [INF] [Gateway] RequestId: 0HNNRK9M38N3A:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}/schedule-pickup' via the EnableRateLimiting option.
+2026-08-16 20:09:44 [INF] [Gateway] RequestId: 0HNNRK9M38N3A:00000001, PreviousRequestId: -
+The path '/gateway/shipments/1/schedule-pickup' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:09:44 [INF] [Gateway] RequestId: 0HNNRK9M38N3A:00000001, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/1/schedule-pickup' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:09:44 [WRN] [Gateway] RequestId: 0HNNRK9M38N3A:00000001, PreviousRequestId: -
+404 Not Found status code of request URI: http://localhost:5004/api/shipments/1/schedule-pickup
+2026-08-16 20:09:44 [INF] [Gateway] GATEWAY POST /gateway/shipments/1/schedule-pickup -> 404 in 149.1630ms
+2026-08-16 20:09:54 [INF] [Gateway] RequestId: 0HNNRK9M38N3A:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}/schedule-pickup' via the EnableRateLimiting option.
+2026-08-16 20:09:54 [INF] [Gateway] RequestId: 0HNNRK9M38N3A:00000002, PreviousRequestId: -
+The path '/gateway/shipments/2/schedule-pickup' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:09:54 [INF] [Gateway] RequestId: 0HNNRK9M38N3A:00000002, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/2/schedule-pickup' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:09:55 [WRN] [Gateway] RequestId: 0HNNRK9M38N3A:00000002, PreviousRequestId: -
+404 Not Found status code of request URI: http://localhost:5004/api/shipments/2/schedule-pickup
+2026-08-16 20:09:55 [INF] [Gateway] GATEWAY POST /gateway/shipments/2/schedule-pickup -> 404 in 133.5006ms
+2026-08-16 20:14:38 [INF] [Gateway] RequestId: 0HNNRKJIQUF1V:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}/schedule-pickup' via the EnableRateLimiting option.
+2026-08-16 20:14:38 [INF] [Gateway] RequestId: 0HNNRKJIQUF1V:00000001, PreviousRequestId: -
+The path '/gateway/shipments/2/schedule-pickup' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:14:38 [INF] [Gateway] RequestId: 0HNNRKJIQUF1V:00000001, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/2/schedule-pickup' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:14:39 [WRN] [Gateway] RequestId: 0HNNRKJIQUF1V:00000001, PreviousRequestId: -
+404 Not Found status code of request URI: http://localhost:5004/api/shipments/2/schedule-pickup
+2026-08-16 20:14:39 [INF] [Gateway] GATEWAY POST /gateway/shipments/2/schedule-pickup -> 404 in 1873.7816ms
+2026-08-16 20:16:49 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}/schedule-pickup' via the EnableRateLimiting option.
+2026-08-16 20:16:49 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000001, PreviousRequestId: -
+The path '/gateway/shipments/2/schedule-pickup' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:16:49 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000001, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/2/schedule-pickup' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:16:50 [WRN] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000001, PreviousRequestId: -
+404 Not Found status code of request URI: http://localhost:5004/api/shipments/2/schedule-pickup
+2026-08-16 20:16:50 [INF] [Gateway] GATEWAY POST /gateway/shipments/2/schedule-pickup -> 404 in 1226.8866ms
+2026-08-16 20:17:40 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/create' via the EnableRateLimiting option.
+2026-08-16 20:17:40 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000002, PreviousRequestId: -
+The path '/gateway/shipments/create' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:17:40 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000002, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/create' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:17:41 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000002, PreviousRequestId: -
+201 Created status code of request URI: http://localhost:5004/api/shipments/create
+2026-08-16 20:17:41 [INF] [Gateway] GATEWAY POST /gateway/shipments/create -> 201 in 1473.1870ms
+2026-08-16 20:17:50 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}/schedule-pickup' via the EnableRateLimiting option.
+2026-08-16 20:17:50 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000003, PreviousRequestId: -
+The path '/gateway/shipments/3/schedule-pickup' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:17:50 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000003, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/3/schedule-pickup' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:17:50 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5004/api/shipments/3/schedule-pickup
+2026-08-16 20:17:50 [INF] [Gateway] GATEWAY POST /gateway/shipments/3/schedule-pickup -> 200 in 208.6532ms
+2026-08-16 20:20:18 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/create' via the EnableRateLimiting option.
+2026-08-16 20:20:18 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000004, PreviousRequestId: -
+The path '/gateway/shipments/create' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:20:18 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000004, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/create' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:20:18 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000004, PreviousRequestId: -
+201 Created status code of request URI: http://localhost:5004/api/shipments/create
+2026-08-16 20:20:18 [INF] [Gateway] GATEWAY POST /gateway/shipments/create -> 201 in 144.4005ms
+2026-08-16 20:20:28 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 273.3073ms
+2026-08-16 20:21:23 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/create-order' via the EnableRateLimiting option.
+2026-08-16 20:21:23 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000006, PreviousRequestId: -
+The path '/gateway/payment/create-order' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:21:23 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000006, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/create-order' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:21:23 [WRN] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000006, PreviousRequestId: -
+404 Not Found status code of request URI: http://localhost:5003/api/payment/create-order
+2026-08-16 20:21:23 [INF] [Gateway] GATEWAY POST /gateway/payment/create-order -> 404 in 718.7391ms
+2026-08-16 20:21:32 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/create-order' via the EnableRateLimiting option.
+2026-08-16 20:21:32 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000007, PreviousRequestId: -
+The path '/gateway/payment/create-order' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:21:32 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000007, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/create-order' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:21:33 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000007, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/create-order
+2026-08-16 20:21:33 [INF] [Gateway] GATEWAY POST /gateway/payment/create-order -> 200 in 1183.5273ms
+2026-08-16 20:21:56 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/create-order' via the EnableRateLimiting option.
+2026-08-16 20:21:56 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000008, PreviousRequestId: -
+The path '/gateway/payment/create-order' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:21:56 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000008, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/create-order' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:21:56 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/create-order
+2026-08-16 20:21:56 [INF] [Gateway] GATEWAY POST /gateway/payment/create-order -> 200 in 161.5282ms
+2026-08-16 20:21:58 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000009, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/create-order' via the EnableRateLimiting option.
+2026-08-16 20:21:58 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000009, PreviousRequestId: -
+The path '/gateway/payment/create-order' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:21:58 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000009, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/create-order' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:21:58 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:00000009, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/create-order
+2026-08-16 20:21:58 [INF] [Gateway] GATEWAY POST /gateway/payment/create-order -> 200 in 56.8070ms
+2026-08-16 20:22:14 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 119.1505ms
+2026-08-16 20:22:57 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000B, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/create' via the EnableRateLimiting option.
+2026-08-16 20:22:57 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000B, PreviousRequestId: -
+The path '/gateway/shipments/create' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:22:57 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000B, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/create' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:22:57 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000B, PreviousRequestId: -
+201 Created status code of request URI: http://localhost:5004/api/shipments/create
+2026-08-16 20:22:57 [INF] [Gateway] GATEWAY POST /gateway/shipments/create -> 201 in 110.0247ms
+2026-08-16 20:24:02 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 70.3877ms
+2026-08-16 20:24:10 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000D, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/create-order' via the EnableRateLimiting option.
+2026-08-16 20:24:10 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000D, PreviousRequestId: -
+The path '/gateway/payment/create-order' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:24:10 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000D, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/create-order' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:24:12 [WRN] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000D, PreviousRequestId: -
+409 Conflict status code of request URI: http://localhost:5003/api/payment/create-order
+2026-08-16 20:24:12 [INF] [Gateway] GATEWAY POST /gateway/payment/create-order -> 409 in 1168.3300ms
+2026-08-16 20:27:07 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000E, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/create-order' via the EnableRateLimiting option.
+2026-08-16 20:27:07 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000E, PreviousRequestId: -
+The path '/gateway/payment/create-order' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:27:07 [INF] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000E, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/create-order' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:27:07 [WRN] [Gateway] RequestId: 0HNNRKKQ0G8KI:0000000E, PreviousRequestId: -
+409 Conflict status code of request URI: http://localhost:5003/api/payment/create-order
+2026-08-16 20:27:07 [INF] [Gateway] GATEWAY POST /gateway/payment/create-order -> 409 in 440.3074ms
+2026-08-16 20:27:25 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/create-order' via the EnableRateLimiting option.
+2026-08-16 20:27:25 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000001, PreviousRequestId: -
+The path '/gateway/payment/create-order' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:27:25 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000001, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/create-order' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:27:28 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000001, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/create-order
+2026-08-16 20:27:28 [INF] [Gateway] GATEWAY POST /gateway/payment/create-order -> 200 in 3321.0987ms
+2026-08-16 20:27:55 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/demo-payment/{orderId}' via the EnableRateLimiting option.
+2026-08-16 20:27:55 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000002, PreviousRequestId: -
+The path '/gateway/payment/demo-payment/3' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:27:55 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000002, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/demo-payment/3' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:27:55 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/demo-payment/3
+2026-08-16 20:27:55 [INF] [Gateway] GATEWAY POST /gateway/payment/demo-payment/3 -> 200 in 35.5158ms
+2026-08-16 20:29:09 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/verify' via the EnableRateLimiting option.
+2026-08-16 20:29:09 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000003, PreviousRequestId: -
+The path '/gateway/payment/verify' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:29:09 [INF] [Gateway] RequestId: 0HNNRKQNIE6MB:00000003, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/verify' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:29:10 [WRN] [Gateway] RequestId: 0HNNRKQNIE6MB:00000003, PreviousRequestId: -
+404 Not Found status code of request URI: http://localhost:5003/api/payment/verify
+2026-08-16 20:29:10 [INF] [Gateway] GATEWAY POST /gateway/payment/verify -> 404 in 379.2625ms
+2026-08-16 20:43:55 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/demo-payment/{orderId}' via the EnableRateLimiting option.
+2026-08-16 20:43:55 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000001, PreviousRequestId: -
+The path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:43:55 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000001, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:43:55 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000001, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/demo-payment/order_TQTxJb6Y8k73cp
+2026-08-16 20:43:55 [INF] [Gateway] GATEWAY POST /gateway/payment/demo-payment/order_TQTxJb6Y8k73cp -> 200 in 19.3928ms
+2026-08-16 20:43:59 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/demo-payment/{orderId}' via the EnableRateLimiting option.
+2026-08-16 20:43:59 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000002, PreviousRequestId: -
+The path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:43:59 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000002, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:43:59 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/demo-payment/order_TQTxJb6Y8k73cp
+2026-08-16 20:43:59 [INF] [Gateway] GATEWAY POST /gateway/payment/demo-payment/order_TQTxJb6Y8k73cp -> 200 in 12.0017ms
+2026-08-16 20:44:00 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/demo-payment/{orderId}' via the EnableRateLimiting option.
+2026-08-16 20:44:00 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000003, PreviousRequestId: -
+The path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:44:00 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000003, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:44:00 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/demo-payment/order_TQTxJb6Y8k73cp
+2026-08-16 20:44:00 [INF] [Gateway] GATEWAY POST /gateway/payment/demo-payment/order_TQTxJb6Y8k73cp -> 200 in 11.1427ms
+2026-08-16 20:44:01 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/demo-payment/{orderId}' via the EnableRateLimiting option.
+2026-08-16 20:44:01 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000004, PreviousRequestId: -
+The path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:44:01 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000004, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:44:01 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/demo-payment/order_TQTxJb6Y8k73cp
+2026-08-16 20:44:01 [INF] [Gateway] GATEWAY POST /gateway/payment/demo-payment/order_TQTxJb6Y8k73cp -> 200 in 9.6738ms
+2026-08-16 20:44:02 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/demo-payment/{orderId}' via the EnableRateLimiting option.
+2026-08-16 20:44:02 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000005, PreviousRequestId: -
+The path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:44:02 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000005, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:44:02 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000005, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/demo-payment/order_TQTxJb6Y8k73cp
+2026-08-16 20:44:02 [INF] [Gateway] GATEWAY POST /gateway/payment/demo-payment/order_TQTxJb6Y8k73cp -> 200 in 13.7128ms
+2026-08-16 20:44:02 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/demo-payment/{orderId}' via the EnableRateLimiting option.
+2026-08-16 20:44:02 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000006, PreviousRequestId: -
+The path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:44:02 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000006, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/demo-payment/order_TQTxJb6Y8k73cp' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:44:02 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/demo-payment/order_TQTxJb6Y8k73cp
+2026-08-16 20:44:02 [INF] [Gateway] GATEWAY POST /gateway/payment/demo-payment/order_TQTxJb6Y8k73cp -> 200 in 10.8738ms
+2026-08-16 20:44:35 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/payment/verify' via the EnableRateLimiting option.
+2026-08-16 20:44:35 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000007, PreviousRequestId: -
+The path '/gateway/payment/verify' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:44:35 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000007, PreviousRequestId: -
+Client has been authenticated for path '/gateway/payment/verify' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:44:35 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000007, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/payment/verify
+2026-08-16 20:44:35 [INF] [Gateway] GATEWAY POST /gateway/payment/verify -> 200 in 68.4885ms
+2026-08-16 20:44:59 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 212.8129ms
+2026-08-16 20:45:03 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000009, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/shipments/{id}/schedule-pickup' via the EnableRateLimiting option.
+2026-08-16 20:45:03 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000009, PreviousRequestId: -
+The path '/gateway/shipments/5/schedule-pickup' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:45:03 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000009, PreviousRequestId: -
+Client has been authenticated for path '/gateway/shipments/5/schedule-pickup' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:45:03 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000009, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5004/api/shipments/5/schedule-pickup
+2026-08-16 20:45:03 [INF] [Gateway] GATEWAY POST /gateway/shipments/5/schedule-pickup -> 200 in 460.0968ms
+2026-08-16 20:45:38 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/admin/shipments/status/{id}' via the EnableRateLimiting option.
+2026-08-16 20:45:38 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:0000000A, PreviousRequestId: -
+The path '/gateway/admin/shipments/status/5' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:45:38 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:0000000A, PreviousRequestId: -
+Client has been authenticated for path '/gateway/admin/shipments/status/5' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:45:38 [WRN] [Gateway] RequestId: 0HNNRKQNIE6MC:0000000A, PreviousRequestId: -
+403 Forbidden status code of request URI: http://localhost:5004/api/admin/shipments/status/5
+2026-08-16 20:45:38 [INF] [Gateway] GATEWAY PUT /gateway/admin/shipments/status/5 -> 403 in 30.9151ms
+2026-08-16 20:45:44 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/adminservice -> 200 in 107.3402ms
+2026-08-16 20:46:10 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 55.8495ms
+2026-08-16 20:46:20 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 47.7879ms
+2026-08-16 20:46:43 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/identityservice -> 200 in 129.6826ms
+2026-08-16 20:47:16 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:0000000F, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/auth/login' via the EnableRateLimiting option.
+2026-08-16 20:47:16 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:0000000F, PreviousRequestId: -
+No authentication is required for the path '/gateway/auth/login' in the route /gateway/auth/login.
+2026-08-16 20:47:18 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:0000000F, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/auth/login
+2026-08-16 20:47:18 [INF] [Gateway] GATEWAY POST /gateway/auth/login -> 200 in 1193.5419ms
+2026-08-16 20:47:32 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/paymentservice -> 200 in 38.8882ms
+2026-08-16 20:47:35 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 44.2336ms
+2026-08-16 20:47:42 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000012, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/admin/shipments/status/{id}' via the EnableRateLimiting option.
+2026-08-16 20:47:42 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000012, PreviousRequestId: -
+The path '/gateway/admin/shipments/status/5' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:47:42 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000012, PreviousRequestId: -
+Client has been authenticated for path '/gateway/admin/shipments/status/5' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:47:42 [WRN] [Gateway] RequestId: 0HNNRKQNIE6MC:00000012, PreviousRequestId: -
+403 Forbidden status code of request URI: http://localhost:5004/api/admin/shipments/status/5
+2026-08-16 20:47:42 [INF] [Gateway] GATEWAY PUT /gateway/admin/shipments/status/5 -> 403 in 13.7357ms
+2026-08-16 20:47:51 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000013, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/admin/shipments/status/{id}' via the EnableRateLimiting option.
+2026-08-16 20:47:51 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000013, PreviousRequestId: -
+The path '/gateway/admin/shipments/status/5' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:47:51 [INF] [Gateway] RequestId: 0HNNRKQNIE6MC:00000013, PreviousRequestId: -
+Client has been authenticated for path '/gateway/admin/shipments/status/5' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:47:56 [WRN] [Gateway] RequestId: 0HNNRKQNIE6MC:00000013, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5004/api/admin/shipments/status/5
+2026-08-16 20:47:56 [INF] [Gateway] GATEWAY PUT /gateway/admin/shipments/status/5 -> 400 in 5043.8024ms
+2026-08-16 20:52:56 [INF] [Gateway] GATEWAY GET /swagger/index.html -> 200 in 127.0833ms
+2026-08-16 20:52:57 [INF] [Gateway] GATEWAY GET /swagger/docs/v1/shipmentservice -> 200 in 271.4783ms
+2026-08-16 20:53:19 [INF] [Gateway] RequestId: 0HNNRL8VQ8I4S:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/gateway/admin/shipments/status/{id}' via the EnableRateLimiting option.
+2026-08-16 20:53:19 [INF] [Gateway] RequestId: 0HNNRL8VQ8I4S:00000003, PreviousRequestId: -
+The path '/gateway/admin/shipments/status/5' is an authenticated route! AuthenticationMiddleware checking if client is authenticated...
+2026-08-16 20:53:19 [INF] [Gateway] RequestId: 0HNNRL8VQ8I4S:00000003, PreviousRequestId: -
+Client has been authenticated for path '/gateway/admin/shipments/status/5' by 'AuthenticationTypes.Federation' scheme.
+2026-08-16 20:53:20 [INF] [Gateway] RequestId: 0HNNRL8VQ8I4S:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5004/api/admin/shipments/status/5
+2026-08-16 20:53:20 [INF] [Gateway] GATEWAY PUT /gateway/admin/shipments/status/5 -> 200 in 1357.2084ms

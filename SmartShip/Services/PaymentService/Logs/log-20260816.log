@@ -1,0 +1,186 @@
+2026-08-16 19:13:47 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-16 19:13:47 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-16 19:13:47 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-16 19:13:47 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 19:13:48 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 19:16:45 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 29.4824ms
+2026-08-16 19:20:13 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 5.9421ms
+2026-08-16 19:22:50 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 11.3353ms
+2026-08-16 19:23:16 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 26.1678ms
+2026-08-16 19:56:50 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-16 19:56:51 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-16 19:56:51 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-16 19:56:51 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 19:56:51 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 19:56:56 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 19.1354ms
+2026-08-16 20:13:25 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-16 20:13:25 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-16 20:13:25 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-16 20:13:25 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 20:13:26 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:16:40 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-16 20:16:40 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-16 20:16:40 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-16 20:16:40 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 20:16:41 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:20:28 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 32.0462ms
+2026-08-16 20:21:23 [INF] [PaymentService] Create order request for Shipment 3 | Method: "COD"
+2026-08-16 20:21:23 [INF] [PaymentService] Create order request for Shipment 3 | Method: "COD"
+2026-08-16 20:21:23 [WRN] [PaymentService] Shipment 3 not found. Cannot create payment order.
+2026-08-16 20:21:23 [ERR] [PaymentService] HTTP POST /api/payment/create-order → 500 in 617.1877ms
+System.Collections.Generic.KeyNotFoundException: Shipment not found for ID 3. Please create a shipment first.
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Core\SmartShip.Payment.Application\Services\PaymentService.cs:line 76
+   at SmartShip.Payment.API.Controllers.PaymentController.CreateOrder(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Presentation\SmartShip.Payment.API\Contollers\PaymentController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:21:23 [WRN] [PaymentService] Handled application exception for POST /api/payment/create-order: Shipment not found for ID 3. Please create a shipment first.
+2026-08-16 20:21:32 [INF] [PaymentService] Create order request for Shipment 4 | Method: "COD"
+2026-08-16 20:21:32 [INF] [PaymentService] Create order request for Shipment 4 | Method: "COD"
+2026-08-16 20:21:32 [INF] [PaymentService] Shipment 4 verified | TrackingNumber: SHP-20260816202018-1667
+2026-08-16 20:21:32 [INF] [PaymentService] Payment Calculation: Base=1680.00, Fuel=84.00, Total=2264.66
+2026-08-16 20:21:33 [INF] [PaymentService] COD order created for 4
+2026-08-16 20:21:33 [INF] [PaymentService] HTTP POST /api/payment/create-order → 200 in 1167.7396ms
+2026-08-16 20:21:56 [INF] [PaymentService] Create order request for Shipment 4 | Method: "COD"
+2026-08-16 20:21:56 [INF] [PaymentService] Create order request for Shipment 4 | Method: "COD"
+2026-08-16 20:21:56 [INF] [PaymentService] Shipment 4 verified | TrackingNumber: SHP-20260816202018-1667
+2026-08-16 20:21:56 [INF] [PaymentService] Payment Calculation: Base=1680.00, Fuel=84.00, Total=2264.66
+2026-08-16 20:21:56 [INF] [PaymentService] COD order created for 4
+2026-08-16 20:21:56 [INF] [PaymentService] HTTP POST /api/payment/create-order → 200 in 152.9135ms
+2026-08-16 20:21:58 [INF] [PaymentService] Create order request for Shipment 4 | Method: "COD"
+2026-08-16 20:21:58 [INF] [PaymentService] Create order request for Shipment 4 | Method: "COD"
+2026-08-16 20:21:58 [INF] [PaymentService] Shipment 4 verified | TrackingNumber: SHP-20260816202018-1667
+2026-08-16 20:21:58 [INF] [PaymentService] Payment Calculation: Base=1680.00, Fuel=84.00, Total=2264.66
+2026-08-16 20:21:58 [INF] [PaymentService] COD order created for 4
+2026-08-16 20:21:58 [INF] [PaymentService] HTTP POST /api/payment/create-order → 200 in 45.6649ms
+2026-08-16 20:24:02 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 5.2429ms
+2026-08-16 20:24:10 [INF] [PaymentService] Create order request for Shipment 5 | Method: "Online"
+2026-08-16 20:24:10 [INF] [PaymentService] Create order request for Shipment 5 | Method: "Online"
+2026-08-16 20:24:10 [INF] [PaymentService] Shipment 5 verified | TrackingNumber: SHP-20260816202257-6692
+2026-08-16 20:24:10 [INF] [PaymentService] Payment Calculation: Base=1680.00, Fuel=84.00, Total=2234.92
+2026-08-16 20:24:11 [ERR] [PaymentService] Failed to create Razorpay order for Shipment 5
+Razorpay.Api.Errors.BadRequestError: Authentication failed
+   at Razorpay.Api.RestClient.HandleErrors(HttpWebResponse webResponse, String response, String host)
+   at Razorpay.Api.RestClient.createResponse(HttpWebRequest request, String host)
+   at Razorpay.Api.RestClient.createResponse(HttpWebRequest request, String host)
+   at Razorpay.Api.RestClient.MakeRequest(String relativeUrl, HttpMethod method, String data, String host, AuthType authType, Nullable`1 mode)
+   at Razorpay.Api.Entity.Request(String relativeUrl, HttpMethod verb, Dictionary`2 options, String host, AuthType authType, Nullable`1 mode)
+   at Razorpay.Api.Entity.Request(String relativeUrl, HttpMethod verb, Dictionary`2 options)
+   at Razorpay.Api.Order.Create(Dictionary`2 data)
+   at SmartShip.Payment.Application.Services.RazorpayClientWrapper.CreateOrder(Decimal amount, Int32 shipmentId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Core\SmartShip.Payment.Application\Services\RazorpayClientWrapper.cs:line 33
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Core\SmartShip.Payment.Application\Services\PaymentService.cs:line 172
+2026-08-16 20:24:12 [ERR] [PaymentService] HTTP POST /api/payment/create-order → 500 in 1111.2004ms
+System.InvalidOperationException: Failed to initiate payment. Please try again.
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Core\SmartShip.Payment.Application\Services\PaymentService.cs:line 178
+   at SmartShip.Payment.API.Controllers.PaymentController.CreateOrder(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Presentation\SmartShip.Payment.API\Contollers\PaymentController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:24:12 [WRN] [PaymentService] Handled application exception for POST /api/payment/create-order: Failed to initiate payment. Please try again.
+2026-08-16 20:27:07 [INF] [PaymentService] Create order request for Shipment 5 | Method: "Online"
+2026-08-16 20:27:07 [INF] [PaymentService] Create order request for Shipment 5 | Method: "Online"
+2026-08-16 20:27:07 [INF] [PaymentService] Shipment 5 verified | TrackingNumber: SHP-20260816202257-6692
+2026-08-16 20:27:07 [INF] [PaymentService] Payment Calculation: Base=1680.00, Fuel=84.00, Total=2234.92
+2026-08-16 20:27:07 [ERR] [PaymentService] Failed to create Razorpay order for Shipment 5
+Razorpay.Api.Errors.BadRequestError: Authentication failed
+   at Razorpay.Api.RestClient.HandleErrors(HttpWebResponse webResponse, String response, String host)
+   at Razorpay.Api.RestClient.createResponse(HttpWebRequest request, String host)
+   at Razorpay.Api.RestClient.createResponse(HttpWebRequest request, String host)
+   at Razorpay.Api.RestClient.MakeRequest(String relativeUrl, HttpMethod method, String data, String host, AuthType authType, Nullable`1 mode)
+   at Razorpay.Api.Entity.Request(String relativeUrl, HttpMethod verb, Dictionary`2 options, String host, AuthType authType, Nullable`1 mode)
+   at Razorpay.Api.Entity.Request(String relativeUrl, HttpMethod verb, Dictionary`2 options)
+   at Razorpay.Api.Order.Create(Dictionary`2 data)
+   at SmartShip.Payment.Application.Services.RazorpayClientWrapper.CreateOrder(Decimal amount, Int32 shipmentId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Core\SmartShip.Payment.Application\Services\RazorpayClientWrapper.cs:line 33
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Core\SmartShip.Payment.Application\Services\PaymentService.cs:line 172
+2026-08-16 20:27:07 [ERR] [PaymentService] HTTP POST /api/payment/create-order → 500 in 391.7065ms
+System.InvalidOperationException: Failed to initiate payment. Please try again.
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Core\SmartShip.Payment.Application\Services\PaymentService.cs:line 178
+   at SmartShip.Payment.API.Controllers.PaymentController.CreateOrder(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Presentation\SmartShip.Payment.API\Contollers\PaymentController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:27:07 [WRN] [PaymentService] Handled application exception for POST /api/payment/create-order: Failed to initiate payment. Please try again.
+2026-08-16 20:27:17 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-16 20:27:17 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-16 20:27:17 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-16 20:27:17 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 20:27:18 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:27:26 [INF] [PaymentService] Create order request for Shipment 5 | Method: "Online"
+2026-08-16 20:27:26 [INF] [PaymentService] Create order request for Shipment 5 | Method: "Online"
+2026-08-16 20:27:27 [INF] [PaymentService] Shipment 5 verified | TrackingNumber: SHP-20260816202257-6692
+2026-08-16 20:27:27 [INF] [PaymentService] Payment Calculation: Base=1680.00, Fuel=84.00, Total=2234.92
+2026-08-16 20:27:28 [INF] [PaymentService] HTTP POST /api/payment/create-order → 200 in 2793.2267ms
+2026-08-16 20:27:55 [INF] [PaymentService] HTTP POST /api/payment/demo-payment/3 → 200 in 12.7744ms
+2026-08-16 20:29:09 [INF] [PaymentService] Verify payment request for Order 3
+2026-08-16 20:29:09 [INF] [PaymentService] Verifying payment for Order 3
+2026-08-16 20:29:10 [WRN] [PaymentService] Order 3 not found — publishing PaymentFailedEvent.
+2026-08-16 20:29:10 [ERR] [PaymentService] HTTP POST /api/payment/verify → 500 in 301.4059ms
+System.Collections.Generic.KeyNotFoundException: Invalid Order ID '3'. Payment failed.
+   at SmartShip.Payment.Core.Services.PaymentService.VerifyPaymentAsync(VerifyPaymentRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Core\SmartShip.Payment.Application\Services\PaymentService.cs:line 243
+   at SmartShip.Payment.API.Controllers.PaymentController.Verify(VerifyPaymentRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Presentation\SmartShip.Payment.API\Contollers\PaymentController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:29:10 [WRN] [PaymentService] Handled application exception for POST /api/payment/verify: Invalid Order ID '3'. Payment failed.
+2026-08-16 20:43:55 [INF] [PaymentService] HTTP POST /api/payment/demo-payment/order_TQTxJb6Y8k73cp → 200 in 1.5686ms
+2026-08-16 20:43:59 [INF] [PaymentService] HTTP POST /api/payment/demo-payment/order_TQTxJb6Y8k73cp → 200 in 1.0124ms
+2026-08-16 20:44:00 [INF] [PaymentService] HTTP POST /api/payment/demo-payment/order_TQTxJb6Y8k73cp → 200 in 1.0107ms
+2026-08-16 20:44:01 [INF] [PaymentService] HTTP POST /api/payment/demo-payment/order_TQTxJb6Y8k73cp → 200 in 0.9467ms
+2026-08-16 20:44:02 [INF] [PaymentService] HTTP POST /api/payment/demo-payment/order_TQTxJb6Y8k73cp → 200 in 1.2846ms
+2026-08-16 20:44:02 [INF] [PaymentService] HTTP POST /api/payment/demo-payment/order_TQTxJb6Y8k73cp → 200 in 1.2454ms
+2026-08-16 20:44:35 [INF] [PaymentService] Verify payment request for Order order_TQTxJb6Y8k73cp
+2026-08-16 20:44:35 [INF] [PaymentService] Verifying payment for Order order_TQTxJb6Y8k73cp
+2026-08-16 20:44:35 [INF] [PaymentService] Payment verified -> SHP-20260816202257-6692 Paid at 16-Aug 08:44 PM
+2026-08-16 20:44:35 [INF] [PaymentService] PaymentCompletedEvent published for ShipmentID: 5
+2026-08-16 20:44:35 [INF] [PaymentService] HTTP POST /api/payment/verify → 200 in 53.8006ms
+2026-08-16 20:46:10 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 9.0722ms
+2026-08-16 20:47:32 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 3.3090ms
+2026-08-16 20:52:48 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-16 20:52:48 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-16 20:52:48 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-16 20:52:48 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 20:52:49 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"

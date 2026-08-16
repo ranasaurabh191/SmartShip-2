@@ -30,6 +30,8 @@ try
     var builder = WebApplication.CreateBuilder(args);
 
     builder.Services.AddScoped<IValidator<SignupRequest>, SignupRequestValidator>();
+    builder.Services.AddScoped<IValidator<LoginRequest>, LoginRequestValidator>();
+    builder.Services.AddScoped<IValidator<UpdateMyProfileRequest>, UpdateRequestValidator>();
 
 
     builder.Host.UseSerilog((ctx, lc) => lc
@@ -56,6 +58,8 @@ try
     builder.Services.AddFluentValidationClientsideAdapters();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddValidatorsFromAssemblyContaining<SignupRequestValidator>();
+    builder.Services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
+    builder.Services.AddValidatorsFromAssemblyContaining<UpdateRequestValidator>();
 
     builder.Services.AddSwaggerGen(options =>
     {

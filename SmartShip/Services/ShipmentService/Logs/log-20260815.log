@@ -38,3 +38,346 @@ Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
 2026-08-15 12:33:52 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
 2026-08-15 12:33:52 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
 2026-08-15 12:35:46 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 26.8314ms
+2026-08-15 20:03:10 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 20:03:10 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-15 20:03:10 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-15 20:03:10 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-15 20:03:10 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 20:45:10 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 20:45:10 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-15 20:45:10 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-15 20:45:10 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-15 20:45:10 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 20:56:56 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 21.7848ms
+2026-08-15 20:57:47 [ERR] [ShipmentService] HTTP GET /api/shipments/1 → 500 in 39876.7929ms
+System.Collections.Generic.KeyNotFoundException: Shipment 1 not found.
+   at SmartShip.Shipment.Core.Services.ShipmentService.GetByIdAsync(Int32 id) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 125
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.GetById(Int32 id) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 20:57:47 [WRN] [ShipmentService] Handled application exception for GET /api/shipments/1: Shipment 1 not found.
+2026-08-15 20:57:53 [ERR] [ShipmentService] HTTP GET /api/shipments/1 → 500 in 150.6303ms
+System.Collections.Generic.KeyNotFoundException: Shipment 1 not found.
+   at SmartShip.Shipment.Core.Services.ShipmentService.GetByIdAsync(Int32 id) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 125
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.GetById(Int32 id) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 20:57:53 [WRN] [ShipmentService] Handled application exception for GET /api/shipments/1: Shipment 1 not found.
+2026-08-15 20:57:57 [ERR] [ShipmentService] HTTP GET /api/shipments/2 → 500 in 73.8376ms
+System.Collections.Generic.KeyNotFoundException: Shipment 2 not found.
+   at SmartShip.Shipment.Core.Services.ShipmentService.GetByIdAsync(Int32 id) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 125
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.GetById(Int32 id) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 20:57:57 [WRN] [ShipmentService] Handled application exception for GET /api/shipments/2: Shipment 2 not found.
+2026-08-15 20:59:00 [INF] [ShipmentService] HTTP GET /api/shipments/rate → 403 in 5.0969ms
+2026-08-15 21:01:50 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 6.1559ms
+2026-08-15 21:01:59 [INF] [ShipmentService] Rate calculated: 1680 | Type: "Domestic" | Weight: 21kg 
+2026-08-15 21:01:59 [INF] [ShipmentService] HTTP GET /api/shipments/rate → 200 in 47.6007ms
+2026-08-15 21:02:15 [ERR] [ShipmentService] HTTP PATCH /api/shipments/11/cancel → 500 in 121.6579ms
+System.Collections.Generic.KeyNotFoundException: Shipment not found.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CancelByCustomerAsync(Int32 shipmentId, Int32 customerId, String reason) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 158
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.CancelShipment(Int32 id, CancelShipmentRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 78
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 21:02:15 [WRN] [ShipmentService] Handled application exception for PATCH /api/shipments/11/cancel: Shipment not found.
+2026-08-15 21:03:13 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 3.3603ms
+2026-08-15 21:04:13 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 7.5104ms
+2026-08-15 21:04:19 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 7.4672ms
+2026-08-15 21:05:03 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 2.4662ms
+2026-08-15 21:06:04 [INF] [ShipmentService] HTTP GET /swagger → 301 in 0.7493ms
+2026-08-15 21:06:04 [INF] [ShipmentService] HTTP GET /swagger/index.html → 200 in 75.2508ms
+2026-08-15 21:06:04 [INF] [ShipmentService] HTTP GET /swagger/index.js → 200 in 0.6831ms
+2026-08-15 21:06:04 [INF] [ShipmentService] HTTP GET /swagger/index.css → 200 in 17.5303ms
+2026-08-15 21:06:04 [INF] [ShipmentService] HTTP GET /swagger/swagger-ui.css → 200 in 50.6028ms
+2026-08-15 21:06:04 [INF] [ShipmentService] HTTP GET /swagger/swagger-ui-standalone-preset.js → 200 in 42.2601ms
+2026-08-15 21:06:04 [INF] [ShipmentService] HTTP GET /swagger/swagger-ui-bundle.js → 200 in 67.7717ms
+2026-08-15 21:06:05 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 3.2810ms
+2026-08-15 21:06:05 [INF] [ShipmentService] HTTP GET /swagger/favicon-32x32.png → 200 in 0.3351ms
+2026-08-15 21:07:40 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 3.3453ms
+2026-08-15 21:07:44 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 5.1997ms
+2026-08-15 21:09:19 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 1.9049ms
+2026-08-15 21:09:30 [INF] [ShipmentService] HTTP PUT /api/admin/shipments/status/1 → 403 in 0.7306ms
+2026-08-15 21:42:17 [INF] [ShipmentService] HTTP POST /api/shipments/create → 400 in 126.9039ms
+2026-08-15 21:45:22 [INF] [ShipmentService] HTTP POST /api/shipments/create → 400 in 12.9571ms
+2026-08-15 21:45:47 [INF] [ShipmentService] HTTP POST /api/shipments/create → 400 in 3.8638ms
+2026-08-15 21:45:58 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-15 21:45:58 [ERR] [ShipmentService] Failed to validate customer 1
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartShip.Shipment.Application.Services.ConsumerHelper.ValidateCustomerExistsAsync(IHttpClientFactory factory, ILogger logger, Int32 customerId, IConfiguration config) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ConsumerHelper.cs:line 18
+2026-08-15 21:45:58 [WRN] [ShipmentService] Shipment creation rejected — Customer 1 not found or inactive.
+2026-08-15 21:45:58 [ERR] [ShipmentService] Failed to create shipment for Customer 1
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 60
+2026-08-15 21:45:58 [ERR] [ShipmentService] HTTP POST /api/shipments/create → 500 in 98.1132ms
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 60
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.Create(CreateShipmentRequest request)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 21:45:58 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/create: Customer 1 does not exist or is inactive.
+2026-08-15 22:13:47 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:13:47 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-15 22:13:47 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-15 22:13:47 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-15 22:13:48 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:15:10 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 21.6063ms
+2026-08-15 22:15:21 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-15 22:15:21 [ERR] [ShipmentService] Failed to validate customer 1
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartShip.Shipment.Application.Services.ConsumerHelper.ValidateCustomerExistsAsync(IHttpClientFactory factory, ILogger logger, Int32 customerId, IConfiguration config) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ConsumerHelper.cs:line 18
+2026-08-15 22:15:21 [WRN] [ShipmentService] Shipment creation rejected — Customer 1 not found or inactive.
+2026-08-15 22:15:21 [ERR] [ShipmentService] Failed to create shipment for Customer 1
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 60
+2026-08-15 22:15:21 [ERR] [ShipmentService] HTTP POST /api/shipments/create → 500 in 486.5941ms
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 60
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.Create(CreateShipmentRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 22:15:21 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/create: Customer 1 does not exist or is inactive.
+2026-08-15 22:16:57 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 11.0032ms
+2026-08-15 22:17:21 [INF] [ShipmentService] HTTP POST /api/shipments/create → 400 in 78.5584ms
+2026-08-15 22:17:31 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-15 22:17:31 [ERR] [ShipmentService] Failed to validate customer 1
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartShip.Shipment.Application.Services.ConsumerHelper.ValidateCustomerExistsAsync(IHttpClientFactory factory, ILogger logger, Int32 customerId, IConfiguration config)
+2026-08-15 22:17:31 [WRN] [ShipmentService] Shipment creation rejected — Customer 1 not found or inactive.
+2026-08-15 22:17:31 [ERR] [ShipmentService] Failed to create shipment for Customer 1
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId)
+2026-08-15 22:17:31 [ERR] [ShipmentService] HTTP POST /api/shipments/create → 500 in 106.1742ms
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId)
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.Create(CreateShipmentRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 22:17:31 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/create: Customer 1 does not exist or is inactive.
+2026-08-15 22:25:02 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 10.7970ms
+2026-08-15 22:25:26 [INF] [ShipmentService] HTTP POST /api/shipments/create → 400 in 21.4350ms
+2026-08-15 22:25:33 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-15 22:25:33 [ERR] [ShipmentService] Failed to validate customer 1
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartShip.Shipment.Application.Services.ConsumerHelper.ValidateCustomerExistsAsync(IHttpClientFactory factory, ILogger logger, Int32 customerId, IConfiguration config)
+2026-08-15 22:25:33 [WRN] [ShipmentService] Shipment creation rejected — Customer 1 not found or inactive.
+2026-08-15 22:25:33 [ERR] [ShipmentService] Failed to create shipment for Customer 1
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId)
+2026-08-15 22:25:33 [ERR] [ShipmentService] HTTP POST /api/shipments/create → 500 in 89.0924ms
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId)
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.Create(CreateShipmentRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 22:25:33 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/create: Customer 1 does not exist or is inactive.
+2026-08-15 22:28:18 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 5.6100ms
+2026-08-15 22:28:38 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:28:38 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-15 22:28:38 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-15 22:28:38 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-15 22:28:38 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:40:13 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-15 22:40:13 [INF] [ShipmentService] Calling IdentityService: nullapi/auth/internal/users/1/exists
+2026-08-15 22:40:13 [ERR] [ShipmentService] Failed to validate customer 1
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartShip.Shipment.Application.Services.ConsumerHelper.ValidateCustomerExistsAsync(IHttpClientFactory factory, ILogger logger, Int32 customerId, IConfiguration config) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ConsumerHelper.cs:line 33
+2026-08-15 22:40:13 [WRN] [ShipmentService] Shipment creation rejected — Customer 1 not found or inactive.
+2026-08-15 22:40:13 [ERR] [ShipmentService] Failed to create shipment for Customer 1
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 60
+2026-08-15 22:40:13 [ERR] [ShipmentService] HTTP POST /api/shipments/create → 500 in 643.3545ms
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 60
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.Create(CreateShipmentRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 22:40:13 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/create: Customer 1 does not exist or is inactive.
+2026-08-15 22:41:56 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 44.1945ms
+2026-08-15 22:42:11 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-15 22:42:11 [INF] [ShipmentService] Calling IdentityService: nullapi/auth/internal/users/1/exists
+2026-08-15 22:42:11 [ERR] [ShipmentService] Failed to validate customer 1
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartShip.Shipment.Application.Services.ConsumerHelper.ValidateCustomerExistsAsync(IHttpClientFactory factory, ILogger logger, Int32 customerId, IConfiguration config) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ConsumerHelper.cs:line 33
+2026-08-15 22:42:11 [WRN] [ShipmentService] Shipment creation rejected — Customer 1 not found or inactive.
+2026-08-15 22:42:11 [ERR] [ShipmentService] Failed to create shipment for Customer 1
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 60
+2026-08-15 22:42:11 [ERR] [ShipmentService] HTTP POST /api/shipments/create → 500 in 169.1553ms
+System.Collections.Generic.KeyNotFoundException: Customer 1 does not exist or is inactive.
+   at SmartShip.Shipment.Core.Services.ShipmentService.CreateAsync(CreateShipmentRequest req, Int32 customerId) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 60
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.Create(CreateShipmentRequest request)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 22:42:11 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/create: Customer 1 does not exist or is inactive.
+2026-08-15 22:44:12 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:44:12 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-15 22:44:12 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-15 22:44:12 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-15 22:44:12 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:44:41 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:44:41 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-15 22:44:41 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-15 22:44:41 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-15 22:44:42 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:56:54 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:56:54 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-15 22:56:54 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-15 22:56:54 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-15 22:56:55 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:56:58 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 25.1330ms
+2026-08-15 22:57:13 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-15 22:57:13 [INF] [ShipmentService] Calling IdentityService: "http://localhost:5002/"api/auth/internal/users/1/exists
+2026-08-15 22:57:13 [INF] [ShipmentService] IdentityService response: Status=200, Body={"exists":true}
+2026-08-15 22:57:13 [INF] [ShipmentService] Customer 1 validated. Proceeding with shipment creation.
+2026-08-15 22:57:13 [INF] [ShipmentService] Rate calculated: 1680 | Type: "Domestic" | Weight: 21kg 
+2026-08-15 22:57:13 [INF] [ShipmentService] Calculated shipping rate: 1680 for Type: "Domestic" 
+2026-08-15 22:57:14 [INF] [ShipmentService] Shipment created: SHP-20260815225714-1031 | Rate: 1680 | Customer: 1
+2026-08-15 22:57:14 [INF] [ShipmentService] Shipment created Event Published.
+2026-08-15 22:57:14 [INF] [ShipmentService] HTTP POST /api/shipments/create → 201 in 1746.5704ms
+2026-08-15 23:09:28 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 23:09:28 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-15 23:09:28 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-15 23:09:28 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-15 23:09:28 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 23:09:30 [INF] [ShipmentService] HTTP GET /api/shipments/1 → 200 in 1094.7743ms
+2026-08-15 23:09:32 [INF] [ShipmentService] PaymentCreatedEvent received | ShipmentId: 1 | Method: Online
+2026-08-15 23:09:32 [INF] [ShipmentService] Shipment 1 payment method updated to "Online".

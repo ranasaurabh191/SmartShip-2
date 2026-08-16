@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SmartShip.Shipment.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Tableupdate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -40,8 +40,7 @@ namespace SmartShip.Shipment.Infrastructure.Migrations
                     LengthCm = table.Column<double>(type: "float", nullable: false),
                     WidthCm = table.Column<double>(type: "float", nullable: false),
                     HeightCm = table.Column<double>(type: "float", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DeclaredValue = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,10 +57,8 @@ namespace SmartShip.Shipment.Infrastructure.Migrations
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     ShipmentType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    PaymentMethod = table.Column<int>(type: "int", nullable: false),
                     ShippingRate = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     IsFragile = table.Column<bool>(type: "bit", nullable: false),
-                    DistanceKm = table.Column<double>(type: "float", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     PickupScheduledAt = table.Column<DateTime>(type: "datetime2", nullable: true),

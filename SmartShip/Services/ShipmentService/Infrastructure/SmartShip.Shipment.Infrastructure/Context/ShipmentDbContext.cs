@@ -24,11 +24,7 @@ public class ShipmentDbContext : DbContext
             e.HasOne(s => s.ReceiverAddress).WithMany().HasForeignKey(s => s.ReceiverAddressId).OnDelete(DeleteBehavior.Restrict);
             e.HasOne(s => s.Package).WithMany().HasForeignKey(s => s.PackageId).OnDelete(DeleteBehavior.Cascade);
         });
-        modelBuilder.Entity<Package>(e =>
-        {
-            e.Property(p => p.DeclaredValue)
-             .HasColumnType("decimal(18,2)");
-        });
+        
   
     }
 }

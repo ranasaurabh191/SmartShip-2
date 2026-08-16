@@ -72,11 +72,7 @@ public class UsersControllerTests
     {
         var userId = 1;
 
-        var request = new UpdateUserRequest(
-            "Jane Doe",
-            "9123456789",
-            true,
-            "CUSTOMER");
+        var request = new UpdateUserRequest(true);
 
         _userServiceMock
             .Setup(x => x.UpdateUserAsync(userId, request))
@@ -98,11 +94,7 @@ public class UsersControllerTests
     {
         var userId = 999;
 
-        var request = new UpdateUserRequest(
-            "Jane Doe",
-            "9123456789",
-            true,
-            "CUSTOMER");
+        var request = new UpdateUserRequest(true);
 
         _userServiceMock
             .Setup(x => x.UpdateUserAsync(userId, request))

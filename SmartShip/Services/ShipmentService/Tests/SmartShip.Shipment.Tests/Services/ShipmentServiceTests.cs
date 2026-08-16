@@ -85,8 +85,7 @@ public class ShipmentServiceTests
             LengthCm = 20,
             WidthCm = 15,
             HeightCm = 10,
-            Description = "Electronics",
-            DeclaredValue = 5000
+            Description = "Electronics"
         };
     }
 
@@ -136,8 +135,7 @@ public class ShipmentServiceTests
                 20,
                 15,
                 10,
-                "Electronics",
-                5000),
+                "Electronics"),
             shipmentType,
             null,
             "Test shipment",

@@ -12,8 +12,8 @@ using SmartShip.Shipment.Infrastructure.Context;
 namespace SmartShip.Shipment.Infrastructure.Migrations
 {
     [DbContext(typeof(ShipmentDbContext))]
-    [Migration("20260809164059_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260816140407_tableupdate")]
+    partial class Tableupdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,9 +74,6 @@ namespace SmartShip.Shipment.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("DeclaredValue")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -115,9 +112,6 @@ namespace SmartShip.Shipment.Infrastructure.Migrations
                     b.Property<DateTime?>("DeliveredAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("DistanceKm")
-                        .HasColumnType("float");
-
                     b.Property<bool>("IsFragile")
                         .HasColumnType("bit");
 
@@ -125,9 +119,6 @@ namespace SmartShip.Shipment.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PackageId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PaymentMethod")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("PickupScheduledAt")

@@ -26,7 +26,7 @@ public class UserService : IUserService
         _publisher = publisher;
     }
 
-
+    
     public async Task<UserDto> GetUserByIdAsync(int id)
     {
         _logger.LogInformation("Fetching user with ID: {UserId}", id);
@@ -55,8 +55,12 @@ public class UserService : IUserService
             _logger.LogWarning("Update failed - user not found: {UserId}", id);
             throw new KeyNotFoundException($"User {id} not found.");
         }
+        if (user.Role == "ADMIN")
+        {
+            _logger.LogWarning("Update failed, Tried to Update ADMIN - ADMIN cannot be Updated");
+            throw new InvalidOperationException($"ADMIN cannot be Updated.");
+        }
 
-        
         user.IsActive = request.IsActive;
 
         _userRepository.Update(user);
@@ -75,7 +79,11 @@ public class UserService : IUserService
             _logger.LogWarning("Delete failed - user not found: {UserId}", userId);
             throw new KeyNotFoundException($"User {userId} not found.");
         }
-
+        if (user.Role == "ADMIN")
+        {
+            _logger.LogWarning("Delete failed, Tried to Delete ADMIN - ADMIN cannot be deleted");
+            throw new InvalidOperationException($"ADMIN cannot be deleted.");
+        }
 
         _userRepository.Delete(user);
         await _unitOfWork.SaveChangesAsync();
@@ -92,5 +100,5 @@ public class UserService : IUserService
 
         _logger.LogInformation("Delete Event published successfully for User Id : {UserId}", userId);
     }
-
+    
 }

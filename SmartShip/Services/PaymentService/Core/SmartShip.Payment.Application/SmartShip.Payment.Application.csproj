@@ -11,13 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SmartShip.Shared\SmartShip.Shared.csproj" />
     <ProjectReference Include="..\SmartShip.Payment.Domain\SmartShip.Payment.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="SmartShip.Shared">
-      <HintPath>..\..\..\..\..\..\SmartShip Logistics Management System\Shared\Smartship.Shared\obj\Debug\net10.0\ref\SmartShip.Shared.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+  
 
 </Project>

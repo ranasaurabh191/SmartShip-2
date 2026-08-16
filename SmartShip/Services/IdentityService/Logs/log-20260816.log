@@ -1,0 +1,23 @@
+2026-08-16 19:13:47 [INF] [IdentityService] Bus started: "rabbitmq://localhost/"
+2026-08-16 19:56:51 [INF] [IdentityService] Bus started: "rabbitmq://localhost/"
+2026-08-16 19:57:00 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 16.9103ms
+2026-08-16 19:57:17 [INF] [IdentityService] Login attempt: ranasaurabh191@gmail.com
+2026-08-16 19:57:18 [INF] [IdentityService] Login successful: ranasaurabh191@gmail.com | Role: CUSTOMER
+2026-08-16 19:57:18 [INF] [IdentityService] Generating JWT token for user: ranasaurabh191@gmail.com, Role: CUSTOMER
+2026-08-16 19:57:18 [INF] [IdentityService] Token generated successfully for user: ranasaurabh191@gmail.com, expires in 60 minutes
+2026-08-16 19:57:18 [INF] [IdentityService] HTTP POST /api/auth/login → 200 in 1108.7027ms
+2026-08-16 19:58:23 [INF] [IdentityService] HTTP GET /api/auth/internal/users/1/exists → 200 in 144.3022ms
+2026-08-16 20:04:32 [INF] [IdentityService] HTTP GET /api/auth/internal/users/1/exists → 200 in 36.7738ms
+2026-08-16 20:13:25 [INF] [IdentityService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:16:41 [INF] [IdentityService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:17:40 [INF] [IdentityService] HTTP GET /api/auth/internal/users/1/exists → 200 in 570.2983ms
+2026-08-16 20:20:18 [INF] [IdentityService] HTTP GET /api/auth/internal/users/1/exists → 200 in 70.7763ms
+2026-08-16 20:22:57 [INF] [IdentityService] HTTP GET /api/auth/internal/users/1/exists → 200 in 16.6669ms
+2026-08-16 20:27:18 [INF] [IdentityService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:46:43 [INF] [IdentityService] HTTP GET /swagger/v1/swagger.json → 200 in 18.3524ms
+2026-08-16 20:47:17 [INF] [IdentityService] Login attempt: admin@smartship.com
+2026-08-16 20:47:18 [INF] [IdentityService] Login successful: admin@smartship.com | Role: ADMIN
+2026-08-16 20:47:18 [INF] [IdentityService] Generating JWT token for user: admin@smartship.com, Role: ADMIN
+2026-08-16 20:47:18 [INF] [IdentityService] Token generated successfully for user: admin@smartship.com, expires in 60 minutes
+2026-08-16 20:47:18 [INF] [IdentityService] HTTP POST /api/auth/login → 200 in 1169.8291ms
+2026-08-16 20:52:48 [INF] [IdentityService] Bus started: "rabbitmq://localhost/"

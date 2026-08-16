@@ -13,13 +13,19 @@ public class PaymentController : ControllerBase
 {
     private readonly IPaymentService _paymentService;
     private readonly ILogger<PaymentController> _logger;
+    private readonly IRazorpayClient _razorpayClient;
 
-    public PaymentController(IPaymentService paymentService, ILogger<PaymentController> logger)
+    public PaymentController(
+    IPaymentService paymentService,
+    IRazorpayClient razorpayClient,
+    ILogger<PaymentController> logger)
     {
         _paymentService = paymentService;
+        _razorpayClient = razorpayClient;
         _logger = logger;
     }
 
+    [Authorize(Roles = "CUSTOMER")]
     [HttpPost("create-order")]
     public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequest request)
     {
@@ -28,6 +34,7 @@ public class PaymentController : ControllerBase
         return Ok(result);
     }
 
+    [Authorize(Roles = "CUSTOMER")]
     [HttpPost("verify")]
     public async Task<IActionResult> Verify([FromBody] VerifyPaymentRequest request)
     {
@@ -36,6 +43,7 @@ public class PaymentController : ControllerBase
         return Ok(result);
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpGet("payment-status")]
     public async Task<IActionResult> PaymentStatus(
     [FromQuery] string? razorpayOrderId,
@@ -78,5 +86,24 @@ public class PaymentController : ControllerBase
     {
         var result = await _paymentService.GetAllPaymentsAsync();
         return Ok(result);
+    }
+
+    [Authorize(Roles = "CUSTOMER")]
+    [HttpPost("demo-payment/{orderId}")]
+    public IActionResult DemoPayment(string orderId)
+    {
+        var paymentId = _razorpayClient.GenerateDemoPaymentId();
+
+        var signature = _razorpayClient.GenerateDemoSignature(
+            orderId,
+            paymentId);
+
+        return Ok(new DemoPaymentResponse
+        {
+            RazorpayOrderId = orderId,
+            RazorpayPaymentId = paymentId,
+            Signature = signature,
+            Message = "Demo payment generated successfully."
+        });
     }
 }

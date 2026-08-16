@@ -14,14 +14,17 @@ public class PaymentControllerTests
     private readonly Mock<IPaymentService> _paymentService;
     private readonly Mock<ILogger<PaymentController>> _logger;
     private readonly PaymentController _controller;
+    private readonly Mock<IRazorpayClient> _razorpayClientMock;
 
     public PaymentControllerTests()
     {
         _paymentService = new Mock<IPaymentService>();
         _logger = new Mock<ILogger<PaymentController>>();
+        _razorpayClientMock = new Mock<IRazorpayClient>();
 
         _controller = new PaymentController(
             _paymentService.Object,
+            _razorpayClientMock.Object,
             _logger.Object);
     }
 

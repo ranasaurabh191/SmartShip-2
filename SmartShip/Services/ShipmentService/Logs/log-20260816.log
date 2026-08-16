@@ -1,0 +1,329 @@
+2026-08-16 19:13:47 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 19:13:47 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-16 19:13:47 [INF] [ShipmentService] Configured endpoint shipment-payment-created, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentCreatedConsumer
+2026-08-16 19:13:47 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-16 19:13:48 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 19:20:01 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 20.0979ms
+2026-08-16 19:23:06 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 9.4108ms
+2026-08-16 19:34:06 [FTL] [ShipmentService]  !! ShipmentService crashed on startup.
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Program.cs:line 159
+2026-08-16 19:34:37 [FTL] [ShipmentService]  !! ShipmentService crashed on startup.
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Program.cs:line 159
+2026-08-16 19:56:49 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 19:56:49 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-16 19:56:49 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-16 19:56:50 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 19:57:39 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 27.8134ms
+2026-08-16 19:58:22 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-16 19:58:22 [INF] [ShipmentService] Calling IdentityService: "http://localhost:5002/"api/auth/internal/users/1/exists
+2026-08-16 19:58:23 [INF] [ShipmentService] IdentityService response: Status=200, Body={"exists":true}
+2026-08-16 19:58:23 [INF] [ShipmentService] Customer 1 validated. Proceeding with shipment creation.
+2026-08-16 19:58:23 [INF] [ShipmentService] Rate calculated: 1680 | Type: "Domestic" | Weight: 21kg 
+2026-08-16 19:58:23 [INF] [ShipmentService] Calculated shipping rate: 1680 for Type: "Domestic" 
+2026-08-16 19:58:23 [INF] [ShipmentService] Shipment created: SHP-20260816195823-4437 | Rate: 1680 | Customer: 1
+2026-08-16 19:58:23 [INF] [ShipmentService] Shipment created Event Published.
+2026-08-16 19:58:23 [INF] [ShipmentService] HTTP POST /api/shipments/create → 201 in 1200.1270ms
+2026-08-16 19:59:25 [INF] [ShipmentService] HTTP GET /api/shipments/by-tracking/SHP-20260816195823-4437 → 200 in 601.2702ms
+2026-08-16 20:03:14 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 7.7264ms
+2026-08-16 20:03:22 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 8.5707ms
+2026-08-16 20:03:46 [ERR] [ShipmentService] HTTP POST /api/shipments/create → 500 in 9234.1000ms
+System.ArgumentException: The method 'SmartShip.Shipment.Core.DTOs.CreateShipmentRequest.get_PickupScheduledAt' is not a property accessor (Parameter 'propertyAccessor')
+   at System.Linq.Expressions.Expression.GetProperty(MethodInfo mi, String paramName, Int32 index)
+   at System.Linq.Expressions.Expression.Property(Expression expression, MethodInfo propertyAccessor)
+   at SmartShip.Shipment.Core.Validators.CreateShipmentRequestValidator..ctor()
+   at InvokeStub_CreateShipmentRequestValidator..ctor(Object, Object, IntPtr*)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at FluentValidation.ServiceProviderValidatorFactory.CreateInstance(Type validatorType) in /_/src/FluentValidation.DependencyInjectionExtensions/ServiceProviderValidatorFactory.cs:line 33
+   at FluentValidation.ValidatorFactoryBase.GetValidator(Type type) in /_/src/FluentValidation/ValidatorFactoryBase.cs:line 43
+   at FluentValidation.AspNetCore.FluentValidationModelValidator.Validate(ModelValidationContext mvContext) in /_/src/FluentValidation.AspNetCore/FluentValidationModelValidatorProvider.cs:line 108
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.ValidateNode()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>n__1(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>c__DisplayClass2_0.<Validate>g__BaseValidate|0() in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 45
+   at FluentValidation.AspNetCore.FluentValidationVisitor.ValidateInternal(ModelMetadata metadata, String key, Object model, Func`1 continuation) in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 63
+   at FluentValidation.AspNetCore.FluentValidationVisitor.Validate(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container) in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 47
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:03:46 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/create: The method 'SmartShip.Shipment.Core.DTOs.CreateShipmentRequest.get_PickupScheduledAt' is not a property accessor (Parameter 'propertyAccessor')
+2026-08-16 20:04:09 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 10.5119ms
+2026-08-16 20:04:15 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 4.4657ms
+2026-08-16 20:04:32 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-16 20:04:32 [INF] [ShipmentService] Calling IdentityService: "http://localhost:5002/"api/auth/internal/users/1/exists
+2026-08-16 20:04:32 [INF] [ShipmentService] IdentityService response: Status=200, Body={"exists":true}
+2026-08-16 20:04:32 [INF] [ShipmentService] Customer 1 validated. Proceeding with shipment creation.
+2026-08-16 20:04:32 [INF] [ShipmentService] Rate calculated: 1680 | Type: "Domestic" | Weight: 21kg 
+2026-08-16 20:04:32 [INF] [ShipmentService] Calculated shipping rate: 1680 for Type: "Domestic" 
+2026-08-16 20:04:32 [INF] [ShipmentService] Shipment created: SHP-20260816200432-8267 | Rate: 1680 | Customer: 1
+2026-08-16 20:04:32 [INF] [ShipmentService] Shipment created Event Published.
+2026-08-16 20:04:32 [INF] [ShipmentService] HTTP POST /api/shipments/create → 201 in 123.8483ms
+2026-08-16 20:05:18 [INF] [ShipmentService] HTTP POST /api/shipments/2/schedule-pickup → 400 in 26.9941ms
+2026-08-16 20:05:25 [INF] [ShipmentService] Scheduling pickup for Shipment 2 | Customer 1
+2026-08-16 20:05:25 [WRN] [ShipmentService] Shipment 2 not found or does not belong to Customer 1
+2026-08-16 20:05:25 [ERR] [ShipmentService] Failed to schedule pickup for Shipment 2
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request)
+2026-08-16 20:05:26 [ERR] [ShipmentService] HTTP POST /api/shipments/2/schedule-pickup → 500 in 132.1060ms
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request)
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.SchedulePickup(Int32 id, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 55
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:05:26 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/2/schedule-pickup: Shipment not found or you are not authorized to schedule pickup for it.
+2026-08-16 20:09:44 [INF] [ShipmentService] Scheduling pickup for Shipment 1 | Customer 1
+2026-08-16 20:09:44 [WRN] [ShipmentService] Shipment 1 not found or does not belong to Customer 1
+2026-08-16 20:09:44 [ERR] [ShipmentService] Failed to schedule pickup for Shipment 1
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request)
+2026-08-16 20:09:44 [ERR] [ShipmentService] HTTP POST /api/shipments/1/schedule-pickup → 500 in 100.0229ms
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request)
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.SchedulePickup(Int32 id, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 55
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:09:44 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/1/schedule-pickup: Shipment not found or you are not authorized to schedule pickup for it.
+2026-08-16 20:09:54 [INF] [ShipmentService] Scheduling pickup for Shipment 2 | Customer 1
+2026-08-16 20:09:54 [WRN] [ShipmentService] Shipment 2 not found or does not belong to Customer 1
+2026-08-16 20:09:54 [ERR] [ShipmentService] Failed to schedule pickup for Shipment 2
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request)
+2026-08-16 20:09:55 [ERR] [ShipmentService] HTTP POST /api/shipments/2/schedule-pickup → 500 in 84.6030ms
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request)
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.SchedulePickup(Int32 id, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 55
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:09:55 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/2/schedule-pickup: Shipment not found or you are not authorized to schedule pickup for it.
+2026-08-16 20:13:26 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 20:13:26 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-16 20:13:26 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-16 20:13:26 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:14:38 [INF] [ShipmentService] SchedulePickup: ShipmentId=2, CustomerIdClaim=1
+2026-08-16 20:14:38 [INF] [ShipmentService] Calling SchedulePickupAsync with ShipmentId=2, CustomerId=1
+2026-08-16 20:14:38 [INF] [ShipmentService] Scheduling pickup for Shipment 2 | Customer 1
+2026-08-16 20:14:39 [WRN] [ShipmentService] Shipment 2 not found or does not belong to Customer 1
+2026-08-16 20:14:39 [ERR] [ShipmentService] Failed to schedule pickup for Shipment 2
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 301
+2026-08-16 20:14:39 [ERR] [ShipmentService] HTTP POST /api/shipments/2/schedule-pickup → 500 in 1227.4385ms
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 301
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.SchedulePickup(Int32 id, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 72
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:14:39 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/2/schedule-pickup: Shipment not found or you are not authorized to schedule pickup for it.
+2026-08-16 20:16:41 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 20:16:41 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-16 20:16:41 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-16 20:16:42 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:16:50 [INF] [ShipmentService] SchedulePickup: ShipmentId=2, CustomerIdClaim=1
+2026-08-16 20:16:50 [INF] [ShipmentService] Calling SchedulePickupAsync with ShipmentId=2, CustomerId=1
+2026-08-16 20:16:50 [INF] [ShipmentService] Scheduling pickup for Shipment 2 | Customer 1
+2026-08-16 20:16:50 [WRN] [ShipmentService] Shipment 2 not found or does not belong to Customer 1
+2026-08-16 20:16:50 [ERR] [ShipmentService] Failed to schedule pickup for Shipment 2
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 301
+2026-08-16 20:16:50 [ERR] [ShipmentService] HTTP POST /api/shipments/2/schedule-pickup → 500 in 765.8458ms
+System.Collections.Generic.KeyNotFoundException: Shipment not found or you are not authorized to schedule pickup for it.
+   at SmartShip.Shipment.Core.Services.ShipmentService.SchedulePickupAsync(Int32 id, Int32 customerId, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 301
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.SchedulePickup(Int32 id, SchedulePickupRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 72
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:16:50 [WRN] [ShipmentService] Handled application exception for POST /api/shipments/2/schedule-pickup: Shipment not found or you are not authorized to schedule pickup for it.
+2026-08-16 20:17:40 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-16 20:17:40 [INF] [ShipmentService] Calling IdentityService: "http://localhost:5002/"api/auth/internal/users/1/exists
+2026-08-16 20:17:40 [INF] [ShipmentService] IdentityService response: Status=200, Body={"exists":true}
+2026-08-16 20:17:40 [INF] [ShipmentService] Customer 1 validated. Proceeding with shipment creation.
+2026-08-16 20:17:40 [INF] [ShipmentService] Rate calculated: 1680 | Type: "Domestic" | Weight: 21kg 
+2026-08-16 20:17:40 [INF] [ShipmentService] Calculated shipping rate: 1680 for Type: "Domestic" 
+2026-08-16 20:17:41 [INF] [ShipmentService] Shipment created: SHP-20260816201741-9093 | Rate: 1680 | Customer: 1
+2026-08-16 20:17:41 [INF] [ShipmentService] Shipment created Event Published.
+2026-08-16 20:17:41 [INF] [ShipmentService] HTTP POST /api/shipments/create → 201 in 1440.1165ms
+2026-08-16 20:17:50 [INF] [ShipmentService] SchedulePickup: ShipmentId=3, CustomerIdClaim=1
+2026-08-16 20:17:50 [INF] [ShipmentService] Calling SchedulePickupAsync with ShipmentId=3, CustomerId=1
+2026-08-16 20:17:50 [INF] [ShipmentService] Scheduling pickup for Shipment 3 | Customer 1
+2026-08-16 20:17:50 [INF] [ShipmentService] Pickup scheduled for SHP-20260816201741-9093 at "2026-08-17T14:35:08.7300000Z" | Customer 1
+2026-08-16 20:17:50 [INF] [ShipmentService] HTTP POST /api/shipments/3/schedule-pickup → 200 in 177.0314ms
+2026-08-16 20:20:18 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-16 20:20:18 [INF] [ShipmentService] Calling IdentityService: "http://localhost:5002/"api/auth/internal/users/1/exists
+2026-08-16 20:20:18 [INF] [ShipmentService] IdentityService response: Status=200, Body={"exists":true}
+2026-08-16 20:20:18 [INF] [ShipmentService] Customer 1 validated. Proceeding with shipment creation.
+2026-08-16 20:20:18 [INF] [ShipmentService] Rate calculated: 1680 | Type: "Domestic" | Weight: 21kg 
+2026-08-16 20:20:18 [INF] [ShipmentService] Calculated shipping rate: 1680 for Type: "Domestic" 
+2026-08-16 20:20:18 [INF] [ShipmentService] Shipment created: SHP-20260816202018-1667 | Rate: 1680 | Customer: 1
+2026-08-16 20:20:18 [INF] [ShipmentService] Shipment created Event Published.
+2026-08-16 20:20:18 [INF] [ShipmentService] HTTP POST /api/shipments/create → 201 in 129.4745ms
+2026-08-16 20:21:23 [ERR] [ShipmentService] HTTP GET /api/shipments/3 → 500 in 183.1655ms
+System.Collections.Generic.KeyNotFoundException: Shipment 3 not found.
+   at SmartShip.Shipment.Core.Services.ShipmentService.GetByIdAsync(Int32 id) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 124
+   at SmartShip.Shipment.API.Controllers.ShipmentsController.GetById(Int32 id) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\ShipmentsController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:21:23 [WRN] [ShipmentService] Handled application exception for GET /api/shipments/3: Shipment 3 not found.
+2026-08-16 20:21:32 [INF] [ShipmentService] HTTP GET /api/shipments/4 → 200 in 17.3596ms
+2026-08-16 20:21:56 [INF] [ShipmentService] HTTP GET /api/shipments/4 → 200 in 8.7310ms
+2026-08-16 20:21:58 [INF] [ShipmentService] HTTP GET /api/shipments/4 → 200 in 10.8203ms
+2026-08-16 20:22:14 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 9.6630ms
+2026-08-16 20:22:57 [INF] [ShipmentService] Creating shipment for Customer 1 | Type: "Domestic" | Weight: 21kg
+2026-08-16 20:22:57 [INF] [ShipmentService] Calling IdentityService: "http://localhost:5002/"api/auth/internal/users/1/exists
+2026-08-16 20:22:57 [INF] [ShipmentService] IdentityService response: Status=200, Body={"exists":true}
+2026-08-16 20:22:57 [INF] [ShipmentService] Customer 1 validated. Proceeding with shipment creation.
+2026-08-16 20:22:57 [INF] [ShipmentService] Rate calculated: 1680 | Type: "Domestic" | Weight: 21kg 
+2026-08-16 20:22:57 [INF] [ShipmentService] Calculated shipping rate: 1680 for Type: "Domestic" 
+2026-08-16 20:22:57 [INF] [ShipmentService] Shipment created: SHP-20260816202257-6692 | Rate: 1680 | Customer: 1
+2026-08-16 20:22:57 [INF] [ShipmentService] Shipment created Event Published.
+2026-08-16 20:22:57 [INF] [ShipmentService] HTTP POST /api/shipments/create → 201 in 99.0649ms
+2026-08-16 20:24:10 [INF] [ShipmentService] HTTP GET /api/shipments/5 → 200 in 8.8338ms
+2026-08-16 20:27:07 [INF] [ShipmentService] HTTP GET /api/shipments/5 → 200 in 10.5594ms
+2026-08-16 20:27:18 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 20:27:18 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-16 20:27:18 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-16 20:27:19 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:27:27 [INF] [ShipmentService] HTTP GET /api/shipments/5 → 200 in 868.2546ms
+2026-08-16 20:44:59 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 10.3958ms
+2026-08-16 20:45:03 [INF] [ShipmentService] SchedulePickup: ShipmentId=5, CustomerIdClaim=1
+2026-08-16 20:45:03 [INF] [ShipmentService] Calling SchedulePickupAsync with ShipmentId=5, CustomerId=1
+2026-08-16 20:45:03 [INF] [ShipmentService] Scheduling pickup for Shipment 5 | Customer 1
+2026-08-16 20:45:03 [INF] [ShipmentService] Pickup scheduled for SHP-20260816202257-6692 at "2026-08-17T14:35:08.7300000Z" | Customer 1
+2026-08-16 20:45:03 [INF] [ShipmentService] HTTP POST /api/shipments/5/schedule-pickup → 200 in 441.1297ms
+2026-08-16 20:45:38 [INF] [ShipmentService] HTTP PUT /api/admin/shipments/status/5 → 403 in 9.4404ms
+2026-08-16 20:46:20 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 4.7462ms
+2026-08-16 20:47:35 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 3.4382ms
+2026-08-16 20:47:42 [INF] [ShipmentService] HTTP PUT /api/admin/shipments/status/5 → 403 in 1.2412ms
+2026-08-16 20:47:51 [INF] [ShipmentService] Updating status for Shipment 5 -> string
+2026-08-16 20:47:51 [WRN] [ShipmentService] Invalid status value: string
+2026-08-16 20:47:51 [ERR] [ShipmentService] Failed to update status for Shipment 5
+System.ArgumentException: Invalid status: string
+   at SmartShip.Shipment.Core.Services.ShipmentService.UpdateStatusAsync(Int32 id, UpdateStatusRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 202
+2026-08-16 20:47:56 [ERR] [ShipmentService] HTTP PUT /api/admin/shipments/status/5 → 500 in 4984.4696ms
+System.ArgumentException: Invalid status: string
+   at SmartShip.Shipment.Core.Services.ShipmentService.UpdateStatusAsync(Int32 id, UpdateStatusRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Core\SmartShip.Shipment.Application\Services\ShipmentService.cs:line 202
+   at SmartShip.Shipment.API.Controllers.AdminShipmentsController.UpdateStatus(Int32 id, UpdateStatusRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\ShipmentService\Presentation\SmartShip.Shipment.API\Contollers\AdminShipmentsController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-16 20:47:56 [WRN] [ShipmentService] Handled application exception for PUT /api/admin/shipments/status/5: Invalid status: string
+2026-08-16 20:52:49 [INF] [ShipmentService] Configured endpoint shipment-user-deleted, Consumer: SmartShip.Shipment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-16 20:52:49 [INF] [ShipmentService] Configured endpoint shipment-cancel-command, Consumer: SmartShip.Shipment.Infrastructure.Consumers.CancelShipmentConsumer
+2026-08-16 20:52:49 [INF] [ShipmentService] Configured endpoint shipment-payment-failed-status, Consumer: SmartShip.Shipment.Infrastructure.Consumers.PaymentFailedShipmentConsumer
+2026-08-16 20:52:50 [INF] [ShipmentService] Bus started: "rabbitmq://localhost/"
+2026-08-16 20:52:57 [INF] [ShipmentService] HTTP GET /swagger/v1/swagger.json → 200 in 21.4594ms
+2026-08-16 20:53:19 [INF] [ShipmentService] Updating status for Shipment 5 -> pickedup
+2026-08-16 20:53:20 [INF] [ShipmentService] Shipment SHP-20260816202257-6692 status: "Booked" → "PickedUp"
+2026-08-16 20:53:20 [INF] [ShipmentService] HTTP PUT /api/admin/shipments/status/5 → 200 in 1177.3749ms

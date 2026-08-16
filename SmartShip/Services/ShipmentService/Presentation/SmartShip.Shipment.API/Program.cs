@@ -35,7 +35,11 @@ try
         .Enrich.WithProperty("Application", "ShipmentService")
         .Enrich.WithProperty("Environment", ctx.HostingEnvironment.EnvironmentName));
 
-    builder.Services.AddHttpClient();
+    builder.Services.AddHttpClient("IdentityService", client =>
+    {
+        client.BaseAddress = new Uri("http://localhost:5002/");
+    });
+    
     builder.Services.AddControllers()
         .AddJsonOptions(opts =>
         {
@@ -54,7 +58,7 @@ try
                 return new BadRequestObjectResult(new { message = "Validation failed.", errors });
             };
         });
-
+    
     builder.Services.AddFluentValidationAutoValidation();
     builder.Services.AddFluentValidationClientsideAdapters();
     builder.Services.AddEndpointsApiExplorer();
@@ -104,7 +108,6 @@ try
     {
         x.AddConsumer<UserDeletedConsumer>();
         x.AddConsumer<CancelShipmentConsumer>();
-        x.AddConsumer<PaymentCreatedConsumer>();
         x.AddConsumer<PaymentFailedShipmentConsumer>();
 
         if (isTesting)
@@ -125,8 +128,6 @@ try
                     e.ConfigureConsumer<UserDeletedConsumer>(ctx));              
                 cfg.ReceiveEndpoint("shipment-cancel-command", e =>
                     e.ConfigureConsumer<CancelShipmentConsumer>(ctx));
-                cfg.ReceiveEndpoint("shipment-payment-created", e =>
-                    e.ConfigureConsumer<PaymentCreatedConsumer>(ctx));
                 cfg.ReceiveEndpoint("shipment-payment-failed-status", e =>
                     e.ConfigureConsumer<PaymentFailedShipmentConsumer>(ctx));
             });

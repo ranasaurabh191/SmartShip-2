@@ -45,3 +45,25 @@ public class LoginRequestValidator : AbstractValidator<LoginRequest>
             .NotEmpty().WithMessage("Password is required.");
     }
 }
+
+public class UpdateRequestValidator : AbstractValidator<UpdateMyProfileRequest>
+{
+    public UpdateRequestValidator()
+    {
+        RuleFor(x => x.Name)
+            .NotEmpty().WithMessage("Name is required.")
+            .MinimumLength(2).WithMessage("Name must be at least 2 characters.")
+            .MaximumLength(100).WithMessage("Name cannot exceed 100 characters.")
+            .Matches(@"^[a-zA-Z\s]+$").WithMessage("Name can only contain letters and spaces.");
+
+        RuleFor(x => x.Email)
+            .NotEmpty().WithMessage("Email is required.")
+            .EmailAddress().WithMessage("Invalid email format.")
+            .MaximumLength(150).WithMessage("Email cannot exceed 150 characters.");
+
+        RuleFor(x => x.Phone)
+            .NotEmpty().WithMessage("Phone is required.")
+            .Matches(@"^\d{10}$").WithMessage("Phone must be exactly 10 digits.")
+            .Must(p => !p.StartsWith("0")).WithMessage("Phone number cannot start with 0.");
+    }
+}

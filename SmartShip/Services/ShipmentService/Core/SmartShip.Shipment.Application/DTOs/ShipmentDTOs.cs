@@ -16,8 +16,7 @@ public record PackageDto(
     double LengthCm, 
     double WidthCm, 
     double HeightCm, 
-    string Description, 
-    decimal DeclaredValue
+    string Description
     );
 
 public record CreateShipmentRequest(
@@ -25,7 +24,6 @@ public record CreateShipmentRequest(
     AddressDto ReceiverAddress,
     PackageDto Package,
     ShipmentType ShipmentType,
-    DateTime? PickupScheduledAt,
     string? Notes,
     bool IsFragile = false
 );

@@ -83,7 +83,6 @@ public class ShipmentService : IShipmentService
                 SenderAddressId = sender.Id,
                 ReceiverAddressId = receiver.Id,
                 PackageId = package.Id,
-                PickupScheduledAt = req.PickupScheduledAt,
                 Notes = req.Notes,
                 IsFragile = req.IsFragile,
             };
@@ -375,8 +374,7 @@ public class ShipmentService : IShipmentService
             LengthCm = dto.LengthCm,
             WidthCm = dto.WidthCm,
             HeightCm = dto.HeightCm,
-            Description = dto.Description,
-            DeclaredValue = dto.DeclaredValue
+            Description = dto.Description
         };
     }
 
@@ -411,7 +409,7 @@ public class ShipmentService : IShipmentService
             ),
             Package: new PackageDto(
                 package.WeightKg, package.LengthCm, package.WidthCm, package.HeightCm,
-                package.Description, package.DeclaredValue
+                package.Description
             ),
             Notes: shipment.Notes,
             IsFragile: shipment.IsFragile

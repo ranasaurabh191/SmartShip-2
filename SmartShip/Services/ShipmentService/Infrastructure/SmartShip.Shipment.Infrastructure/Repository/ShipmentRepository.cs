@@ -53,10 +53,36 @@ public class ShipmentRepository : IShipmentRepository
             .FirstOrDefaultAsync(s => s.Id == id);
     }
 
-    public async Task<Shipments?> GetByIdAndCustomerAsync(int shipmentId, int customerId)
+    public async Task<Shipments?> GetByIdAndCustomerAsync(
+    int shipmentId,
+    int customerId)
     {
-        return await _context.Shipments
-            .FirstOrDefaultAsync(s => s.Id == shipmentId && s.CustomerId == customerId);
+        var database = _context.Database.GetDbConnection().Database;
+        var server = _context.Database.GetDbConnection().DataSource;
+
+        Console.WriteLine($"DATABASE: {database}");
+        Console.WriteLine($"SERVER: {server}");
+        Console.WriteLine($"ShipmentId: {shipmentId}");
+        Console.WriteLine($"CustomerId: {customerId}");
+
+        var shipment = await _context.Shipments
+            .FirstOrDefaultAsync(s => s.Id == shipmentId);
+
+        if (shipment == null)
+        {
+            Console.WriteLine("SHIPMENT NOT FOUND BY ID");
+            return null;
+        }
+
+        Console.WriteLine($"DB Shipment CustomerId: {shipment.CustomerId}");
+
+        if (shipment.CustomerId != customerId)
+        {
+            Console.WriteLine("CUSTOMER ID DOES NOT MATCH");
+            return null;
+        }
+
+        return shipment;
     }
 
     public async Task AddAsync(Shipments shipment)

@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using SmartShip.Identity.API.Controllers;
 using SmartShip.Identity.Application.DTOs;
 using SmartShip.Identity.Application.Interfaces.Services;
+using System.Security.Claims;
 using Xunit;
 
 namespace SmartShip.Identity.Tests.Controllers;
@@ -117,30 +119,6 @@ public class AuthControllerTests
     }
 
     [Fact]
-    public async Task FixAdmin_ShouldReturnOk()
-    {
-        var expectedResponse = new
-        {
-            message = "Admin fixed successfully."
-        };
-
-        _authServiceMock
-            .Setup(x => x.FixAdminAsync())
-            .ReturnsAsync(expectedResponse);
-
-        var result = await _controller.FixAdmin();
-
-        var okResult = Assert.IsType<OkObjectResult>(result);
-
-        Assert.Equal(200, okResult.StatusCode);
-        Assert.Same(expectedResponse, okResult.Value);
-
-        _authServiceMock.Verify(
-            x => x.FixAdminAsync(),
-            Times.Once);
-    }
-
-    [Fact]
     public async Task Login_ServiceThrowsException_ShouldPropagateException()
     {
         var request = new LoginRequest
@@ -161,5 +139,120 @@ public class AuthControllerTests
         Assert.Equal(
             "User not found with this email. Please signup.",
             exception.Message);
+    }
+    [Fact]
+    public async Task UpdateProfile_ValidUser_ShouldReturnOk()
+    {
+        var request = new UpdateMyProfileRequest(
+            "Updated User",
+            "updated@example.com",
+            "9876543210");
+        var userDto = new UserDto(
+            1,
+            "Updated User",
+            "updated@example.com",
+            "9876543210",
+            "CUSTOMER",
+            true,
+            DateTime.Now);
+
+        _authServiceMock
+            .Setup(x => x.UpdateMyProfileAsync(1, request)).ReturnsAsync(userDto);
+
+        var claims = new[]{new Claim(ClaimTypes.NameIdentifier, "1")};
+
+        var identity = new ClaimsIdentity(claims, "TestAuthentication");
+
+        var principal = new ClaimsPrincipal(identity);
+
+        _controller.ControllerContext = new ControllerContext
+        {
+            HttpContext = new DefaultHttpContext
+            {
+                User = principal
+            }
+        };
+
+        var result = await _controller.UpdateProfile(request);
+
+        var okResult = Assert.IsType<OkObjectResult>(result);
+
+        Assert.NotNull(okResult.Value);
+
+        _authServiceMock.Verify(
+            x => x.UpdateMyProfileAsync(1, request),
+            Times.Once);
+    }
+    [Fact]
+    public async Task UpdateProfile_MissingUserIdClaim_ShouldReturnUnauthorized()
+    {
+        var request = new UpdateMyProfileRequest(
+            "Updated User",
+            "updated@example.com",
+            "9876543210");
+
+        var identity = new ClaimsIdentity(
+            Array.Empty<Claim>(),
+            "TestAuthentication");
+
+        var principal = new ClaimsPrincipal(identity);
+
+        _controller.ControllerContext = new ControllerContext
+        {
+            HttpContext = new DefaultHttpContext
+            {
+                User = principal
+            }
+        };
+
+        var result = await _controller.UpdateProfile(request);
+
+        var unauthorizedResult =
+            Assert.IsType<UnauthorizedObjectResult>(result);
+
+        Assert.NotNull(unauthorizedResult.Value);
+
+        _authServiceMock.Verify(
+            x => x.UpdateMyProfileAsync(
+                It.IsAny<int>(),
+                It.IsAny<UpdateMyProfileRequest>()),
+            Times.Never);
+    }
+    [Fact]
+    public async Task UpdateProfile_InvalidUserIdClaim_ShouldReturnUnauthorized()
+    {
+        var request = new UpdateMyProfileRequest(
+            "Updated User",
+            "updated@example.com",
+            "9876543210");
+
+        var claims = new[]
+        {
+        new Claim(ClaimTypes.NameIdentifier, "invalid-id")
+    };
+
+        var identity = new ClaimsIdentity(
+            claims,
+            "TestAuthentication");
+
+        var principal = new ClaimsPrincipal(identity);
+
+        _controller.ControllerContext = new ControllerContext
+        {
+            HttpContext = new DefaultHttpContext
+            {
+                User = principal
+            }
+        };
+
+        var result = await _controller.UpdateProfile(request);
+
+        Assert.IsType<UnauthorizedObjectResult>(result);
+
+        _authServiceMock.Verify(
+            x => x.UpdateMyProfileAsync(
+                It.IsAny<int>(),
+                It.IsAny<UpdateMyProfileRequest>()),
+            Times.Never);
     }
 }

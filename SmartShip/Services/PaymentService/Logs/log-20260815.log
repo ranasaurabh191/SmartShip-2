@@ -12,3 +12,152 @@
 2026-08-15 12:33:51 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
 2026-08-15 12:33:51 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
 2026-08-15 12:33:52 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 20:03:09 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 20:03:09 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 20:03:09 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 20:03:09 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 20:03:10 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 20:45:09 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 20:45:09 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 20:45:09 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 20:45:09 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 20:45:09 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:13:46 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 22:13:46 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 22:13:46 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 22:13:46 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:13:47 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:28:37 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 22:28:37 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 22:28:37 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 22:28:37 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:28:38 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:44:11 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 22:44:11 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 22:44:11 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 22:44:11 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:44:12 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:44:40 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 22:44:40 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 22:44:40 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 22:44:40 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:44:41 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 22:56:52 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 22:56:52 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 22:56:52 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 22:56:52 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 22:56:54 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 23:00:01 [INF] [PaymentService] HTTP GET /swagger/v1/swagger.json → 200 in 16.6387ms
+2026-08-15 23:01:26 [INF] [PaymentService] HTTP GET /api/payment/my → 200 in 624.4213ms
+2026-08-15 23:02:16 [INF] [PaymentService] Create order request for Shipment 1 | Method: "Online"
+2026-08-15 23:02:36 [ERR] [PaymentService] HTTP POST /api/payment/create-order → 500 in 20312.8389ms
+System.IO.FileNotFoundException: Could not load file or assembly 'SmartShip.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. The system cannot find the file specified.
+File name: 'SmartShip.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at SmartShip.Payment.API.Controllers.PaymentController.CreateOrder(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Presentation\SmartShip.Payment.API\Contollers\PaymentController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 23:02:36 [ERR] [PaymentService] Unhandled exception for POST /api/payment/create-order
+System.IO.FileNotFoundException: Could not load file or assembly 'SmartShip.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. The system cannot find the file specified.
+File name: 'SmartShip.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at SmartShip.Payment.API.Controllers.PaymentController.CreateOrder(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Presentation\SmartShip.Payment.API\Contollers\PaymentController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at SmartShip.Shared.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\SmartShip.Shared\Middleware\ExceptionMiddleware.cs:line 18
+2026-08-15 23:05:15 [INF] [PaymentService] Create order request for Shipment 1 | Method: "Online"
+2026-08-15 23:05:50 [ERR] [PaymentService] HTTP POST /api/payment/create-order → 500 in 35179.5434ms
+System.IO.FileNotFoundException: Could not load file or assembly 'SmartShip.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. The system cannot find the file specified.
+File name: 'SmartShip.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at SmartShip.Payment.API.Controllers.PaymentController.CreateOrder(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Presentation\SmartShip.Payment.API\Contollers\PaymentController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-15 23:05:50 [ERR] [PaymentService] Unhandled exception for POST /api/payment/create-order
+System.IO.FileNotFoundException: Could not load file or assembly 'SmartShip.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. The system cannot find the file specified.
+File name: 'SmartShip.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at SmartShip.Payment.Core.Services.PaymentService.CreateOrderAsync(CreateOrderRequest request)
+   at SmartShip.Payment.API.Controllers.PaymentController.CreateOrder(CreateOrderRequest request) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\Services\PaymentService\Presentation\SmartShip.Payment.API\Contollers\PaymentController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at SmartShip.Shared.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\ASUS\OneDrive\Desktop\SmartShip-ReTraining\SmartShip\SmartShip.Shared\Middleware\ExceptionMiddleware.cs:line 18
+2026-08-15 23:08:53 [INF] [PaymentService] Create order request for Shipment 1 | Method: "Online"
+2026-08-15 23:09:26 [INF] [PaymentService] Payment database migrated successfully.
+2026-08-15 23:09:27 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled-by-customer, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledByCustomerConsumer
+2026-08-15 23:09:27 [INF] [PaymentService] Configured endpoint payment-shipment-cancelled, Consumer: SmartShip.Payment.Infrastructure.Consumers.ShipmentCancelledConsumer
+2026-08-15 23:09:27 [INF] [PaymentService] Configured endpoint payment-user-deleted, Consumer: SmartShip.Payment.Infrastructure.Consumers.UserDeletedConsumer
+2026-08-15 23:09:27 [INF] [PaymentService] Bus started: "rabbitmq://localhost/"
+2026-08-15 23:09:29 [INF] [PaymentService] Create order request for Shipment 1 | Method: "Online"
+2026-08-15 23:09:29 [INF] [PaymentService] Create order request for Shipment 1 | Method: "Online"
+2026-08-15 23:09:30 [INF] [PaymentService] Shipment 1 verified | TrackingNumber: SHP-20260815225714-1031
+2026-08-15 23:09:30 [INF] [PaymentService] Payment Calculation: Base=1680.00, Fuel=84.00, Total=2234.92
+2026-08-15 23:09:32 [INF] [PaymentService] HTTP POST /api/payment/create-order → 200 in 3708.2504ms
+2026-08-15 23:12:22 [INF] [PaymentService] HTTP GET /api/payment/my → 200 in 149.8156ms
+2026-08-15 23:13:04 [INF] [PaymentService] Payment status request | OrderId:order_TQ8BNnQZ3pbnFY | ShipmentId:1 | Tracking:SHP-20260815225714-1031
+2026-08-15 23:13:04 [INF] [PaymentService] Fetching payment status | OrderId:order_TQ8BNnQZ3pbnFY | ShipmentId:1 | Tracking:SHP-20260815225714-1031
+2026-08-15 23:13:04 [INF] [PaymentService] Payment status → SHP-20260815225714-1031 | "Pending" | "Online"
+2026-08-15 23:13:04 [INF] [PaymentService] HTTP GET /api/payment/payment-status → 200 in 58.1414ms

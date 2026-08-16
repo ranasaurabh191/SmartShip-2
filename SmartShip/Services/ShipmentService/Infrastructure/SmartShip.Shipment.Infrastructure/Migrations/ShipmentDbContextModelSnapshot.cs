@@ -71,9 +71,6 @@ namespace SmartShip.Shipment.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("DeclaredValue")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -119,9 +116,6 @@ namespace SmartShip.Shipment.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PackageId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PaymentMethod")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("PickupScheduledAt")

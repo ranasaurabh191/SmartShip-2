@@ -96,13 +96,8 @@ public class UserServiceTests
             IsActive = true
         };
 
-        var request = new UpdateUserRequest(
-            "Jane Doe",
-            "9123456789",
-            false,
-            "ADMIN"
-        );
-
+        var request = new UpdateUserRequest(false);
+            
         _userRepositoryMock
             .Setup(x => x.GetByIdAsync(1))
             .ReturnsAsync(user);
@@ -113,9 +108,6 @@ public class UserServiceTests
 
         await _userService.UpdateUserAsync(1, request);
 
-        Assert.Equal("Jane Doe", user.Name);
-        Assert.Equal("9123456789", user.Phone);
-        Assert.Equal("ADMIN", user.Role);
         Assert.False(user.IsActive);
 
         _userRepositoryMock.Verify(
@@ -134,12 +126,7 @@ public class UserServiceTests
     [Fact]
     public async Task UpdateUserAsync_UserDoesNotExist_ShouldThrowKeyNotFoundException()
     {
-        var request = new UpdateUserRequest(
-            "Jane Doe",
-            "9123456789",
-            true,
-            "CUSTOMER"
-        );
+        var request = new UpdateUserRequest(true);
 
         _userRepositoryMock
             .Setup(x => x.GetByIdAsync(999))

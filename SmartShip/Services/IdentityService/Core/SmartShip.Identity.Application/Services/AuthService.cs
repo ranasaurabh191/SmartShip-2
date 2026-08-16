@@ -19,8 +19,6 @@ public class AuthService : IAuthService
     private readonly IUnitOfWork _unitOfWork;
     private readonly IConfiguration _config;
     private readonly ILogger<AuthService> _logger;
-    private readonly IPublishEndpoint _publisher;
-    private readonly IConfiguration _configuration;
 
 
     public AuthService(
@@ -34,9 +32,7 @@ public class AuthService : IAuthService
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
         _config = config;
-        _configuration = configuration;
         _logger = logger;
-        _publisher = publisher;
     }
 
 
@@ -130,8 +126,49 @@ public class AuthService : IAuthService
         return new AuthResponse(GenerateToken(user), user.Role, user.Name, user.Id);
     }
 
-    
 
+    public async Task<UserDto> UpdateMyProfileAsync(int userId, UpdateMyProfileRequest request)
+    {
+        _logger.LogInformation(
+            "Updating profile for user ID: {UserId}", userId);
+
+        var user = await _userRepository.GetByIdAsync(userId);
+
+        if (user == null)
+        {
+            _logger.LogWarning("Profile update failed - user not found: {UserId}", userId);
+
+            throw new KeyNotFoundException($"User {userId} not found.");
+        }
+
+        var existingEmailUser = await _userRepository.GetByEmailAsync(request.Email);
+
+        if (existingEmailUser != null && existingEmailUser.Id != userId)
+        {
+            _logger.LogWarning("Profile update failed - email already exists: {Email}", request.Email);
+
+            throw new InvalidOperationException("User with this email already exists.");
+        }
+
+        user.Name = request.Name;
+        user.Email = request.Email;
+        user.Phone = request.Phone;
+
+        _userRepository.Update(user);
+
+        await _unitOfWork.SaveChangesAsync();
+
+        _logger.LogInformation("Profile updated successfully for user ID: {UserId}", userId);
+
+        return new UserDto(
+            user.Id,
+            user.Name,
+            user.Email,
+            user.Phone,
+            user.Role,
+            user.IsActive,
+            user.CreatedAt);
+    }
 
     public async Task<object> DebugLoginAsync(LoginRequest request)
     {
@@ -161,45 +198,8 @@ public class AuthService : IAuthService
             isActive = user.IsActive
         };
     }
-
-    public async Task<object> FixAdminAsync()
+    public async Task<bool> ExistsActiveUserAsync(int id)
     {
-
-        _logger.LogInformation("FixAdmin operation started");
-
-        var admin = await _userRepository.GetByEmailForAdminAsync("admin@smartship.com");
-        var defaultPassword = _configuration["AdminSettings:DefaultPassword"];
-
-        if (admin == null)
-        {
-            _logger.LogWarning("Admin not found. Creating new admin user.");
-            admin = new User
-            {
-                Name = "Super Admin",
-                Email = "admin@smartship.com",
-                Phone = "9999999999",
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(defaultPassword),
-                Role = "ADMIN",
-                IsActive = true,
-                CreatedAt = DateTime.Now
-            };
-
-            await _userRepository.AddAsync(admin);
-        }
-        else
-        {
-            _logger.LogWarning("Admin already exists. Resetting password.");
-
-            admin.PasswordHash = BCrypt.Net.BCrypt.HashPassword(defaultPassword);
-            _userRepository.Update(admin);
-        }
-
-        await _unitOfWork.SaveChangesAsync();
-
-        _logger.LogInformation("FixAdmin operation completed successfully.");
-
-        return new { message = "Admin fixed successfully." };
-
+        return await _userRepository.ExistsActiveByIdAsync(id);
     }
-
 }

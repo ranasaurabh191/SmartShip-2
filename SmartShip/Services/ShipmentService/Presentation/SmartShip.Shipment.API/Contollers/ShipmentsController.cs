@@ -27,7 +27,7 @@ public class ShipmentsController : ControllerBase
         return int.Parse(claim ?? "0");
     }
 
-    [HttpPost]
+    [HttpPost("create")]
     [Authorize(Roles = "CUSTOMER")]
     public async Task<IActionResult> Create([FromBody] CreateShipmentRequest request)
     {
@@ -40,20 +40,41 @@ public class ShipmentsController : ControllerBase
     public async Task<IActionResult> GetById(int id) =>  Ok(await _service.GetByIdAsync(id));
 
     [HttpPost("{id}/schedule-pickup")]
-    [Authorize(Roles = "CUSTOMER")]  
-    public async Task<IActionResult> SchedulePickup(int id, [FromBody] SchedulePickupRequest request)
+    [Authorize(Roles = "CUSTOMER")]
+    public async Task<IActionResult> SchedulePickup(
+    int id,
+    [FromBody] SchedulePickupRequest request)
     {
         var customerIdClaim = User.FindFirst("userId")?.Value
             ?? User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        if (string.IsNullOrEmpty(customerIdClaim) || !int.TryParse(customerIdClaim, out var customerId))
+        _logger.LogInformation(
+            "SchedulePickup: ShipmentId={ShipmentId}, CustomerIdClaim={CustomerIdClaim}",
+            id,
+            customerIdClaim);
+
+        if (string.IsNullOrEmpty(customerIdClaim) ||
+            !int.TryParse(customerIdClaim, out var customerId))
         {
-            _logger.LogWarning("JWT userId claim missing or invalid on SchedulePickup.");
-            return Unauthorized(new { message = "Invalid or missing user token." });
+            _logger.LogWarning("JWT userId claim missing or invalid.");
+            return Unauthorized(new
+            {
+                message = "Invalid or missing user token.",
+                customerIdClaim
+            });
         }
 
-        await _service.SchedulePickupAsync(id, customerId, request);  
-        return Ok(new { message = "Pickup scheduled successfully." });
+        _logger.LogInformation(
+            "Calling SchedulePickupAsync with ShipmentId={ShipmentId}, CustomerId={CustomerId}",
+            id,
+            customerId);
+
+        await _service.SchedulePickupAsync(id, customerId, request);
+
+        return Ok(new
+        {
+            message = "Pickup scheduled successfully."
+        });
     }
 
     [HttpGet("rate")]

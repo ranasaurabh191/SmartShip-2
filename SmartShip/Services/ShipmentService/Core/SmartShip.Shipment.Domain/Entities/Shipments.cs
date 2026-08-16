@@ -8,7 +8,6 @@ public class Shipments
     public int CustomerId { get; set; }
     public ShipmentType ShipmentType { get; set; }
     public ShipmentStatus Status { get; set; } = ShipmentStatus.Draft;
-    public PaymentMethod PaymentMethod { get; set; } = PaymentMethod.Online;
     public decimal ShippingRate { get; set; }
     public bool IsFragile { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;

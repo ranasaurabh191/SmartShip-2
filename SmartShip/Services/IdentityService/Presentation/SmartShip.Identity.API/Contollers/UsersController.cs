@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using SmartShip.Identity.Application.DTOs;
 using SmartShip.Identity.Application.Interfaces.Services;
 
-
 namespace SmartShip.Identity.API.Controllers;
 
 [ApiController]

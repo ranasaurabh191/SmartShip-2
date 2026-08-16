@@ -59,10 +59,6 @@ public class PackageValidator : AbstractValidator<PackageDto>
         RuleFor(x => x.Description)
             .NotEmpty().WithMessage("Description is required.")
             .MaximumLength(500).WithMessage("Description cannot exceed 500 characters.");
-
-        RuleFor(x => x.DeclaredValue)
-            .GreaterThanOrEqualTo(0).WithMessage("Declared value cannot be negative.")
-            .LessThanOrEqualTo(10000000).WithMessage("Declared value cannot exceed 1 crore.");
     }
 }
 
@@ -84,10 +80,6 @@ public class CreateShipmentRequestValidator : AbstractValidator<CreateShipmentRe
 
         RuleFor(x => x.ShipmentType)
             .IsInEnum().WithMessage("Invalid shipment type.");
-
-        RuleFor(x => x.PickupScheduledAt)
-            .GreaterThan(DateTime.Now).WithMessage("Pickup time must be in the future.")
-            .When(x => x.PickupScheduledAt.HasValue);
     }
 }
 

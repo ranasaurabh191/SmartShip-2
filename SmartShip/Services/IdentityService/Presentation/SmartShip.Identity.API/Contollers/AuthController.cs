@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartShip.Identity.Application.DTOs;
 using SmartShip.Identity.Application.Interfaces.Services;
+using SmartShip.Identity.Application.Services;
+using System.Security.Claims;
 
 namespace SmartShip.Identity.API.Controllers;
 
@@ -31,12 +33,33 @@ public class AuthController : ControllerBase
         return Ok(result);
     }
 
+    [HttpPut("profile")]
+    [Authorize]
+    public async Task<IActionResult> UpdateProfile([FromBody] UpdateMyProfileRequest request)
+    {
+        var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (!int.TryParse(userIdClaim, out var userId)) return Unauthorized(new { message = "Invalid user identity." });
+        await _authService.UpdateMyProfileAsync(userId, request);
+
+        return Ok(new { message = "Profile updated successfully." });
+    }
+
     [HttpPost("debug-login")]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> DebugLogin([FromBody] LoginRequest request) =>
-        Ok(await _authService.DebugLoginAsync(request));
+    public async Task<IActionResult> DebugLogin([FromBody] LoginRequest request)
+    {
+        return Ok(await _authService.DebugLoginAsync(request));
+    }
 
-    [HttpGet("fix-admin")]
-    public async Task<IActionResult> FixAdmin() =>
-        Ok(await _authService.FixAdminAsync());
+    [HttpGet("internal/users/{id}/exists")]
+    public async Task<IActionResult> Exists(int id)
+    {
+        var exists = await _authService.ExistsActiveUserAsync(id);
+        if (!exists) return NotFound();
+
+        return Ok(new
+        {
+            exists = true
+        });
+    }
 }
