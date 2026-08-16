@@ -136,8 +136,7 @@ public class ShipmentServiceTests
                 15,
                 10,
                 "Electronics"),
-            shipmentType,
-            null,
+            shipmentType,            
             "Test shipment",
             false);
     }

@@ -69,8 +69,7 @@ public class PaymentControllerTests
             RazorpayOrderId = "order_123",
             RazorpayPaymentId = "pay_123",
             Signature = "signature",
-            ShipmentId = 1,
-            PaymentMethod = "Online"
+            ShipmentId = 1
         };
 
         var response = new PaymentResponse

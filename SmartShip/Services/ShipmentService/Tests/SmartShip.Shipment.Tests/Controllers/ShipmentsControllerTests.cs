@@ -126,9 +126,7 @@ public class ShipmentsControllerTests
                 10,
                 "Electronics"
               ),
-            ShipmentType.Domestic,
-            null,
-            "Test shipment",
+            ShipmentType.Domestic, "Test shipment",
             false);
     }
 
