@@ -26,9 +26,7 @@ public class AdminControllerTests
         new Claim(ClaimTypes.Role, "ADMIN")
     };
 
-        var identity = new ClaimsIdentity(
-            claims,
-            "TestAuthentication");
+        var identity = new ClaimsIdentity(claims, "TestAuthentication");
 
         _controller.ControllerContext = new ControllerContext
         {
