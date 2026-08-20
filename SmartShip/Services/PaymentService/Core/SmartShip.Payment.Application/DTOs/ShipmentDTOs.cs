@@ -1,5 +1,8 @@
 namespace SmartShip.Payment.Application.DTOs;
 
+/// <summary>
+/// Data Transfer Object carrying shipment details required by PaymentService to calculate billing and verify ownership.
+/// </summary>
 public class ShipmentDTOs
 {
     public int Id { get; set; }

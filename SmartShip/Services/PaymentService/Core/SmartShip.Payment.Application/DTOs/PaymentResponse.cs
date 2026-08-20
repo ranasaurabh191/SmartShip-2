@@ -1,17 +1,28 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace SmartShip.Payment.Application.DTOs;
 
+/// <summary>
+/// Data Transfer Object representing the payment status response returned to clients.
+/// Contains payment status, monetary details, and gateway tokens.
+/// </summary>
 public class PaymentResponse
 {
+  
     public int Id { get; set; }
-    public int? ShipmentId { get; set; }
-    public string TrackingNumber { get; set; } = "";
-    public decimal Amount { get; set; }
-    public string PaymentMethod { get; set; } = "";
-    public string PaymentStatus { get; set; } = "";
-    public string? RazorpayOrderId { get; set; }
 
+    public int? ShipmentId { get; set; }
+   
+    public string TrackingNumber { get; set; } = "";
+
+    public decimal Amount { get; set; }
+
+    public string PaymentMethod { get; set; } = "";
+
+    public string PaymentStatus { get; set; } = "";
+
+    public string? RazorpayOrderId { get; set; }
+ 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? RazorpayPaymentId { get; set; }
     public string CreatedAt { get; set; } = "";

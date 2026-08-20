@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartShip.Identity.Application.DTOs;
 using SmartShip.Identity.Application.Interfaces.Services;
 
 namespace SmartShip.Identity.API.Controllers;
 
+/// <summary>
+/// Administrative controller for user account management, status updates, and deletions.
+/// Restricted to authenticated users with the ADMIN role.
+/// </summary>
 [ApiController]
 [Route("api/admin/users")]
 [Authorize(Roles = "ADMIN")]
@@ -33,5 +37,4 @@ public class UsersController : ControllerBase
         await _userService.DeleteUserAsync(id);
         return Ok(new { message = "Deleted Successfully" }) ;
     }
-
 }

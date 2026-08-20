@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using SmartShip.Identity.API.Controllers;
 using SmartShip.Identity.Application.DTOs;
@@ -7,17 +7,22 @@ using Xunit;
 
 namespace SmartShip.Identity.Tests.Controllers;
 
+/// <summary>
+/// Unit test suite for validating administrative endpoint actions in <see cref="UsersController"/>.
+/// </summary>
 public class UsersControllerTests
 {
     private readonly Mock<IUserService> _userServiceMock;
     private readonly UsersController _controller;
-
     public UsersControllerTests()
     {
         _userServiceMock = new Mock<IUserService>();
         _controller = new UsersController(_userServiceMock.Object);
     }
 
+    /// <summary>
+    /// Verifies <see cref="UsersController.GetById"/> returns HTTP 200 (OK) when the requested user ID exists.
+    /// </summary>
     [Fact]
     public async Task GetById_UserExists_ShouldReturnOk()
     {
@@ -48,6 +53,9 @@ public class UsersControllerTests
             Times.Once);
     }
 
+    /// <summary>
+    /// Verifies <see cref="UsersController.GetById"/> throws <see cref="KeyNotFoundException"/> when user is not found.
+    /// </summary>
     [Fact]
     public async Task GetById_UserDoesNotExist_ShouldPropagateException()
     {
@@ -67,6 +75,9 @@ public class UsersControllerTests
             Times.Once);
     }
 
+    /// <summary>
+    /// Verifies <see cref="UsersController.Update"/> returns HTTP 200 (OK) when status update succeeds.
+    /// </summary>
     [Fact]
     public async Task Update_UserExists_ShouldReturnOk()
     {
@@ -89,6 +100,9 @@ public class UsersControllerTests
             Times.Once);
     }
 
+    /// <summary>
+    /// Verifies <see cref="UsersController.Update"/> throws <see cref="KeyNotFoundException"/> when user does not exist.
+    /// </summary>
     [Fact]
     public async Task Update_UserDoesNotExist_ShouldPropagateException()
     {
@@ -110,6 +124,9 @@ public class UsersControllerTests
             Times.Once);
     }
 
+    /// <summary>
+    /// Verifies <see cref="UsersController.Delete"/> returns HTTP 200 (OK) when user account deletion succeeds.
+    /// </summary>
     [Fact]
     public async Task Delete_UserExists_ShouldReturnOk()
     {
@@ -130,6 +147,9 @@ public class UsersControllerTests
             Times.Once);
     }
 
+    /// <summary>
+    /// Verifies <see cref="UsersController.Delete"/> throws <see cref="KeyNotFoundException"/> when target user ID is not found.
+    /// </summary>
     [Fact]
     public async Task Delete_UserDoesNotExist_ShouldPropagateException()
     {

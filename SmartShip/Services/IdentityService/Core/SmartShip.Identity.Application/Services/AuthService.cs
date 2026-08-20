@@ -13,6 +13,8 @@ using System.Text;
 
 namespace SmartShip.Identity.Application.Services;
 
+/// Service implementing authentication, registration, JWT token management, and profile updates for IdentityService.
+/// Encapsulates credential hashing with BCrypt and JWT issuance logic.
 public class AuthService : IAuthService
 {
     private readonly IUserRepository _userRepository;
@@ -20,14 +22,18 @@ public class AuthService : IAuthService
     private readonly IConfiguration _config;
     private readonly ILogger<AuthService> _logger;
 
-
+    /// <summary>
+    /// Initializes a new instance of the <see cref="AuthService"/> class.
+    /// </summary>
+    /// <param name="userRepository">Repository interface for accessing user data.</param>
+    /// <param name="unitOfWork">Unit of work for executing atomic database operations.</param>
+    /// <param name="config">Configuration settings containing JWT key, issuer, and audience.</param>
+    /// <param name="logger">Logger for recording operational events.</param>
     public AuthService(
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
         IConfiguration config,
-        ILogger<AuthService> logger,
-        IPublishEndpoint publisher,
-        IConfiguration configuration)
+        ILogger<AuthService> logger)
     {
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
@@ -35,7 +41,11 @@ public class AuthService : IAuthService
         _logger = logger;
     }
 
-
+    /// <summary>
+    /// Generates a signed JSON Web Token (JWT) containing user ID, email, name, and role claims.
+    /// </summary>
+    /// <param name="user">The user entity for whom to generate the token.</param>
+    /// <returns>A signed JWT token string.</returns>
     private string GenerateToken(User user)
     {
         _logger.LogInformation("Generating JWT token for user: {Email}, Role: {Role}", user.Email, user.Role);
@@ -52,7 +62,7 @@ public class AuthService : IAuthService
             new Claim(ClaimTypes.Name, user.Name),
             new Claim(ClaimTypes.Role, user.Role)
         };
-
+         
         var expiryMinutes = double.Parse(jwt["ExpiryMinutes"]!);
 
         var token = new JwtSecurityToken(
@@ -67,7 +77,8 @@ public class AuthService : IAuthService
 
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
-    public async Task<AuthResponse> SignupAsync(SignupRequest request)
+
+    public async Task<AuthResponse> SignupAsync(SignupRequest request, CancellationToken cancellationToken = default)
     {
         _logger.LogInformation("Signup attempt for email: {Email}", request.Email);
 
@@ -78,6 +89,7 @@ public class AuthService : IAuthService
             throw new InvalidOperationException("User with this email already exists.");
         }
 
+        // Hash plaintext password using BCrypt algorithm
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
         var user = new User
@@ -98,11 +110,12 @@ public class AuthService : IAuthService
 
         return new AuthResponse(GenerateToken(user), user.Role, user.Name, user.Id);
     }
-    public async Task<AuthResponse> LoginAsync(LoginRequest request)
+
+    public async Task<AuthResponse> LoginAsync(LoginRequest request, CancellationToken cancellationToken = default)
     {
         _logger.LogInformation("Login attempt: {Email}", request.Email);
 
-        var user = await _userRepository.GetByEmailAsync(request.Email);
+        var user = await _userRepository.GetByEmailAsync(request.Email, cancellationToken);
 
         if (user == null)
         {
@@ -116,6 +129,7 @@ public class AuthService : IAuthService
             throw new UnauthorizedAccessException("User account is inactive.");
         }
 
+        // Verify provided password against stored BCrypt hash
         if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
         {
             _logger.LogWarning("Login failed - wrong password: {Email}", request.Email);
@@ -126,13 +140,13 @@ public class AuthService : IAuthService
         return new AuthResponse(GenerateToken(user), user.Role, user.Name, user.Id);
     }
 
-
-    public async Task<UserDto> UpdateMyProfileAsync(int userId, UpdateMyProfileRequest request)
+ 
+    public async Task<UserDto> UpdateMyProfileAsync(int userId, UpdateMyProfileRequest request, CancellationToken cancellationToken = default)
     {
         _logger.LogInformation(
             "Updating profile for user ID: {UserId}", userId);
 
-        var user = await _userRepository.GetByIdAsync(userId);
+        var user = await _userRepository.GetByIdAsync(userId, cancellationToken);
 
         if (user == null)
         {
@@ -141,7 +155,7 @@ public class AuthService : IAuthService
             throw new KeyNotFoundException($"User {userId} not found.");
         }
 
-        var existingEmailUser = await _userRepository.GetByEmailAsync(request.Email);
+        var existingEmailUser = await _userRepository.GetByEmailAsync(request.Email, cancellationToken);
 
         if (existingEmailUser != null && existingEmailUser.Id != userId)
         {
@@ -170,11 +184,11 @@ public class AuthService : IAuthService
             user.CreatedAt);
     }
 
-    public async Task<object> DebugLoginAsync(LoginRequest request)
+    public async Task<object> DebugLoginAsync(LoginRequest request, CancellationToken cancellationToken = default)
     {
         _logger.LogInformation("Debug login attempt for email: {Email}", request.Email);
 
-        var user = await _userRepository.GetByEmailAsync(request.Email);
+        var user = await _userRepository.GetByEmailAsync(request.Email, cancellationToken);
 
         if (user == null)
         {
@@ -198,8 +212,9 @@ public class AuthService : IAuthService
             isActive = user.IsActive
         };
     }
-    public async Task<bool> ExistsActiveUserAsync(int id)
+
+    public async Task<bool> ExistsActiveUserAsync(int id, CancellationToken cancellationToken = default)
     {
-        return await _userRepository.ExistsActiveByIdAsync(id);
+        return await _userRepository.ExistsActiveByIdAsync(id, cancellationToken);
     }
 }

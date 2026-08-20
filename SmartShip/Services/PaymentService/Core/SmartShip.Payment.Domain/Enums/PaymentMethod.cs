@@ -1,3 +1,11 @@
-﻿namespace SmartShip.Payment.Domain.Entities.Enums;
+namespace SmartShip.Payment.Domain.Entities.Enums;
 
-public enum PaymentMethod { COD, Online }
+/// <summary>
+/// Enumeration defining supported payment channels for shipment transactions.
+/// </summary>
+public enum PaymentMethod 
+{ 
+
+    COD, 
+    Online 
+}

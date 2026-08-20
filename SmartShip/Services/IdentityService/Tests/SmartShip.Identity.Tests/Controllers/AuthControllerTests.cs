@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using SmartShip.Identity.API.Controllers;
@@ -9,6 +9,9 @@ using Xunit;
 
 namespace SmartShip.Identity.Tests.Controllers;
 
+/// <summary>
+/// Unit test suite for verifying <see cref="AuthController"/> endpoint behavior, claim processing, and HTTP status code mappings.
+/// </summary>
 public class AuthControllerTests
 {
     private readonly Mock<IAuthService> _authServiceMock;
@@ -20,6 +23,9 @@ public class AuthControllerTests
         _controller = new AuthController(_authServiceMock.Object);
     }
 
+    /// <summary>
+    /// Verifies that <see cref="AuthController.Login"/> returns HTTP 200 (OK) with valid credentials.
+    /// </summary>
     [Fact]
     public async Task Login_ValidRequest_ShouldReturnOk()
     {
@@ -51,6 +57,9 @@ public class AuthControllerTests
             Times.Once);
     }
 
+    /// <summary>
+    /// Verifies that <see cref="AuthController.Signup"/> returns HTTP 200 (OK) with valid registration data.
+    /// </summary>
     [Fact]
     public async Task Signup_ValidRequest_ShouldReturnOk()
     {
@@ -84,6 +93,9 @@ public class AuthControllerTests
             Times.Once);
     }
 
+    /// <summary>
+    /// Verifies that <see cref="AuthController.DebugLogin"/> returns HTTP 200 (OK) with diagnostic info.
+    /// </summary>
     [Fact]
     public async Task DebugLogin_ValidRequest_ShouldReturnOk()
     {
@@ -118,6 +130,9 @@ public class AuthControllerTests
             Times.Once);
     }
 
+    /// <summary>
+    /// Verifies that <see cref="AuthController.Login"/> rethrows exception when service fails.
+    /// </summary>
     [Fact]
     public async Task Login_ServiceThrowsException_ShouldPropagateException()
     {
@@ -140,6 +155,10 @@ public class AuthControllerTests
             "User not found with this email. Please signup.",
             exception.Message);
     }
+
+    /// <summary>
+    /// Verifies profile update with a valid JWT user claim.
+    /// </summary>
     [Fact]
     public async Task UpdateProfile_ValidUser_ShouldReturnOk()
     {
@@ -183,6 +202,10 @@ public class AuthControllerTests
             x => x.UpdateMyProfileAsync(1, request),
             Times.Once);
     }
+
+    /// <summary>
+    /// Verifies profile update returns HTTP 401 (Unauthorized) when user ID claim is missing.
+    /// </summary>
     [Fact]
     public async Task UpdateProfile_MissingUserIdClaim_ShouldReturnUnauthorized()
     {
@@ -218,6 +241,10 @@ public class AuthControllerTests
                 It.IsAny<UpdateMyProfileRequest>()),
             Times.Never);
     }
+
+    /// <summary>
+    /// Verifies profile update returns HTTP 401 (Unauthorized) when user ID claim cannot be parsed as integer.
+    /// </summary>
     [Fact]
     public async Task UpdateProfile_InvalidUserIdClaim_ShouldReturnUnauthorized()
     {

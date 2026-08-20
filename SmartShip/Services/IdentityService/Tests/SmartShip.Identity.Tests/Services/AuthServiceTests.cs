@@ -1,4 +1,4 @@
-﻿using MassTransit;
+using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -11,6 +11,9 @@ using Xunit;
 
 namespace SmartShip.Identity.Tests.Services;
 
+/// <summary>
+/// Unit test suite for verifying <see cref="AuthService"/> authentication, registration, BCrypt password hashing, and JWT token issuance logic.
+/// </summary>
 public class AuthServiceTests
 {
     private readonly Mock<IUserRepository> _userRepositoryMock;
@@ -44,9 +47,7 @@ public class AuthServiceTests
             _userRepositoryMock.Object,
             _unitOfWorkMock.Object,
             _configuration,
-            _loggerMock.Object,
-            _publisherMock.Object,
-            _configuration);
+            _loggerMock.Object);
     }
 
     [Fact]

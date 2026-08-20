@@ -1,10 +1,15 @@
-﻿using SmartShip.Payment.Domain.Entities.Enums;
+using SmartShip.Payment.Domain.Entities.Enums;
 
 namespace SmartShip.Payment.Domain.Entities;
 
+/// <summary>
+/// Domain entity representing a payment transaction associated with a shipment.
+/// Stores payment amount, status, gateway reference tokens (Razorpay Order/Payment ID), and transaction timestamps.
+/// </summary>
 public class ShipmentPayment
 {
-    public int Id { get; set; }
+   
+    public int Id { get; set; } 
     public int ShipmentId { get; set; }
     public string TrackingNumber { get; set; } = "";
     public int CustomerId { get; set; }

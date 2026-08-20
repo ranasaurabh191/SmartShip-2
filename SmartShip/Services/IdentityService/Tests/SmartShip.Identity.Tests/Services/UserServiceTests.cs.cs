@@ -1,4 +1,4 @@
-﻿using MassTransit;
+using MassTransit;
 using Microsoft.Extensions.Logging;
 using Moq;
 using SmartShip.Identity.Application.DTOs;
@@ -11,6 +11,9 @@ using Xunit;
 
 namespace SmartShip.Identity.Tests.Services;
 
+/// <summary>
+/// Unit test suite for validating <see cref="UserService"/> operations, exception handling, and <see cref="UserDeletedEvent"/> publishing.
+/// </summary>
 public class UserServiceTests
 {
     private readonly Mock<IUserRepository> _userRepositoryMock;
@@ -19,6 +22,9 @@ public class UserServiceTests
     private readonly Mock<IPublishEndpoint> _publisherMock;
     private readonly UserService _userService;
 
+    /// <summary>
+    /// Initializes test dependencies with mocked dependencies.
+    /// </summary>
     public UserServiceTests()
     {
         _userRepositoryMock = new Mock<IUserRepository>();

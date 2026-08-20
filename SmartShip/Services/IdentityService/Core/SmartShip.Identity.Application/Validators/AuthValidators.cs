@@ -1,10 +1,13 @@
-﻿using FluentValidation;
+using FluentValidation;
 using SmartShip.Identity.Application.DTOs;
 
 namespace SmartShip.Identity.Application.Validators;
 
+/// FluentValidation validator rules for <see cref="SignupRequest"/>.
+/// Enforces name length/format, email structure, 10-digit phone number validation, and strong password complexity rules.
 public class SignupRequestValidator : AbstractValidator<SignupRequest>
 {
+    /// Initializes validation rules for user signup requests.
     public SignupRequestValidator()
     {
         RuleFor(x => x.Name)
@@ -33,8 +36,10 @@ public class SignupRequestValidator : AbstractValidator<SignupRequest>
     }
 }
 
+
 public class LoginRequestValidator : AbstractValidator<LoginRequest>
 {
+    /// Initializes validation rules for user login requests.
     public LoginRequestValidator()
     {
         RuleFor(x => x.Email)
@@ -48,6 +53,7 @@ public class LoginRequestValidator : AbstractValidator<LoginRequest>
 
 public class UpdateRequestValidator : AbstractValidator<UpdateMyProfileRequest>
 {
+    /// Initializes validation rules for profile update requests.
     public UpdateRequestValidator()
     {
         RuleFor(x => x.Name)

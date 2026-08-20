@@ -1,4 +1,4 @@
-﻿using MassTransit;
+using MassTransit;
 using Microsoft.Extensions.Logging;
 using SmartShip.Identity.Application.DTOs;
 using SmartShip.Identity.Application.Interfaces.Persistence;
@@ -8,12 +8,14 @@ using SmartShip.Shared.Events;
 
 namespace SmartShip.Identity.Application.Services;
 
+/// Service providing administrative user lookup, state updates, account deletion, and event publishing.
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly ILogger<UserService> _logger;
     private readonly IPublishEndpoint _publisher;
+
     public UserService(
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
@@ -25,8 +27,6 @@ public class UserService : IUserService
         _logger = logger;
         _publisher = publisher;
     }
-
-    
     public async Task<UserDto> GetUserByIdAsync(int id)
     {
         _logger.LogInformation("Fetching user with ID: {UserId}", id);
@@ -68,7 +68,6 @@ public class UserService : IUserService
 
         _logger.LogInformation("User updated successfully: {UserId}", id);
     }
-
     public async Task DeleteUserAsync(int userId)
     {
         _logger.LogInformation("Deleting user with ID: {UserId}", userId);
@@ -90,6 +89,7 @@ public class UserService : IUserService
 
         _logger.LogInformation("User deleted successfully: {UserId}", userId);
 
+        // Broadcast UserDeletedEvent across message bus to trigger cleanup in subscriber microservices
         await _publisher.Publish(new UserDeletedEvent
         {
             UserId = userId,
@@ -100,5 +100,4 @@ public class UserService : IUserService
 
         _logger.LogInformation("Delete Event published successfully for User Id : {UserId}", userId);
     }
-    
 }
