@@ -132,7 +132,6 @@ graph TD
 * **Events Published**: `UserDeletedEvent`.
 * **Events Consumed**: None.
 
-> **Interview Pitch**: "Identity Service is the security authority for SmartShip running on port 5002. It manages user credentials with BCrypt hashing, issues JWT tokens with custom role claims, and exposes internal validation endpoints for downstream services. When an admin deletes a user, it publishes a `UserDeletedEvent` to trigger data cleanup in Shipment and Payment services."
 
 ---
 
@@ -157,7 +156,6 @@ graph TD
 * **Events Published**: `PaymentCreatedEvent`, `PaymentCompletedEvent`, `PaymentFailedEvent`.
 * **Events Consumed**: `ShipmentCancelledConsumer`, `ShipmentCancelledByCustomerConsumer`, `UserDeletedConsumer`.
 
-> **Interview Pitch**: "Payment Service handles all financial transactions on port 5003. It integrates with Razorpay for online payments, calculates detailed tax and surcharge breakdowns, and supports Cash on Delivery. It verifies Razorpay HMAC SHA256 signatures for security and consumes cancellation events from RabbitMQ to handle status updates automatically."
 
 ---
 
